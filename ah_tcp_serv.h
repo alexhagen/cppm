@@ -40,7 +40,7 @@ public:
     void change_ipaddr(char*);
     void change_port(int);
     // server start and stop methods for timing
-    //void start_nb(void);
+    void start_nb(void);
     void start_b(void);
     //void stop_nb(void);
     void send_msg(char*);
@@ -83,6 +83,10 @@ void ah_tcp_serv::change_port(int _port) {
 	port = _port;
 }
 
+void ah_tcp_serv::start_nb(void){
+    //
+}
+
 void ah_tcp_serv::start_b(void){
 	/* get the listener */
     if((listener = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
@@ -90,7 +94,16 @@ void ah_tcp_serv::start_b(void){
         error.emit(ERR_CRIT, "Server-socket() cannot start listener.");
         exit(1);
     }
-    //error.emit(ERR_DEBUG,"Server-socket() connected listener.");
+    error.emit(ERR_DEBUG,"Server-socket() connected listener.");
+    int opts;
+    opts = fcntl(listener,F_GETFL);
+    if (opts < 0){
+        error.emit(ERR_CRIT,"fcntl failure");
+    }
+    opts = (opts | O_NONBLOCK);
+    if (fcntl(listener,F_SETFL,opts)<0){
+        error.emit(ERR_CRIT,"fcntl set flags failure");
+    }
     /*"address already in use" error message */
     if(setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == \
     	-1) {
