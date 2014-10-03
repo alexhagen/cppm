@@ -134,7 +134,7 @@ void ah_tcp_serv::start_b(void){
          
         if(select(fdmax+1, &read_fds, NULL, NULL, NULL) == -1) {
             error.emit(ERR_ERR,"Server-select had an error!");
-            //perror("Server-select() error lol!");
+            perror("Server-select() error lol!");
             exit(1);
         }
         error.emit(ERR_DEBUG,"server was able to select.");
