@@ -37,9 +37,8 @@ class ah_tcp_serv : public sigslot::has_slots<>{
 public:
 	// constructor methods - overloading
     ah_tcp_serv(void);
-    ah_tcp_serv(char*);
-    ah_tcp_serv(char*,int);
-    ah_tcp_serv(int);
+    void change_ipaddr(char*);
+    void change_port(int);
     // server start and stop methods for timing
     //void start_nb(void);
     void start_b(void);
@@ -65,7 +64,7 @@ private:
     int addrlen;
     int i, j;
     unsigned long int ipAddr = INADDR_ANY; // defaulting to 0.0.0.0
-    int port = 9001; // defaulting to port 9000
+    int port = 9000; // defaulting to port 9000
     bool cont = true; // flag to continue in the loop
 };
 
@@ -74,19 +73,12 @@ ah_tcp_serv::ah_tcp_serv(void) {
 }
 
 
-ah_tcp_serv::ah_tcp_serv(char* _ipAddr) {
+void ah_tcp_serv::change_ipaddr(char* _ipAddr) {
 	// convert a char* ipAddr into the hex value
 	ipAddr = inet_addr(_ipAddr);
 }
 
-ah_tcp_serv::ah_tcp_serv(char* _ipAddr,int _port) {
-	// convert a char* ipAddr into the hex value
-	ipAddr = inet_addr(_ipAddr);
-	// change the port to match that defined
-	port = _port;
-}
-
-ah_tcp_serv::ah_tcp_serv(int _port) {
+void ah_tcp_serv::change_port(int _port) {
 	// change the port to match that defined
 	port = _port;
 }
