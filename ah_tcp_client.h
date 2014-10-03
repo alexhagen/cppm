@@ -128,7 +128,7 @@ void ah_tcp_client::send_data(char* msg){
 		error.emit(ERR_DEBUG,err_str);
 	}
 	
-	totalcnt = 0;
+	memset(buffer,0,sizeof(buffer));
 	if (rc = recv(sd, &buffer,sizeof(buffer),0) <= 0){
 		if(rc < 0) {
 			error.emit(ERR_ERR,"client read error");

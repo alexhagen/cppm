@@ -27,7 +27,7 @@ int main(void){
 	ah_tcp_client *client = new ah_tcp_client();
 	client->error.connect(err_ind,&error::printerror);
 	client->data_ready.connect(err_ind,&error::printdata);
-	client->tcp_connect("192.168.1.40",10000);
+	client->tcp_connect("192.168.1.40",9000);
 	client->send_data("1");
 	client->send_data("none");
 	client->disconnect();
