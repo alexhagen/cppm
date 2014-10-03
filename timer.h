@@ -41,7 +41,7 @@ class timer : public sigslot::has_slots<>{
     struct sigevent         te;
     struct itimerspec       its;
     struct sigaction        sa;
-    int                     sigNo = SIGRTMIN;
+    int                     sigNo = SIGALRM;
 };
 
 void signalHandler(int sig, siginfo_t *si, void *uc){
