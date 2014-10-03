@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <string>
+#include <fcntl.h>
 #include "sigslot.h"
 
 #define DEFAULTPORT 9000
