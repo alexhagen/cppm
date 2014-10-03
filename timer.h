@@ -85,6 +85,8 @@ void timer::set(double t){
     int nsec = int((delt-floor(delt))*1.0E9);
     its.it_value.tv_sec = sec;
     its.it_value.tv_nsec = nsec;
+    its.it_interval.tv_sec = 0;
+    its.it_interval.tv_nsec = 0;
 }
 
 void timer::set_int(double t){
@@ -109,11 +111,15 @@ void timer::finish(){
     realtime = double(now.tv_sec+(now.tv_nsec/1.0E9))-start_time;
     if (realtime > 10000) realtime = 0;
     printf("ran finish\n");
+    clock_gettime(CLOCK_REALTIME, &now);
+    start_time = double(now.tv_sec+(now.tv_nsec/1.0E9));
 }
 
 void timer::clear(){
     its.it_value.tv_sec = 0;
     its.it_value.tv_nsec = 0;
+    its.it_interval.tv_sec = 0;
+    its.it_interval.tv_nsec = 0;
     timer_settime(timerID,0,&its,NULL);
     printf("ran clear\n");
     delete this;
@@ -122,6 +128,8 @@ void timer::clear(){
 void timer::stop(){
     its.it_value.tv_sec = 0;
     its.it_value.tv_nsec = 0;
+    its.it_interval.tv_sec = 0;
+    its.it_interval.tv_nsec = 0;
     timer_settime(timerID,0,&its,NULL);
 }
 
