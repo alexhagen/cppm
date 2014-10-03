@@ -91,7 +91,6 @@ void ah_tcp_serv::start_nb(void){
 void ah_tcp_serv::start_b(void){
 	/* get the listener */
     if((listener = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
-    	printf("listener error.\n");
         error.emit(ERR_CRIT, "Server-socket() cannot start listener.");
         exit(1);
     }
@@ -108,7 +107,6 @@ void ah_tcp_serv::start_b(void){
     /*"address already in use" error message */
     if(setsockopt(listener, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == \
     	-1) {
-    	printf("setsockopt error\n");
         error.emit(ERR_CRIT,"Server-setsockopt() error: ");
         exit(1);
     }
@@ -122,7 +120,6 @@ void ah_tcp_serv::start_b(void){
      
     if(bind(listener, (struct sockaddr *)&serveraddr, sizeof(serveraddr)) == \
     	-1) {
-    	perror("bind error.\n");
         error.emit(ERR_CRIT,"Server-bind() failed to bind to server.");
         exit(1);
     }
@@ -130,7 +127,6 @@ void ah_tcp_serv::start_b(void){
      
     // listen
     if(listen(listener, 10) == -1) {
-    	printf("listen error.\n");
          error.emit(ERR_CRIT,"Server-listen() was unable to start listening.");
          exit(1);
     }
@@ -189,7 +185,6 @@ void ah_tcp_serv::start_b(void){
                         // remove from master set
                         FD_CLR(i, &master);
                     } else {
-                        printf("string received was \"%s\"\n",buf);
                     	send_reply(buf);
                     }
 	            }
