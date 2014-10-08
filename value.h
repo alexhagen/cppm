@@ -23,12 +23,13 @@ template <class T> class value : public sigslot::has_slots<>
     void resetmaxmin(void);
     T getmax(void);
     T getmin(void);
-  //private:
+    T getold(void);
+  private:
   	T val;
   	T level;
     T max;
     T min;
-    T old = NULL;
+    T old;
 };
 
 template <class T> void value<T>::set(T x)
@@ -98,6 +99,11 @@ template <class T> T value<T>::getmax(void)
 template <class T> T value<T>::getmin(void)
 {
   return min;
+}
+
+template <class T> T value<T>::getold(void)
+{
+  return old;
 }
 
 #endif
