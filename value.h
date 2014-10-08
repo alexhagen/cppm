@@ -28,20 +28,20 @@ template <class T> class value : public sigslot::has_slots<>
   	T level;
     T max;
     T min;
+    T old = NULL;
 };
 
 template <class T> void value<T>::set(T x)
 {
-  T y;
-  y = val;
+  old = val;
   val = x;
-	if(x != y){
+	if(x != old){
 		changed.emit();}
-	if(x > level && (y <= level)){
+	if(x > level && (old <= level)){
 		abovelevel.emit();}
-	else if (x < level && (y >= level)){
+	else if (x < level && (old >= level)){
 		belowlevel.emit();}
-	else if (x == level && (y != level)){
+	else if (x == level && (old != level)){
 		atlevel.emit();}
   if(x > max){
     max = x;
@@ -61,6 +61,7 @@ template <class T> void value<T>::set(T x)
 
 template <class T> void value<T>::silentset(T x)
 {
+  old = val;
   val = x;
 }
 
