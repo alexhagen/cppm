@@ -12,6 +12,7 @@
 #include <arpa/inet.h>
 #include <string>
 #include <fcntl.h>
+#include <map>
 #include "sigslot.h"
 
 #define DEFAULTPORT 9000
@@ -46,9 +47,12 @@ public:
     //void stop_nb(void);
     void send_msg(char*);
     void virtual send_reply(char*);
+    std::map<int,int> return_connected_clients(void);
     // signals to hook up responses
 	sigslot::signal1<char*> command_recv;
 	sigslot::signal2<int,char*> error;
+    sigslot::signal1<int> client_connected;
+    sigslot::signal1<int> client_disconnected;
 
 private:
 	fd_set master; // master file descriptor list
@@ -67,6 +71,7 @@ private:
     unsigned long int ipAddr = INADDR_ANY; // defaulting to 0.0.0.0
     int port = 9000; // defaulting to port 9000
     bool cont = true; // flag to continue in the loop
+    std::map<int,int> connected_clients;
 };
 
 ah_tcp_serv::ah_tcp_serv(void) {
@@ -166,6 +171,10 @@ void ah_tcp_serv::start_b(void){
 	                    char err_buff[255];
 	                    sprintf(err_buff,"%s: New connection from %s on socket %d", "program name", inet_ntoa(clientaddr.sin_addr), newfd);
 	                    error.emit(ERR_INFO,err_buff);
+                        // insert the connected client into the map of all connected clients
+                        connected_clients.insert(std::pair<int,int>(newfd,clientaddr.sin_addr));
+                        // emit the signal saying that this connected
+                        client_connected.emit(clientaddr.sin_addr);
 	                }
 	            } else {
                     /* handle data from a client */
@@ -176,6 +185,12 @@ void ah_tcp_serv::start_b(void){
 	                        char err_buff[255];
 	                        sprintf(err_buff,"%s: socket %d hung up", "program name", i);
 	                        error.emit(ERR_INFO,err_buff);
+                            // using the socket number, find the ipaddress
+                            int remipaddr = connected_clients.at(i);
+                            // remove that
+                            connected_clients.erase(i);
+                            // emit the signal saying that this disconnected
+                            client_disconnected.emit(remipaddr);
                         } else {
                             perror("recieve error()");
                             error.emit(ERR_WARN,"receive error().");
@@ -205,6 +220,11 @@ void ah_tcp_serv::send_msg(char* rply){
     if(send(i,rply,strlen(rply),0)==-1) {
     	error.emit(ERR_ERR,"Send didn't complete.");
     }
+}
+
+std::map<int,int> ah_tcp_serv::return_connected_clients(void) {
+    // return the map of connected clients
+    return connected_clients;
 }
 
 #endif
