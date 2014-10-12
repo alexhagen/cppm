@@ -15,7 +15,7 @@ Installation of the AH Timer library is easy, simply download the contents of th
 Follow the steps below to use the AH Timer library.
 * Lets say we have a class that needs to do something at a certain time.  For the sake of example, we'll use the following bomb:
 
-```
+```c++
 // in file bomb.h
 #include "ah_timer.h"
 #include "sigslot.h"
@@ -62,7 +62,7 @@ void bomb::interval(void){
 
 * This class can be run using the following tester
 
-```
+```c++
 // in file test_bomb.cpp
 #include "bomb.h"
 #include <stdio.h>
@@ -90,7 +90,7 @@ int main(void){
 
 This can be compiled using (assuming that sigslot.h, bomb.h, and ah_timer.h are in the current directory):
 
-```
+```bash
 $ g++ -std=c++11 test_bomb.cpp -o test_bomb
 $ ./test_bomb
 ```
