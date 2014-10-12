@@ -13,7 +13,7 @@ Installation of the AH Timer library is easy, simply download the contents of th
 
 ## 2. Usage
 Follow the steps below to use the AH Timer library.
-1. Lets say we have a class that needs to do something at a certain time.  For the sake of example, we'll use the following bomb:
+* Lets say we have a class that needs to do something at a certain time.  For the sake of example, we'll use the following bomb:
 
 ```
 // in file bomb.h
@@ -60,7 +60,7 @@ void bomb::interval(void){
 }
 ```
 
-2. This class can be run using the following tester
+* This class can be run using the following tester
 
 ```
 // in file test_bomb.cpp
@@ -96,6 +96,6 @@ $ ./test_bomb
 ```
 
 ## 3. To Do
-[ ] Windows compatibility (added 10/12/14)
-[ ] Different start and interval times functionality (added 10/12/14)
-[ ] Better deconstructor (added 10/12/14)
+- [ ] Windows compatibility (added 10/12/14)
+- [ ] Different start and interval times functionality (added 10/12/14)
+- [ ] Better deconstructor (added 10/12/14)
