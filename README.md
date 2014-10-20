@@ -72,7 +72,7 @@ int main(void){
 	vl->set(9);
 	vl->set(7);
 	vl->set(5);
-	// now that we're back below speed (remember we said ABOVE 5), we can end 
+	// now that we're back below speed (remember we said *above* 5), we can end 
 	// and look at details
 	printf("The maximum when up to speed was %d, and the minimum was %d.\n", \
 		vl->getmax(),vl->getmin());
