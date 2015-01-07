@@ -16,6 +16,18 @@ Installation of the ah_value class is simple.  Place the ah_value.h file somewhe
 Follow the steps below to use the `ah_value` class.
 
 * Lets say we want to create a program that indicates whether a motor is up to speed, and thereafter, how much it has varied from that speed.  We would write a notifier class, as below.
+lets try code indenting
+
+start with some something
+
+    #include <stdio.h>
+    
+    int main(void){
+    	printf("hello world!");
+    	return 0;
+    }
+
+some other text
 
 ```c++
 
