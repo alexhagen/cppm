@@ -20,14 +20,14 @@ lets try code indenting
 
 start with some something
 
-```c++
-#include <stdio.h>
-
-int main(void){
-	printf("hello world!");
-	return 0;
-}
-```
+    ```c++
+    #include <stdio.h>
+    
+    int main(void){
+    	printf("hello world!");
+    	return 0;
+    }
+    ```
 
 some other text
 
