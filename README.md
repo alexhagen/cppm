@@ -17,33 +17,35 @@ Follow the steps below to use the ah_value class.
 
 * Lets say we want to create a program that indicates whether a motor is up to speed, and thereafter, how much it has varied from that speed.  We would write a notifier class, as below.
 
-    // in file notifier.h
-    #include "sigslot.h"
-    #include "ah_value.h"
-    #include <stdio.h>
-    
-    class notifier : public sigslot::has_slots<>{
-    				 // we have to make this a sigslot so that it can accept slots
-    public:
-    	// a value object for our notifier class
-    	value<int> *vl;
-    	// a constructor to pass in an external notifier class
-    	notifier(value<int>*);
-    	// we need a slot that will tell when it's up to speed
-    	void up_to_speed(void);
-    }
-    
-    notifier::notifier(value<int> *_vl){
-    	vl = _vl;
-    }
-    
-    void notifier::up_to_speed(void){
-    	// let us know that we're up to speed
-    	printf("Motor is up to speed\n");
-    	// now reset the max min so we only get the maximum and minimum when up to 
-    	// speed
-    	vl->resetmaxmin();
-    }
+```c++
+// in file notifier.h
+#include "sigslot.h"
+#include "ah_value.h"
+#include <stdio.h>
+
+class notifier : public sigslot::has_slots<>{
+				 // we have to make this a sigslot so that it can accept slots
+public:
+	// a value object for our notifier class
+	value<int> *vl;
+	// a constructor to pass in an external notifier class
+	notifier(value<int>*);
+	// we need a slot that will tell when it's up to speed
+	void up_to_speed(void);
+}
+
+notifier::notifier(value<int> *_vl){
+	vl = _vl;
+}
+
+void notifier::up_to_speed(void){
+	// let us know that we're up to speed
+	printf("Motor is up to speed\n");
+	// now reset the max min so we only get the maximum and minimum when up to 
+	// speed
+	vl->resetmaxmin();
+}
+```
 
 * This can be run using the following tester
 
