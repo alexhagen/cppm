@@ -1,3 +1,7 @@
+---
+layout: index
+---
+
 # AH Value Class
 By Alex Hagen
 
