@@ -31,6 +31,7 @@ if [ `git rev-parse --abbrev-ref HEAD` == "master" ]; then
     done
 
     git add docs
+    rm temp
     git commit -a -m "Sync docs from master branch to docs gh-pages directory"
 
     # Uncomment the following push if you want to auto push to
