@@ -1,4 +1,7 @@
 # AH Value Class
+
+## This should've been synced!
+
 By Alex Hagen
 
 The AH Value class is a simple, encapsulated c++ class to help track values.  It is written with the signal-slot paradigm so that events can be triggered as the values change, corresponding.  This is a way to decrease the overhead that must happen to trace some values (such as checking if something is over a certain value every loop).
