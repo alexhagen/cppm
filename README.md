@@ -18,6 +18,7 @@ Follow the steps below to use the ah_value class.
 * Lets say we want to create a program that indicates whether a motor is up to speed, and thereafter, how much it has varied from that speed.  We would write a notifier class, as below.
 
 ```c++
+
 // in file notifier.h
 #include "sigslot.h"
 #include "ah_value.h"
@@ -50,6 +51,7 @@ void notifier::up_to_speed(void){
 * This can be run using the following tester
 
 ```c++
+
 // in file test_value.cpp
 #include "ah_value.h"
 #include "notifier.h"
@@ -85,6 +87,7 @@ int main(void){
 This can be compiled and run using:
 
 ```bash
+
 $ g++ -std=c++11 test_value.cpp -I/dir/to/notifier.h -I/dir/to/ah_value.h \
 > -I/dir/to/sigslot.h -o test_value
 $ ./test_value
