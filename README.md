@@ -1,6 +1,6 @@
 # AH Value Class
 
-## This should've been synced!
+## This should've been synced by now!
 
 By Alex Hagen
 
