@@ -93,4 +93,4 @@ $ telnet 127.0.0.1 9000
 - [ ] Readme for the error signal catching (added 10/15/14)
 - [ ] Non-Blocking server (added 10/15/14)
 - [ ] Reply to many clients (added 10/15/14)
-- [ ] 
+- [ ] Updated
