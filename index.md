@@ -1,3 +1,8 @@
+---
+layout: index
+---
+
+
 # AH Timer Class
 By Alex Hagen
 
