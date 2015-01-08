@@ -76,4 +76,4 @@ when this is run after a server (see ah_tcp_serv instructions) is running, we sh
 ## 3. To Do
 - [ ] Windows compatibility (added 10/15/14)
 - [ ] Better compatibility between the ah_tcp_client and ah_tcp_serv readme (added 10/15/14)
-- [ ] Send_int, send_byte, send_bin and other functions (added 10/15/14)
+- [ ] Send_int, send_byte, send_bin and other functions (added 10/15/14)Updated
