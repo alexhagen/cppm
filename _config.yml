@@ -24,6 +24,10 @@ tools:
   standards:      "MATLAB, Python, C++, QT, FORTRAN, PHP"
   software:       "COMSOL, Solidworks, git, Inkscape"
 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://alexhagen.github.io" # the base hostname & protocol for your site
+
+
 # Links to include in top navigation
 # For external links add external: true
 links:
