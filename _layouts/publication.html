@@ -1,0 +1,30 @@
+---
+layout: post-light-feature
+---
+<div class="publication">
+
+  <header class="post-header">
+    <h1 class="post-title pub-title">{{ page.title }}</h1>
+    <p class="publication-author-list">
+    	{% for author in page.authors %}
+    		<span class="publication-author">{{ author }}</span>
+    	{% endfor %}
+    </p>
+    <p class="post-meta">{{ page.date | date: "%Y" }}</p>
+    {% if page.fulltext %}<p class="post-meta">Fulltext available <a href={{ page.fulltext }}>here</a></p>{% endif %}
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  {% if page.tags contains 'poster' %}<p>This publication was a poster presentation</p>{% endif %}
+
+  <h3>Citation</h3>
+  <p class="publication-citation">{{ page.citation }}</p>
+  {% if page.abstract %}
+    <h3>Abstract</h3>
+    <p class="publication-abstract">{{ page.abstract | replace:'\n','<br>' }}</p>
+  {% endif %}
+
+</div>
