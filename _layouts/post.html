@@ -1,15 +1,28 @@
----
-layout: default
----
-<div class="post">
+{% include head.html %}
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+<section class="article">
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+{% if page.image.feature %}
+  <div class="overlay"></div>
+  {% if page.image.feature contains 'https://' | escape or page.image.feature contains 'http://' | escape %}
+  <div class="featured-image" style="background-image: url({{ page.image.feature }})"></div>
+  {% else %}
+  <div class="featured-image" style="background-image: url({{ site.url }}/images/{{ page.image.feature }})"></div>
+  {% endif %}
+{% else %}
+  <div class="overlay"></div>
+  <div class="featured-image" style="background-image: url({{ site.url }}/images/typewriter.jpg)"></div>
+{% endif %}
 
+
+      <article class="wrap post">
+
+        {{ content }}
+
+
+      </article>
+
+    </section>
 </div>
+
+{% include footer.html %}

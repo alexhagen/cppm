@@ -1,0 +1,332 @@
+{% include head-dark.html %}
+
+<style>
+
+/* CSS */
+.gridWrapper {
+      overflow: hidden;
+      margin: 10px;
+}
+.tile {
+      float: left;
+      position: relative;
+      width: 20%;
+      padding-bottom: 20%;
+    }
+.tile-double {
+  float:left;
+  position:relative;
+  width:40%;
+  padding-bottom:20%;
+}
+.tileInner {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      overflow: hidden;
+    }
+.tileInner img {
+      width: 100%;
+    }
+/*Media Query to Adapt Screen to iPhone*/
+@media only screen and (max-width : 320px) {
+    .tile {
+        width: 100%;
+        padding-bottom: 100%;
+      }
+}
+/*Media Query to Adapt Screen to iPhone Retina*/
+@media only screen and (max-width : 640px) {
+    .box {
+        width: 50%;
+        padding-bottom: 50%;
+      }
+}
+
+</style>
+
+<section class="article archive">
+  <article class="archive-wrap">
+/* HTML */
+    <!-- Define Responsive Image Tiles: For Best Effect Use Square Images and a lot more Images -->
+     <div class="gridWrapper">
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="peer-reviewed-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="coauthored-papers"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="posters"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="designs"/>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tileInner">
+          <img src="/image.png" alt="codes"/>
+        </div>
+      </div>
+
+
+    </div>
+  </article>
+</section>
+
+<!--
+<section class="article archive">
+<article class="archive-wrap">
+  <h1 class="page-heading">Codes</h1>
+
+    <ul class="post-list">
+        {% for post in site.categories.codes %}
+            
+          <li>
+            <span class="post-meta">
+              {{ post.date | date: "%b %Y" }}
+            </span>
+            <h2>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+          </li>
+        {% endfor %}
+      </ul>
+  <h1 class="page-heading">Publications</h1>
+    <ul class="post-list">
+      {% for post in site.categories.publications %}
+        <li>
+          <span class="post-meta">
+            {{ post.date | date: "%b %Y" }}
+            {% if post.tags contains 'coauthor' %} - contributing author{% endif %}
+            {% if post.tags contains 'poster' %} - poster only{% endif %}
+            {% if post.fulltext %} - full text available{% endif %}
+          </span>
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+
+        </li>
+      {% endfor %}
+    </ul>
+
+  <h1 class="page-heading">Designs</h1>
+    <ul class="post-list">
+        {% for post in site.categories.designs %}
+          <li>
+            <div class="deets">
+              <p><span class="post-meta">
+                {{ post.date | date: "%b %Y" }}
+              </span></p>
+              <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h2>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</section>
+</article>
+
+-->
+
+<!--
+    <div id='bump'>
+        <section class="article archive">
+          <article class="archive-wrap">
+              <ol class="post-list">
+                 <lh><h2><span class="bb">{{ page.title }}</span></h2></lh>
+                  {% for post in site.posts %}
+                  <li>
+                    <div class="deets" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+                        <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+                        <p class="date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></p>
+                        <p class="">{% if post.description %}{{ post.description  | strip_html | strip_newlines | truncate: 120 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}</p>
+                    </div>
+                  </li>
+                  {% endfor %}
+              </ol>
+
+  <dl class="csslinegraph">
+    
+    <dt>Day 1</dt>
+    <dd class="first"><span class="pi0 i1"><em>3</em></span></dd>
+    
+    <dt>Day 2</dt>
+    <dd><span class="pi1 i10"><em>36</em></span></dd>   
+    
+    <dt>Day 3</dt>
+    <dd><span class="pd11 d d4"><em>23</em></span></dd> 
+    
+    <dt>Day 4</dt>
+    <dd><span class="pi7 i10"><em>56</em></span></dd> 
+    
+    <dt>Day 5</dt>
+    <dd><span class="pd17 d d0"><em>55</em></span></dd>               
+    
+    <dt>Day 6</dt>
+    <dd><span class="pd17 d d7"><em>32</em></span></dd>     
+    
+    <dt>Day 7</dt>
+    <dd><span class="pi10 i14"><em>79</em></span></dd>  
+    
+    <dt>Day 8</dt>
+    <dd><span class="pd24 d d2"><em>74</em></span></dd> 
+    
+    <dt>Day 9</dt>
+    <dd><span class="pi22 i1"><em>77</em></span></dd> 
+    
+    <dt>Day 10</dt>
+    <dd><span class="pi23 i2"><em>83</em></span></dd> 
+    
+    <dt>Day 11</dt>
+    <dd><span class="pd25 d d15"><em>34</em></span></dd>  
+    
+    <dt>Day 12</dt>
+    <dd><span class="pi10 i2"><em>39</em></span></dd>                     
+        
+  </dl>
+          </article>
+        </section>
+    </div>
+-->
+
+{% include footer.html %}
