@@ -6,7 +6,7 @@ if [ `git rev-parse --abbrev-ref HEAD` == "master" ]; then
 
     # Layout prefix is prepended to each markdown file synced
     ###################################################################
-    LAYOUT_PREFIX='---\r\nlayout: index\r\n---\r\n\r\n'
+    LAYOUT_PREFIX='---\r\nlayout: post-no-feature\r\n---\r\n\r\n'
 
     # Switch to gh-pages branch to sync it with master
     ###################################################################
