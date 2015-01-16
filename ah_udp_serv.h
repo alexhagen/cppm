@@ -16,6 +16,7 @@ class ah_udp_serv : public sigslot::has_slots<>{
 public:
 	ah_udp_serv(void);
 	void send(int);
+	void send(char*);
 private:
 	struct sockaddr_in addr;
 	int addrlen, sock, cnt;
@@ -39,7 +40,19 @@ ah_udp_serv::ah_udp_serv(void){
 
 void ah_udp_serv::send(int msg){
 	char message[50];
-	sprintf(message, "%d",msg);
+	sprintf(message, "%d\0",msg);
+   	printf("sending: %s\n", message);
+	cnt = sendto(sock, message, sizeof(message), 0,
+		(struct sockaddr *) &addr, addrlen);
+	if (cnt < 0) {
+		perror("sendto");
+	exit(1);
+	}
+}
+
+void ah_udp_serv::send(char *msg){
+	char message[1024];
+	sprintf(message, "%s\0",msg);
    	printf("sending: %s\n", message);
 	cnt = sendto(sock, message, sizeof(message), 0,
 		(struct sockaddr *) &addr, addrlen);
