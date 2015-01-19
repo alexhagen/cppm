@@ -16,11 +16,10 @@ void alert::msg_recv(char* msg){
 }
 
 int main(void) {
-	ah_udp_client *mcast = new ah_udp_client();
+	ah_udp_client mcast;
 	alert *alrt = new alert();
-	mcast->data_ready.connect(alrt,&alert::msg_recv);
-	mcast->start();
-	sleep(5);
+	mcast.data_ready.connect(alrt,&alert::msg_recv);
+	mcast.start();
 
 	return 0;
 }

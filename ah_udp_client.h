@@ -56,12 +56,11 @@ void ah_udp_client::start(void) {
         cnt = recvfrom(sock, message, sizeof(message), 0, 
             (struct sockaddr *) &addr, &addrlen);
         if (cnt < 0) {
+            printf("error");
             perror("recvfrom");
             exit(1);
-        } else if (cnt == 0) {
-            break;
-        }
-            printf("%s: message = \"%s\"\n", inet_ntoa(addr.sin_addr), message);
+        } else if (cnt > 0) {
             data_ready.emit(message);
+        }
     }
 };
