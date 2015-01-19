@@ -16,7 +16,7 @@ class ah_udp_client : public sigslot::has_slots<>{
 public:
 	ah_udp_client(void);
     void start(void);
-    sigslot::signal1<char*> recv;
+    sigslot::signal1<char*> data_ready;
 private:
     struct sockaddr_in addr;
     socklen_t addrlen;
@@ -62,6 +62,6 @@ void ah_udp_client::start(void) {
             break;
         }
             printf("%s: message = \"%s\"\n", inet_ntoa(addr.sin_addr), message);
-            recv.emit(message);
+            data_ready.emit(message);
     }
 };
