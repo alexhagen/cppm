@@ -28,18 +28,28 @@ ah_udp_client_qt::ah_udp_client_qt(void){
     }
 }
 
+void ah_udp_client_qt::loop(void) {
+    cnt = recvfrom(sock, message, sizeof(message), 0,
+        (struct sockaddr *) &addr, &addrlen);
+    if (cnt < 0) {
+        printf("error");
+        perror("recvfrom");
+        exit(1);
+    } else if (cnt > 0) {
+        emit data_ready(message);
+    }
+}
+
 void ah_udp_client_qt::start(void) {
     while (cont) {
-        qDebug() << "started";
-        cnt = recvfrom(sock, message, sizeof(message), 0,
-            (struct sockaddr *) &addr, &addrlen);
-        if (cnt < 0) {
-            printf("error");
-            perror("recvfrom");
-            exit(1);
-        } else if (cnt > 0) {
-            emit data_ready(message);
-        }
+        loop();
     }
 };
+
+void ah_udp_client_qt::start(int t) {
+    QTimer *timer = new QTimer(this);
+    timer->setInterval(1000*t);
+    connect(timer, SIGNAL(timeout()), this, SLOT(loop()));
+    timer->start();
+}
 

@@ -5,7 +5,9 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <QObject>
+#include <QTimer>
 
 #define PORT 6000
 #define GROUP "239.1.1.1"
@@ -19,6 +21,10 @@ class ah_udp_client_qt : public QObject {
 public:
     ah_udp_client_qt(void);
     void start(void);
+    void start(int);
+
+public slots:
+    void loop(void);
 
 signals:
     void data_ready(char* msg);
