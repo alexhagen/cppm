@@ -20,8 +20,10 @@ class ah_udp_client_qt : public QObject {
 
 public:
     ah_udp_client_qt(void);
+    ah_udp_client_qt(int);
     void start(void);
     void start(int);
+    void setup(void);
 
 public slots:
     void loop(void);
@@ -32,7 +34,7 @@ signals:
 private:
     struct sockaddr_in addr;
     socklen_t addrlen;
-    int sock, cnt;
+    int sock, cnt, port;
     struct ip_mreq mreq;
     char message[BUFSIZE];
     bool cont;

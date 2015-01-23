@@ -2,8 +2,18 @@
 #include <QDebug>
 
 ah_udp_client_qt::ah_udp_client_qt(void){
+    port = PORT;
+    setup();
+}
+
+ah_udp_client_qt::ah_udp_client_qt(int _port){
+    port = _port;
+    setup();
+}
+
+void ah_udp_client_qt::setup(void) {
+    qDebug() << "in setup";
     cont = true;
-    qDebug() << "starting socket";
     sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock < 0) {
         perror("socket");
@@ -12,7 +22,7 @@ ah_udp_client_qt::ah_udp_client_qt(void){
     bzero((char *)&addr, sizeof(addr));
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    addr.sin_port = htons(PORT);
+    addr.sin_port = htons(port);
     addrlen = sizeof(addr);
 
     if (bind(sock, (struct sockaddr *) &addr, sizeof(addr)) < 0) {
