@@ -1,23 +1,33 @@
 #ifndef ahsignal_h
 #define ahsignal_h
+#include <sys/time.h>
 #include <signal.h>
-
-void signalHandler(int sig, siginfo_t *si, void *uc){
-    timer *object = (timer *)si->si_value.sival_ptr;
-    object->sig->emit();
-}
+#include <time.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <error.h>
+#include <math.h>
 
 class ah_signal {
 public:
 	ah_signal(void);
+	ah_signal(int,void (*)());
 	void set(int);
-	void action(void*);
+	void action(void (*)());
+	void run(void);
+	void (*act)() = NULL;
 
 private:
-	struct sigevent e;
 	struct sigaction sa;
 	int signum;
 };
+
+void *obj = NULL;
+
+void signalHandler(int sig, siginfo_t *si, void *uc){
+    ah_signal *object = (ah_signal *)obj;
+    object->act();
+}
 
 ah_signal::ah_signal(void){
 	sa.sa_flags = SA_SIGINFO;
@@ -25,12 +35,12 @@ ah_signal::ah_signal(void){
     sigemptyset(&sa.sa_mask);
 }
 
-ah_signal::ah_signal(int _signum,void* act){
+ah_signal::ah_signal(int _signum,void (*_act)()){
 	sa.sa_flags = SA_SIGINFO;
     sa.sa_sigaction = &signalHandler;
     sigemptyset(&sa.sa_mask);
     set(_signum);
-    action(act);
+    action(_act);
 }
 
 void ah_signal::set(int _signum){
@@ -40,21 +50,21 @@ void ah_signal::set(int _signum){
     // a signal
     sa.sa_flags = SA_SIGINFO;
     sa.sa_sigaction = &signalHandler;
+    obj = (void*) this;
     sigemptyset(&sa.sa_mask);
     if (sigaction(signum, &sa, NULL) == -1)
     {
         return;
     }
-    /* Set and enable alarm */
-    e.sigev_notify = SIGEV_SIGNAL;
-    e.sigev_signo = sigNo;
-    e.sigev_value.sival_ptr = (void*) this;
 }
 
-void ah_signal::action(void* act){
-    /* Set and enable alarm */
-    e.sigev_notify = SIGEV_SIGNAL;
-    e.sigev_signo = signum;
-    e.sigev_value.sival_ptr = (void*) act;
+void ah_signal::action(void (*_act)()){
+    act = _act;
 }
+
+void ah_signal::run(void){
+	printf("signal was run!");
+	act();
+}
+
 #endif
