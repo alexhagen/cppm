@@ -16,7 +16,8 @@ int main(void){
 	ah_signal(SIGALRM,&action1);
 	ah_signal(SIGHUP,&action2);
 
-	send_signal(SIGHUP,"signal");
+	send_signal(SIGALRM,"signal");
+
 while(1){
 	sleep(1);
 }
