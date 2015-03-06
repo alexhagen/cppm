@@ -16,6 +16,7 @@ public:
 	double stop(void);
 	double get_t(void);	
 	double get_delt(void);
+	void check_time(void);
 
 private:
 	void _start(void);
@@ -56,9 +57,9 @@ void simple_timer::start(double _delt){
 	_start();
 }
 
-double simple_timer::stop(double _delt){
+double simple_timer::stop(void){
 	// first update the time
-	get_t();
+	check_time();
 	// disconnect the signal/timer
 	its.it_value.tv_sec = 0;
     its.it_value.tv_nsec = 0;
@@ -86,9 +87,12 @@ void simple_timer::_start(void){
     start_t = double(now.tv_sec+(now.tv_nsec/1.0E9));
 }
 
-double simple_timer::get_t(void){
+void simple_timer::check_time(void){
 	clock_gettime(CLOCK_REALTIME, &now);
     t = double(now.tv_sec+(now.tv_nsec/1.0E9))-start_t;
+}
+
+double simple_timer::get_t(void){
     return t;
 }
 
