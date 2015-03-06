@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wwrite-strings"
 #include "ah_signal.h"
 #include <stdio.h>
 #include <unistd.h>
