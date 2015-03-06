@@ -1,5 +1,9 @@
+#include <sys/time.h>
 #include <signal.h>
 #include <time.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <math.h>
 
 
 class simple_timer{
