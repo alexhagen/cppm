@@ -13,18 +13,4 @@ url: "http://alexhagen.github.io" # the base hostname & protocol for your site
 github_username:  alexhagen
 
 # Build settings
-markdown: kramdown
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+markdown: redcarpet
