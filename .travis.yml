@@ -1,0 +1,2 @@
+language: cpp
+script: g++ -std=c++11 test_reply.cpp -Icommon -o test_reply
