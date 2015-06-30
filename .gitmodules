@@ -1,0 +1,10 @@
+[submodule "alexhagen.github.io"]
+	path = template/
+	url = https://github.com/alexhagen/alexhagen.github.io.git
+	branch = template
+[submodule "_includes"]
+	path = _includes
+	url = https://github.com/alexhagen/includes.git
+[submodule "_layouts"]
+	path = _layouts
+	url = https://github.com/alexhagen/layouts.git
