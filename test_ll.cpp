@@ -9,7 +9,12 @@ int main() {
         a->insert(4.6);
         a->insert(6.5);
         double val;
+        printf("mean = %f\n",a->mean());
+        printf("std = %f\n",a->stdev());
         while(!a->isempty()){
             printf("%f\n",a->pop());
         }
+        a->destroy();
+        printf("%f\n",a->pop());
+        printf("%f\n",a->pop());
 }

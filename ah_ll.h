@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+#include <math.h>
 
 /*                        AH Circular Linked List Class                       */
 /*                             Author: Alex Hagen                             */
@@ -28,6 +29,9 @@ public:
   void insert(T);
   T pop();
   bool isempty();
+  T mean();
+  T stdev();
+  void destroy();
 
 private:
   node<T>* head;
@@ -59,10 +63,46 @@ template <class T> bool ll<T>::isempty(void) {
 template <class T> T ll<T>::pop(void) {
   assert(head != NULL);
   T object;
+  node<T>* next = head->next;
   object = head->data;
   free(head);
-  head = head->next;
+  head = next;
   return(object);
+}
+
+template <class T> T ll<T>::mean(void) {
+  node<T>* _next = head->next;
+  T sum = 0;
+  int counter = 0;
+  do {
+    sum = sum + _next->data;
+    _next = _next->next;
+    counter = counter + 1;
+  } while (_next != NULL);
+  return sum/(counter);
+}
+
+template <class T> T ll<T>::stdev(void) {
+  node<T>* _next = head->next;
+  T _mean = mean();
+	T sum = 0;
+  int counter = 0;
+  do {
+    sum = sum + pow(_next->data - _mean,2.0);
+    _next = _next->next;
+    counter = counter + 1;
+  } while (_next != NULL);
+  return sqrt((T)1.0/((T)(counter-1))*sum);
+}
+
+template <class T> void ll<T>::destroy(void) {
+  while (!isempty()) {
+    pop();
+  }
+  head = (node<T> *)malloc(sizeof(node<T>));
+  head->data = 0;
+  head->next = NULL;
+  tail = head;
 }
 
 #endif
