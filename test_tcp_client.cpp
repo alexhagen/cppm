@@ -1,36 +1,37 @@
-#include "ah_tcp_client.h"
-#include "sigslot.h"
+#include "simple_tcp_client.h"
 #include <string>
 #include <iostream>
 
-class error : public sigslot::has_slots<>{
+class xbee : public simple_tcp_client {
 public:
-	error(void);
-	void printerror(int,char*);
-	void printdata(char*);
+    int decode(void);
 };
 
-error::error(void) {
-	printf("error initialized.\n");
-}
-
-void error::printerror(int code,char* str){
-	printf("ERROR CODE %d: %s\n",code,str);
-}
-
-void error::printdata(char* str){
-	printf("[DATA]: %s\n",str);
+int xbee::decode(){
+    this->accumulate(16);
+    int val = 0;
+		int val2 = 0;
+    val = uint8_t(this->data[12]) * 256 + uint8_t(this->data[13]);
+		val2 = uint8_t(this->data[14]) * 256 + uint8_t(this->data[15]);
+		printf("%d %d\n",val,val2);
+    return val;
+    //printf("%4d %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d %4d:\t\t%4d\n",
+    //    data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],
+    //    data[9],data[10],data[11],data[12],data[13],val);
 }
 
 int main(void){
-	error *err_ind = new error();
-	ah_tcp_client *client = new ah_tcp_client();
-	client->error.connect(err_ind,&error::printerror);
-	client->data_ready.connect(err_ind,&error::printdata);
-	client->tcp_connect("192.168.1.40",9000);
-	client->send_data("1");
-	client->send_data("none");
-	client->disconnect();
+	// connect to the wifi xbee through tcp
+  xbee *xbwf = new xbee();
+  xbwf->tcp_connect("192.168.1.6",9750);
+
+
+  while(1){
+      xbwf->decode();
+      usleep(50000);
+  }
+  xbwf->disconnect();
+  return 0;
 
 	return 0;
 }
