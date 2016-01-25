@@ -6,7 +6,8 @@ int main(void){
 	reply *server = new reply();
 	// change our port to be 9000, which is high enough not to get in the way of
 	// other programs
-	server->change_port(9000);
+	server->change_ipaddr("127.0.0.1");
+	server->change_port(5700);
 	// start our server in blocking mode. The program will hang here until
 	// forever.
 	server->start_b();
