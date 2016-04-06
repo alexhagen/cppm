@@ -23,7 +23,7 @@ int xbee::decode(){
 int main(void){
 	// connect to the wifi xbee through tcp
   xbee *xbwf = new xbee();
-  xbwf->tcp_connect("192.168.1.6",9750);
+  xbwf->tcp_connect("192.168.1.7",9750);
 
 
   while(1){
