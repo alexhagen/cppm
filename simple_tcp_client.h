@@ -27,12 +27,13 @@ using namespace std;
 #define ERR_INFO	5
 #define ERR_DEBUG	6
 
-/*                            Simple TCP Client class                             */
-/*                             Author: Alex Hagen                             */
-/* This client is a c implementation of the c directives to write to a tcp pipe
-	and then wait for a response (or not).  I have tried to encapsulate and
-	overload everything.  */
 
+/* Simple TCP Client class.
+ *
+ * `simple_tcp_client` implements a tcp client which encapsulates all of the
+ * `c` directives to create a tcp client which writes to a server and then
+ * can be programmed to respond or not.
+ */
 class simple_tcp_client {
 public:
 	int sd, rc, length = sizeof(int);
@@ -73,7 +74,7 @@ void simple_tcp_client::tcp_connect(char* _ipAddr, int _port){
 	ipAddr = inet_addr(_ipAddr);
 	// get the port
 	port = _port;
-	
+
 	serveraddr.sin_port = htons(port);
 
 	if((serveraddr.sin_addr.s_addr = ipAddr) == \
@@ -143,7 +144,7 @@ void simple_tcp_client::send_data(char* msg){
 	this->data_ready_sig = false;
 	// write string to the server
 	rc = write(sd, msg, strlen(msg));
-	 
+
 	if(rc < 0) {
 		//error.emit(ERR_ERR,"couldn't write to client");
 		rc = getsockopt(sd, SOL_SOCKET, SO_ERROR, &temp, (socklen_t*)&length);
@@ -159,7 +160,7 @@ void simple_tcp_client::send_data(char* msg){
 		sprintf(this->err_str,"String successfully sent!\n");
 		//error.emit(ERR_DEBUG,err_str);
 	}
-	
+
 	memset(buffer,0,sizeof(buffer));
 	if (rc = recv(sd, &buffer,sizeof(buffer),0) <= 0){
 		if(rc < 0) {
@@ -176,7 +177,7 @@ void simple_tcp_client::send_data(char* msg){
 	printf("number of bytes found is %d.\n",rc);
 	printf("these bytes are: %s.\n",this->data);
 	//error.emit(ERR_DEBUG,"Client-read() is OK");
-	
+
 	//data_ready.emit(buffer);
 	this->data_ready_sig = true;
 }
