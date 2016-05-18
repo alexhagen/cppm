@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<classtemplate id="node" name="node" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>                       AH Circular Linked List Class</brief>
+  <doc>Author: Alex Hagen
+ This is an implementation of a linked list class that is circular for fast
+and efficient data storage.</doc>
+  <templatetypeparameter id="node::T" name="T" />
+  <constructor id="node::node&lt;T&gt;" name="node&lt;T&gt;">
+    <argument id="node::node&lt;T&gt;::" name="">
+      <type name="T" />
+    </argument>
+    <argument id="node::node&lt;T&gt;::" name="">
+      <type name="node&lt;T&gt;" qualifier="*" ref="node#node" />
+    </argument>
+  </constructor>
+  <field id="node::data" name="data">
+    <type name="T" />
+  </field>
+  <field id="node::next" name="next">
+    <type name="node&lt;T&gt;" qualifier="*" ref="node#node" />
+  </field>
+  <templatetypeparameter id="node::T" name="T" />
+</classtemplate>

@@ -4,14 +4,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*                        AH Circular Linked List Class                       */
-/*                             Author: Alex Hagen                             */
-/* This is an implementation of a linked list class that is circular for fast
-and efficient data storage.  */
-
+/* node class
+ *
+ * Node is an implementation of a storage node for a circular linked list.
+ */
 template <class T> class node {
 public:
-  node(T,node<T>*);
+  /* Initializes a node
+   * @_data the data that will be added to the node
+   * @_next the pointer of the next node
+   *
+   * initializes the node with the pointer to the next node
+   */
+  node(T _data,node<T>* _next);
   T data;
   node<T>* next;
 };
