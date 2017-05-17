@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classvalue" kind="class" language="C++" prot="public">
+    <compoundname>value</compoundname>
+    <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16" prot="public" static="no" mutable="no">
+        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <definition>sigslot::signal0 value&lt; T &gt;::changed</definition>
+        <argsstring></argsstring>
+        <name>changed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="10" column="1" bodyfile="ah_value.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa" prot="public" static="no" mutable="no">
+        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <definition>sigslot::signal0 value&lt; T &gt;::levelchanged</definition>
+        <argsstring></argsstring>
+        <name>levelchanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="11" column="1" bodyfile="ah_value.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a0027cf12cbcc6031c7eb40f7013f76d5" prot="public" static="no" mutable="no">
+        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <definition>sigslot::signal0 value&lt; T &gt;::abovelevel</definition>
+        <argsstring></argsstring>
+        <name>abovelevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="12" column="1" bodyfile="ah_value.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a0744303135beb5b6cbcb1599ec8e6d4d" prot="public" static="no" mutable="no">
+        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <definition>sigslot::signal0 value&lt; T &gt;::belowlevel</definition>
+        <argsstring></argsstring>
+        <name>belowlevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="13" column="1" bodyfile="ah_value.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" static="no" mutable="no">
+        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <definition>sigslot::signal0 value&lt; T &gt;::atlevel</definition>
+        <argsstring></argsstring>
+        <name>atlevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="16" column="1" bodyfile="ah_value.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classvalue_1aad42c1c3a08ae1381cbbef2b4520a019" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="28" column="1" bodyfile="ah_value.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a34ed56cb9db06893d3b5acf65279d200" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="29" column="1" bodyfile="ah_value.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a7c92e95a70f06c68429e329f774102ec" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="30" column="1" bodyfile="ah_value.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1ad2ebbde2f43f00d276509732eb177737" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="31" column="1" bodyfile="ah_value.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classvalue_1a313f1bd2ebdde33206e393d4218bc1c4" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::old</definition>
+        <argsstring></argsstring>
+        <name>old</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="32" column="1" bodyfile="ah_value.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classvalue_1a17449aee748a7f024efc91c6a0efbbba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void value&lt; T &gt;::set</definition>
+        <argsstring>(T x)</argsstring>
+        <name>set</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="18" column="1" bodyfile="ah_value.h" bodystart="35" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void value&lt; T &gt;::silentset</definition>
+        <argsstring>(T x)</argsstring>
+        <name>silentset</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="19" column="1" bodyfile="ah_value.h" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1af126a5d3141d20654bb8c8d643b35139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::get</definition>
+        <argsstring>(void)</argsstring>
+        <name>get</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="20" column="1" bodyfile="ah_value.h" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void value&lt; T &gt;::setlevel</definition>
+        <argsstring>(T x)</argsstring>
+        <name>setlevel</name>
+        <param>
+          <type>T</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="21" column="1" bodyfile="ah_value.h" bodystart="74" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1a0ec9d92bebbbb8716991c2d4784835e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::getlevel</definition>
+        <argsstring>(void)</argsstring>
+        <name>getlevel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="22" column="1" bodyfile="ah_value.h" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1ad1f83bbb9c1fda8839784e4a34568d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void value&lt; T &gt;::resetmaxmin</definition>
+        <argsstring>(void)</argsstring>
+        <name>resetmaxmin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="23" column="1" bodyfile="ah_value.h" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1ab84bad3e9f625c72051a679ed3da4d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::getmax</definition>
+        <argsstring>(void)</argsstring>
+        <name>getmax</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="24" column="1" bodyfile="ah_value.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1af9f93b5c9cbca674acd478c3eab0dc40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::getmin</definition>
+        <argsstring>(void)</argsstring>
+        <name>getmin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="25" column="1" bodyfile="ah_value.h" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classvalue_1a60a1e8dbe5a09728d26b3320a9b5e576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T value&lt; T &gt;::getold</definition>
+        <argsstring>(void)</argsstring>
+        <name>getold</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_value.h" line="26" column="1" bodyfile="ah_value.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="297">
+        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
+      </node>
+      <node id="296">
+        <label>sigslot::has_slots&lt;&gt;</label>
+        <link refid="classsigslot_1_1has__slots"/>
+        <childnode refid="297" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="295">
+        <label>value&lt; T &gt;</label>
+        <link refid="classvalue"/>
+        <childnode refid="296" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="300">
+        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
+      </node>
+      <node id="299">
+        <label>sigslot::has_slots&lt;&gt;</label>
+        <link refid="classsigslot_1_1has__slots"/>
+        <childnode refid="300" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="301">
+        <label>sigslot::signal0&lt; mt_policy &gt;</label>
+        <link refid="classsigslot_1_1signal0"/>
+        <childnode refid="302" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="298">
+        <label>value&lt; T &gt;</label>
+        <link refid="classvalue"/>
+        <childnode refid="299" relation="public-inheritance">
+        </childnode>
+        <childnode refid="301" relation="usage">
+          <edgelabel>levelchanged</edgelabel>
+          <edgelabel>changed</edgelabel>
+          <edgelabel>belowlevel</edgelabel>
+          <edgelabel>abovelevel</edgelabel>
+          <edgelabel>atlevel</edgelabel>
+        </childnode>
+      </node>
+      <node id="304">
+        <label>mt_policy</label>
+      </node>
+      <node id="303">
+        <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base"/>
+        <childnode refid="304" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>sigslot::_signal_base0&lt; mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base0"/>
+        <childnode refid="303" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ah_value.h" line="8" column="1" bodyfile="ah_value.h" bodystart="7" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classvalue_1a0027cf12cbcc6031c7eb40f7013f76d5" prot="public" virt="non-virtual"><scope>value</scope><name>abovelevel</name></member>
+      <member refid="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" virt="non-virtual"><scope>value</scope><name>atlevel</name></member>
+      <member refid="classvalue_1a0744303135beb5b6cbcb1599ec8e6d4d" prot="public" virt="non-virtual"><scope>value</scope><name>belowlevel</name></member>
+      <member refid="classvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16" prot="public" virt="non-virtual"><scope>value</scope><name>changed</name></member>
+      <member refid="classsigslot_1_1has__slots_1a6e367c801e273a0a10f198640eb6fa89" prot="public" virt="non-virtual"><scope>value</scope><name>disconnect_all</name></member>
+      <member refid="classvalue_1af126a5d3141d20654bb8c8d643b35139" prot="public" virt="non-virtual"><scope>value</scope><name>get</name></member>
+      <member refid="classvalue_1a0ec9d92bebbbb8716991c2d4784835e5" prot="public" virt="non-virtual"><scope>value</scope><name>getlevel</name></member>
+      <member refid="classvalue_1ab84bad3e9f625c72051a679ed3da4d2f" prot="public" virt="non-virtual"><scope>value</scope><name>getmax</name></member>
+      <member refid="classvalue_1af9f93b5c9cbca674acd478c3eab0dc40" prot="public" virt="non-virtual"><scope>value</scope><name>getmin</name></member>
+      <member refid="classvalue_1a60a1e8dbe5a09728d26b3320a9b5e576" prot="public" virt="non-virtual"><scope>value</scope><name>getold</name></member>
+      <member refid="classsigslot_1_1has__slots_1aad7e6742f09f8abc1c216296435d236d" prot="public" virt="non-virtual"><scope>value</scope><name>has_slots</name></member>
+      <member refid="classsigslot_1_1has__slots_1a32701fef2e2a29baa463e4797bcd48c7" prot="public" virt="non-virtual"><scope>value</scope><name>has_slots</name></member>
+      <member refid="classvalue_1a34ed56cb9db06893d3b5acf65279d200" prot="private" virt="non-virtual"><scope>value</scope><name>level</name></member>
+      <member refid="classvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa" prot="public" virt="non-virtual"><scope>value</scope><name>levelchanged</name></member>
+      <member refid="classvalue_1a7c92e95a70f06c68429e329f774102ec" prot="private" virt="non-virtual"><scope>value</scope><name>max</name></member>
+      <member refid="classvalue_1ad2ebbde2f43f00d276509732eb177737" prot="private" virt="non-virtual"><scope>value</scope><name>min</name></member>
+      <member refid="classvalue_1a313f1bd2ebdde33206e393d4218bc1c4" prot="private" virt="non-virtual"><scope>value</scope><name>old</name></member>
+      <member refid="classvalue_1ad1f83bbb9c1fda8839784e4a34568d7f" prot="public" virt="non-virtual"><scope>value</scope><name>resetmaxmin</name></member>
+      <member refid="classvalue_1a17449aee748a7f024efc91c6a0efbbba" prot="public" virt="non-virtual"><scope>value</scope><name>set</name></member>
+      <member refid="classvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1" prot="public" virt="non-virtual"><scope>value</scope><name>setlevel</name></member>
+      <member refid="classsigslot_1_1has__slots_1a08a0318c7c01ff6b28b37cbfe0a900c9" prot="public" virt="non-virtual"><scope>value</scope><name>signal_connect</name></member>
+      <member refid="classsigslot_1_1has__slots_1a09bcc73ab0e195af47b42c133198f2f6" prot="public" virt="non-virtual"><scope>value</scope><name>signal_disconnect</name></member>
+      <member refid="classvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f" prot="public" virt="non-virtual"><scope>value</scope><name>silentset</name></member>
+      <member refid="classvalue_1aad42c1c3a08ae1381cbbef2b4520a019" prot="private" virt="non-virtual"><scope>value</scope><name>val</name></member>
+      <member refid="classsigslot_1_1has__slots_1ae1b969877526cacdaa819f81e675b448" prot="public" virt="virtual"><scope>value</scope><name>~has_slots</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

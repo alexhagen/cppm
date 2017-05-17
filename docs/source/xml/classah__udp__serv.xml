@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classah__udp__serv" kind="class" language="C++" prot="public">
+    <compoundname>ah_udp_serv</compoundname>
+    <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classah__udp__serv_1a41c30d6d7bf21966b8918f84d9aa1117" prot="private" static="no" mutable="no">
+        <type>struct sockaddr_in</type>
+        <definition>struct sockaddr_in ah_udp_serv::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="19" column="1" bodyfile="ah_udp_serv.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__serv_1a47192efde12a7640ccd6f8f38eefd9a2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_serv::addrlen</definition>
+        <argsstring></argsstring>
+        <name>addrlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="22" column="1" bodyfile="ah_udp_serv.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__serv_1afe9341a67e9a51df53f36e51cef7badc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_serv::sock</definition>
+        <argsstring></argsstring>
+        <name>sock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="22" column="1" bodyfile="ah_udp_serv.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__serv_1ae607668b6b6a16af4bc7d088c87df1e2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_serv::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="22" column="1" bodyfile="ah_udp_serv.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__serv_1af99510747d489f294c36a790f26d240b" prot="private" static="no" mutable="no">
+        <type>struct ip_mreq</type>
+        <definition>struct ip_mreq ah_udp_serv::mreq</definition>
+        <argsstring></argsstring>
+        <name>mreq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="22" column="1" bodyfile="ah_udp_serv.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classah__udp__serv_1ad7067b7ffef7e7b4eb93c6f96aa87804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ah_udp_serv::ah_udp_serv</definition>
+        <argsstring>(void)</argsstring>
+        <name>ah_udp_serv</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="17" column="1" bodyfile="ah_udp_serv.h" bodystart="26" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__serv_1a1268f9d7c7c1a3b53a0b9fdf7861c4da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_serv::send</definition>
+        <argsstring>(int)</argsstring>
+        <name>send</name>
+        <param>
+          <type>int</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="18" column="1" bodyfile="ah_udp_serv.h" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__serv_1a99a5b0baacaf1f52d8c8fbe743452335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_serv::send</definition>
+        <argsstring>(char *)</argsstring>
+        <name>send</name>
+        <param>
+          <type>char *</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_serv.h" line="19" column="1" bodyfile="ah_udp_serv.h" bodystart="53" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="187">
+        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
+      </node>
+      <node id="185">
+        <label>ah_udp_serv</label>
+        <link refid="classah__udp__serv"/>
+        <childnode refid="186" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>sigslot::has_slots&lt;&gt;</label>
+        <link refid="classsigslot_1_1has__slots"/>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="190">
+        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
+      </node>
+      <node id="188">
+        <label>ah_udp_serv</label>
+        <link refid="classah__udp__serv"/>
+        <childnode refid="189" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="189">
+        <label>sigslot::has_slots&lt;&gt;</label>
+        <link refid="classsigslot_1_1has__slots"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ah_udp_serv.h" line="15" column="1" bodyfile="ah_udp_serv.h" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classah__udp__serv_1a41c30d6d7bf21966b8918f84d9aa1117" prot="private" virt="non-virtual"><scope>ah_udp_serv</scope><name>addr</name></member>
+      <member refid="classah__udp__serv_1a47192efde12a7640ccd6f8f38eefd9a2" prot="private" virt="non-virtual"><scope>ah_udp_serv</scope><name>addrlen</name></member>
+      <member refid="classah__udp__serv_1ad7067b7ffef7e7b4eb93c6f96aa87804" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>ah_udp_serv</name></member>
+      <member refid="classah__udp__serv_1ae607668b6b6a16af4bc7d088c87df1e2" prot="private" virt="non-virtual"><scope>ah_udp_serv</scope><name>cnt</name></member>
+      <member refid="classsigslot_1_1has__slots_1a6e367c801e273a0a10f198640eb6fa89" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>disconnect_all</name></member>
+      <member refid="classsigslot_1_1has__slots_1aad7e6742f09f8abc1c216296435d236d" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>has_slots</name></member>
+      <member refid="classsigslot_1_1has__slots_1a32701fef2e2a29baa463e4797bcd48c7" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>has_slots</name></member>
+      <member refid="classah__udp__serv_1af99510747d489f294c36a790f26d240b" prot="private" virt="non-virtual"><scope>ah_udp_serv</scope><name>mreq</name></member>
+      <member refid="classah__udp__serv_1a1268f9d7c7c1a3b53a0b9fdf7861c4da" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>send</name></member>
+      <member refid="classah__udp__serv_1a99a5b0baacaf1f52d8c8fbe743452335" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>send</name></member>
+      <member refid="classsigslot_1_1has__slots_1a08a0318c7c01ff6b28b37cbfe0a900c9" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>signal_connect</name></member>
+      <member refid="classsigslot_1_1has__slots_1a09bcc73ab0e195af47b42c133198f2f6" prot="public" virt="non-virtual"><scope>ah_udp_serv</scope><name>signal_disconnect</name></member>
+      <member refid="classah__udp__serv_1afe9341a67e9a51df53f36e51cef7badc" prot="private" virt="non-virtual"><scope>ah_udp_serv</scope><name>sock</name></member>
+      <member refid="classsigslot_1_1has__slots_1ae1b969877526cacdaa819f81e675b448" prot="public" virt="virtual"><scope>ah_udp_serv</scope><name>~has_slots</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

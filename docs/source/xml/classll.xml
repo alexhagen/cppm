@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classll" kind="class" language="C++" prot="public">
+    <compoundname>ll</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classll_1a243197867545d2d548761841cd5b8aa9" prot="private" static="no" mutable="no">
+        <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
+        <definition>node&lt;T&gt;* ll&lt; T &gt;::head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="37" column="1" bodyfile="ah_ll.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classll_1a227174746d623f56702b21f98e6401c7" prot="private" static="no" mutable="no">
+        <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
+        <definition>node&lt;T&gt;* ll&lt; T &gt;::tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="38" column="1" bodyfile="ah_ll.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classll_1a8a81bca9ed7ec3da16b61a03ad18bbb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ll&lt; T &gt;::ll</definition>
+        <argsstring>()</argsstring>
+        <name>ll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="28" column="1" bodyfile="ah_ll.h" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1a7ac9983e6dc0413f5dcecae8d2856b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ll&lt; T &gt;::insert</definition>
+        <argsstring>(T)</argsstring>
+        <name>insert</name>
+        <param>
+          <type>T</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="29" column="1" bodyfile="ah_ll.h" bodystart="48" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1a3463cf369d98f7fb54a952a4bb7e3fbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T ll&lt; T &gt;::pop</definition>
+        <argsstring>()</argsstring>
+        <name>pop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="30" column="1" bodyfile="ah_ll.h" bodystart="63" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1a0163fed6c2bacd0b0c335e03dae8431a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ll&lt; T &gt;::isempty</definition>
+        <argsstring>()</argsstring>
+        <name>isempty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="31" column="1" bodyfile="ah_ll.h" bodystart="55" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1af899e14180d38597127fd6f91c27894b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T ll&lt; T &gt;::mean</definition>
+        <argsstring>()</argsstring>
+        <name>mean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="32" column="1" bodyfile="ah_ll.h" bodystart="73" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1a1c943f143877d9eef056053862646936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T ll&lt; T &gt;::stdev</definition>
+        <argsstring>()</argsstring>
+        <name>stdev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="33" column="1" bodyfile="ah_ll.h" bodystart="85" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classll_1ad5fc321bf1d05d0eed4590940969f39e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ll&lt; T &gt;::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_ll.h" line="34" column="1" bodyfile="ah_ll.h" bodystart="98" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ah_ll.h" line="26" column="1" bodyfile="ah_ll.h" bodystart="26" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classll_1ad5fc321bf1d05d0eed4590940969f39e" prot="public" virt="non-virtual"><scope>ll</scope><name>destroy</name></member>
+      <member refid="classll_1a243197867545d2d548761841cd5b8aa9" prot="private" virt="non-virtual"><scope>ll</scope><name>head</name></member>
+      <member refid="classll_1a7ac9983e6dc0413f5dcecae8d2856b61" prot="public" virt="non-virtual"><scope>ll</scope><name>insert</name></member>
+      <member refid="classll_1a0163fed6c2bacd0b0c335e03dae8431a" prot="public" virt="non-virtual"><scope>ll</scope><name>isempty</name></member>
+      <member refid="classll_1a8a81bca9ed7ec3da16b61a03ad18bbb6" prot="public" virt="non-virtual"><scope>ll</scope><name>ll</name></member>
+      <member refid="classll_1af899e14180d38597127fd6f91c27894b" prot="public" virt="non-virtual"><scope>ll</scope><name>mean</name></member>
+      <member refid="classll_1a3463cf369d98f7fb54a952a4bb7e3fbb" prot="public" virt="non-virtual"><scope>ll</scope><name>pop</name></member>
+      <member refid="classll_1a1c943f143877d9eef056053862646936" prot="public" virt="non-virtual"><scope>ll</scope><name>stdev</name></member>
+      <member refid="classll_1a227174746d623f56702b21f98e6401c7" prot="private" virt="non-virtual"><scope>ll</scope><name>tail</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

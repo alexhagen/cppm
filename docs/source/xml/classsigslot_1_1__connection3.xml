@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classsigslot_1_1__connection3" kind="class" language="C++" prot="public">
+    <compoundname>sigslot::_connection3</compoundname>
+    <basecompoundref refid="classsigslot_1_1__connection__base3" prot="public" virt="non-virtual">sigslot::_connection_base3&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>dest_type</declname>
+        <defname>dest_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg1_type</declname>
+        <defname>arg1_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg2_type</declname>
+        <defname>arg2_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg3_type</declname>
+        <defname>arg3_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>mt_policy</declname>
+        <defname>mt_policy</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsigslot_1_1__connection3_1ad50396fa7a24d22013e5d67d2d248089" prot="private" static="no" mutable="no">
+        <type>dest_type *</type>
+        <definition>dest_type* sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::m_pobject</definition>
+        <argsstring></argsstring>
+        <name>m_pobject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1684" column="1" bodyfile="sigslot.h" bodystart="1684" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsigslot_1_1__connection3_1af85399fef8de74c4a15f45ae88f6fc6d" prot="private" static="no" mutable="no">
+        <type>void(dest_type::*</type>
+        <definition>void(dest_type::*  sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::m_pmemfun) (arg1_type, arg2_type, arg3_type)</definition>
+        <argsstring>)(arg1_type, arg2_type, arg3_type)</argsstring>
+        <name>m_pmemfun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1685" column="1" bodyfile="sigslot.h" bodystart="1685" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1af0ead63a88a99e3ee4cd59e58058c48c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::_connection3</definition>
+        <argsstring>()</argsstring>
+        <name>_connection3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1650" column="1" bodyfile="sigslot.h" bodystart="1650" bodyend="1654"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1aa8b2afd3fc933e6bf4e18034371900df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::_connection3</definition>
+        <argsstring>(dest_type *pobject, void(dest_type::*pmemfun)(arg1_type, arg2_type, arg3_type))</argsstring>
+        <name>_connection3</name>
+        <param>
+          <type>dest_type *</type>
+          <declname>pobject</declname>
+        </param>
+        <param>
+          <type>void(dest_type::*)(arg1_type, arg2_type, arg3_type)</type>
+          <declname>pmemfun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1656" column="1" bodyfile="sigslot.h" bodystart="1656" bodyend="1661"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1a7eace0f1e4cf5a1f510d2fd52774f110" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1__connection__base3" kindref="compound">_connection_base3</ref>&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt; *</type>
+        <definition>virtual _connection_base3&lt;arg1_type, arg2_type, arg3_type, mt_policy&gt;* sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="classsigslot_1_1__connection__base3_1ae89d84c5e83ceb09b4364eb9870f9bb8">clone</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1663" column="1" bodyfile="sigslot.h" bodystart="1663" bodyend="1666"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1a0e7383de3ba101773120970e21823697" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1__connection__base3" kindref="compound">_connection_base3</ref>&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt; *</type>
+        <definition>virtual _connection_base3&lt;arg1_type, arg2_type, arg3_type, mt_policy&gt;* sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::duplicate</definition>
+        <argsstring>(has_slots&lt; mt_policy &gt; *pnewdest)</argsstring>
+        <name>duplicate</name>
+        <reimplements refid="classsigslot_1_1__connection__base3_1ab033af804fe6911a3a525bbb3e86565b">duplicate</reimplements>
+        <param>
+          <type><ref refid="classsigslot_1_1has__slots" kindref="compound">has_slots</ref>&lt; mt_policy &gt; *</type>
+          <declname>pnewdest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1668" column="1" bodyfile="sigslot.h" bodystart="1668" bodyend="1671"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1ab8a4fd45a9cb964a7d22c6c9f65230f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::emit</definition>
+        <argsstring>(arg1_type a1, arg2_type a2, arg3_type a3)</argsstring>
+        <name>emit</name>
+        <reimplements refid="classsigslot_1_1__connection__base3_1a115218665f1972064f489072c0963cc2">emit</reimplements>
+        <param>
+          <type>arg1_type</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>arg2_type</type>
+          <declname>a2</declname>
+        </param>
+        <param>
+          <type>arg3_type</type>
+          <declname>a3</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1673" column="1" bodyfile="sigslot.h" bodystart="1673" bodyend="1676"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection3_1ab4fe1a6e14467796a73ce2ca21c3dae1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1has__slots" kindref="compound">has_slots</ref>&lt; mt_policy &gt; *</type>
+        <definition>virtual has_slots&lt;mt_policy&gt;* sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;::getdest</definition>
+        <argsstring>() const </argsstring>
+        <name>getdest</name>
+        <reimplements refid="classsigslot_1_1__connection__base3_1ab30c46fc2b5f8154a91f37d655da0f2a">getdest</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1678" column="1" bodyfile="sigslot.h" bodystart="1678" bodyend="1681"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection3"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>sigslot::_connection_base3&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection__base3"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="14">
+        <label>sigslot::_connection3&lt; dest_type, arg1_type, arg2_type, arg3_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection3"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>sigslot::_connection_base3&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection__base3"/>
+      </node>
+    </collaborationgraph>
+    <location file="sigslot.h" line="1648" column="1" bodyfile="sigslot.h" bodystart="1647" bodyend="1686"/>
+    <listofallmembers>
+      <member refid="classsigslot_1_1__connection3_1af0ead63a88a99e3ee4cd59e58058c48c" prot="public" virt="non-virtual"><scope>sigslot::_connection3</scope><name>_connection3</name></member>
+      <member refid="classsigslot_1_1__connection3_1aa8b2afd3fc933e6bf4e18034371900df" prot="public" virt="non-virtual"><scope>sigslot::_connection3</scope><name>_connection3</name></member>
+      <member refid="classsigslot_1_1__connection3_1a7eace0f1e4cf5a1f510d2fd52774f110" prot="public" virt="virtual"><scope>sigslot::_connection3</scope><name>clone</name></member>
+      <member refid="classsigslot_1_1__connection3_1a0e7383de3ba101773120970e21823697" prot="public" virt="virtual"><scope>sigslot::_connection3</scope><name>duplicate</name></member>
+      <member refid="classsigslot_1_1__connection3_1ab8a4fd45a9cb964a7d22c6c9f65230f9" prot="public" virt="virtual"><scope>sigslot::_connection3</scope><name>emit</name></member>
+      <member refid="classsigslot_1_1__connection3_1ab4fe1a6e14467796a73ce2ca21c3dae1" prot="public" virt="virtual"><scope>sigslot::_connection3</scope><name>getdest</name></member>
+      <member refid="classsigslot_1_1__connection3_1af85399fef8de74c4a15f45ae88f6fc6d" prot="private" virt="non-virtual"><scope>sigslot::_connection3</scope><name>m_pmemfun</name></member>
+      <member refid="classsigslot_1_1__connection3_1ad50396fa7a24d22013e5d67d2d248089" prot="private" virt="non-virtual"><scope>sigslot::_connection3</scope><name>m_pobject</name></member>
+      <member refid="classsigslot_1_1__connection__base3_1ad9567ab7af56a520de81a27595108638" prot="public" virt="virtual"><scope>sigslot::_connection3</scope><name>~_connection_base3</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

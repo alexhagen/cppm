@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classcll" kind="class" language="C++" prot="public">
+    <compoundname>cll</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcll_1a2eabdd7dcf8ebd086637868070360c86" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cll&lt; T &gt;::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="34" column="1" bodyfile="ah_cll.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcll_1ac8d30a3f2c526c688dea4897053bd7a1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cll&lt; T &gt;::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="35" column="1" bodyfile="ah_cll.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcll_1a5e02fc48a7f3e17ac02a844eeb51ecc2" prot="private" static="no" mutable="no">
+        <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
+        <definition>node&lt;T&gt;* cll&lt; T &gt;::head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="38" column="1" bodyfile="ah_cll.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcll_1a1ef9249ea5e1dcab9dce364c1b794116" prot="private" static="no" mutable="no">
+        <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
+        <definition>node&lt;T&gt;* cll&lt; T &gt;::tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="39" column="1" bodyfile="ah_cll.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcll_1a09f49da94648322767e50d76460d0204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cll&lt; T &gt;::cll</definition>
+        <argsstring>(int)</argsstring>
+        <name>cll</name>
+        <param>
+          <type>int</type>
+          <defname>_length</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="31" column="1" bodyfile="ah_cll.h" bodystart="42" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcll_1a938dadad92b1e12d8a309ff2c282205f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cll&lt; T &gt;::insert</definition>
+        <argsstring>(T)</argsstring>
+        <name>insert</name>
+        <param>
+          <type>T</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="32" column="1" bodyfile="ah_cll.h" bodystart="51" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classcll_1ac9ae22569c31a01698bd248306ff47d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T cll&lt; T &gt;::pop</definition>
+        <argsstring>()</argsstring>
+        <name>pop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_cll.h" line="33" column="1" bodyfile="ah_cll.h" bodystart="66" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ah_cll.h" line="29" column="1" bodyfile="ah_cll.h" bodystart="29" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classcll_1a09f49da94648322767e50d76460d0204" prot="public" virt="non-virtual"><scope>cll</scope><name>cll</name></member>
+      <member refid="classcll_1a5e02fc48a7f3e17ac02a844eeb51ecc2" prot="private" virt="non-virtual"><scope>cll</scope><name>head</name></member>
+      <member refid="classcll_1a938dadad92b1e12d8a309ff2c282205f" prot="public" virt="non-virtual"><scope>cll</scope><name>insert</name></member>
+      <member refid="classcll_1a2eabdd7dcf8ebd086637868070360c86" prot="public" virt="non-virtual"><scope>cll</scope><name>length</name></member>
+      <member refid="classcll_1ac9ae22569c31a01698bd248306ff47d8" prot="public" virt="non-virtual"><scope>cll</scope><name>pop</name></member>
+      <member refid="classcll_1ac8d30a3f2c526c688dea4897053bd7a1" prot="public" virt="non-virtual"><scope>cll</scope><name>size</name></member>
+      <member refid="classcll_1a1ef9249ea5e1dcab9dce364c1b794116" prot="private" virt="non-virtual"><scope>cll</scope><name>tail</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

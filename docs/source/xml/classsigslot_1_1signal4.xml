@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classsigslot_1_1signal4" kind="class" language="C++" prot="public">
+    <compoundname>sigslot::signal4</compoundname>
+    <basecompoundref refid="classsigslot_1_1__signal__base4" prot="public" virt="non-virtual">sigslot::_signal_base4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>arg1_type</declname>
+        <defname>arg1_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg2_type</declname>
+        <defname>arg2_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg3_type</declname>
+        <defname>arg3_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>arg4_type</declname>
+        <defname>arg4_type</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>mt_policy</declname>
+        <defname>mt_policy</defname>
+        <defval>SIGSLOT_DEFAULT_MT_POLICY</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classsigslot_1_1signal4_1a24e568175909ead2c931802935f464a8" prot="public" static="no">
+        <type><ref refid="classsigslot_1_1__signal__base4" kindref="compound">_signal_base4</ref>&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::connections_list::const_iterator</type>
+        <definition>typedef _signal_base4&lt;arg1_type, arg2_type, arg3_type, arg4_type, mt_policy&gt;::connections_list::const_iterator sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::const_iterator</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2188" column="1" bodyfile="sigslot.h" bodystart="2188" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsigslot_1_1signal4_1ad6ebe667d3e0116ab486dfdd418b23cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::signal4</definition>
+        <argsstring>()</argsstring>
+        <name>signal4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2189" column="1" bodyfile="sigslot.h" bodystart="2189" bodyend="2192"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1signal4_1ab8a822efb92ab505e5b17284180c8fbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::signal4</definition>
+        <argsstring>(const signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt; &amp;s)</argsstring>
+        <name>signal4</name>
+        <param>
+          <type>const <ref refid="classsigslot_1_1signal4" kindref="compound">signal4</ref>&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt; &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2194" column="1" bodyfile="sigslot.h" bodystart="2194" bodyend="2198"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1signal4_1ac7862e65d949ac77123a722daeb6b655" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class desttype</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::connect</definition>
+        <argsstring>(desttype *pclass, void(desttype::*pmemfun)(arg1_type, arg2_type, arg3_type, arg4_type))</argsstring>
+        <name>connect</name>
+        <param>
+          <type>desttype *</type>
+          <declname>pclass</declname>
+        </param>
+        <param>
+          <type>void(desttype::*)(arg1_type, arg2_type, arg3_type, arg4_type)</type>
+          <declname>pmemfun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2201" column="1" bodyfile="sigslot.h" bodystart="2201" bodyend="2210"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1signal4_1a564803b70fd41436c2640ad407249649" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::emit</definition>
+        <argsstring>(arg1_type a1, arg2_type a2, arg3_type a3, arg4_type a4)</argsstring>
+        <name>emit</name>
+        <param>
+          <type>arg1_type</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>arg2_type</type>
+          <declname>a2</declname>
+        </param>
+        <param>
+          <type>arg3_type</type>
+          <declname>a3</declname>
+        </param>
+        <param>
+          <type>arg4_type</type>
+          <declname>a4</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2212" column="1" bodyfile="sigslot.h" bodystart="2212" bodyend="2227"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1signal4_1aeccdd2db687ca657cc5fbbf509ce58c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;::operator()</definition>
+        <argsstring>(arg1_type a1, arg2_type a2, arg3_type a3, arg4_type a4)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>arg1_type</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>arg2_type</type>
+          <declname>a2</declname>
+        </param>
+        <param>
+          <type>arg3_type</type>
+          <declname>a3</declname>
+        </param>
+        <param>
+          <type>arg4_type</type>
+          <declname>a4</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="2229" column="1" bodyfile="sigslot.h" bodystart="2229" bodyend="2244"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="239">
+        <label>sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1signal4"/>
+        <childnode refid="240" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="240">
+        <label>sigslot::_signal_base4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base4"/>
+        <childnode refid="241" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="242">
+        <label>mt_policy</label>
+      </node>
+      <node id="241">
+        <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base"/>
+        <childnode refid="242" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="243">
+        <label>sigslot::signal4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1signal4"/>
+        <childnode refid="244" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="244">
+        <label>sigslot::_signal_base4&lt; arg1_type, arg2_type, arg3_type, arg4_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base4"/>
+        <childnode refid="245" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="246">
+        <label>mt_policy</label>
+      </node>
+      <node id="245">
+        <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__signal__base"/>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="sigslot.h" line="2186" column="1" bodyfile="sigslot.h" bodystart="2184" bodyend="2245"/>
+    <listofallmembers>
+      <member refid="classsigslot_1_1__signal__base4_1a6d1a0311b333c7f7e324ddcf64ff77e5" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>_signal_base4</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1a17a5b2252368054aaf270c3fd2414d20" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>_signal_base4</name></member>
+      <member refid="classsigslot_1_1signal4_1ac7862e65d949ac77123a722daeb6b655" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>connect</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1aea35b507c1a9e79a103e652ba90c96f5" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>connections_list</name></member>
+      <member refid="classsigslot_1_1signal4_1a24e568175909ead2c931802935f464a8" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>const_iterator</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1ace9704303ba56183645a81e5b235f35c" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>disconnect</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1adb24830605ad8a4dc4f06996b6a938f6" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>disconnect_all</name></member>
+      <member refid="classsigslot_1_1signal4_1a564803b70fd41436c2640ad407249649" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>emit</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1ad2fa207c81748fc90c3dab04df673c53" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>iterator</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1a063f41e2f4817b0a58642e836464045a" prot="protected" virt="non-virtual"><scope>sigslot::signal4</scope><name>m_connected_slots</name></member>
+      <member refid="classsigslot_1_1signal4_1aeccdd2db687ca657cc5fbbf509ce58c3" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>operator()</name></member>
+      <member refid="classsigslot_1_1signal4_1ad6ebe667d3e0116ab486dfdd418b23cf" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>signal4</name></member>
+      <member refid="classsigslot_1_1signal4_1ab8a822efb92ab505e5b17284180c8fbb" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>signal4</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1a43773cf6c5aa4258f3cbe96bbf921f7f" prot="public" virt="virtual"><scope>sigslot::signal4</scope><name>slot_disconnect</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1a1a74ae3ce51fe799cbcfd38862c22c2e" prot="public" virt="virtual"><scope>sigslot::signal4</scope><name>slot_duplicate</name></member>
+      <member refid="classsigslot_1_1__signal__base4_1a3a2d39c097c82c3cd26f1fe16c6e6c31" prot="public" virt="non-virtual"><scope>sigslot::signal4</scope><name>~_signal_base4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

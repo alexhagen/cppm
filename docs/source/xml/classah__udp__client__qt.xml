@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classah__udp__client__qt" kind="class" language="C++" prot="public">
+    <compoundname>ah_udp_client_qt</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classah__udp__client__qt_1a846ffee7df118e3b5c09dc9703ba43ba" prot="private" static="no" mutable="no">
+        <type>struct sockaddr_in</type>
+        <definition>struct sockaddr_in ah_udp_client_qt::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="32" column="1" bodyfile="ah_udp_client_qt.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a57d85795651998e00597fb1c37eff030" prot="private" static="no" mutable="no">
+        <type>socklen_t</type>
+        <definition>socklen_t ah_udp_client_qt::addrlen</definition>
+        <argsstring></argsstring>
+        <name>addrlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="36" column="1" bodyfile="ah_udp_client_qt.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a312f25a50ba5babff6d87ddc83e8880f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_client_qt::sock</definition>
+        <argsstring></argsstring>
+        <name>sock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="37" column="1" bodyfile="ah_udp_client_qt.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a1643f19035a092231296827a50ff8b2f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_client_qt::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="37" column="1" bodyfile="ah_udp_client_qt.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1af9809075f2ea2aa3e0db2f3c726dc872" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ah_udp_client_qt::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="37" column="1" bodyfile="ah_udp_client_qt.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a3a288afdee0db5f4214aa8a3cfceb6da" prot="private" static="no" mutable="no">
+        <type>struct ip_mreq</type>
+        <definition>struct ip_mreq ah_udp_client_qt::mreq</definition>
+        <argsstring></argsstring>
+        <name>mreq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="37" column="1" bodyfile="ah_udp_client_qt.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a8d48ac2d5abf13bed8adc04c01ddcb2c" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char ah_udp_client_qt::message[BUFSIZE]</definition>
+        <argsstring>[BUFSIZE]</argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="39" column="1" bodyfile="ah_udp_client_qt.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classah__udp__client__qt_1a1e658fc9e369f8a09bb44fbc51c18ca9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ah_udp_client_qt::cont</definition>
+        <argsstring></argsstring>
+        <name>cont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="40" column="1" bodyfile="ah_udp_client_qt.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classah__udp__client__qt_1a6f5f1fda25a3fbbf454ecd06a88f1c15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ah_udp_client_qt::ah_udp_client_qt</definition>
+        <argsstring>(void)</argsstring>
+        <name>ah_udp_client_qt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="22" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="4" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__client__qt_1a41a18c6a0d48604eb554bf91c2f25fa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ah_udp_client_qt::ah_udp_client_qt</definition>
+        <argsstring>(int)</argsstring>
+        <name>ah_udp_client_qt</name>
+        <param>
+          <type>int</type>
+          <defname>_port</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="23" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__client__qt_1a778aa269b32603ecda50c95e9e9f8c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_client_qt::start</definition>
+        <argsstring>(void)</argsstring>
+        <name>start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="24" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__client__qt_1a8d48e3480be15afa654e4d23df3cf1d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_client_qt::start</definition>
+        <argsstring>(int)</argsstring>
+        <name>start</name>
+        <param>
+          <type>int</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="25" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="59" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classah__udp__client__qt_1a29353e5b41ca8af7f64927869a20c9c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_client_qt::setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="26" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="14" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="classah__udp__client__qt_1a8fe7e7672fa609ca532a50b39ed887bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_client_qt::loop</definition>
+        <argsstring>(void)</argsstring>
+        <name>loop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="29" column="1" bodyfile="ah_udp_client_qt.cpp" bodystart="41" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="classah__udp__client__qt_1ab486c19dd07003a978b31786afc9748a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ah_udp_client_qt::data_ready</definition>
+        <argsstring>(char *msg)</argsstring>
+        <name>data_ready</name>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_udp_client_qt.h" line="32" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="182">
+        <label>QObject</label>
+      </node>
+      <node id="181">
+        <label>ah_udp_client_qt</label>
+        <link refid="classah__udp__client__qt"/>
+        <childnode refid="182" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="184">
+        <label>QObject</label>
+      </node>
+      <node id="183">
+        <label>ah_udp_client_qt</label>
+        <link refid="classah__udp__client__qt"/>
+        <childnode refid="184" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ah_udp_client_qt.h" line="17" column="1" bodyfile="ah_udp_client_qt.h" bodystart="17" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classah__udp__client__qt_1a846ffee7df118e3b5c09dc9703ba43ba" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>addr</name></member>
+      <member refid="classah__udp__client__qt_1a57d85795651998e00597fb1c37eff030" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>addrlen</name></member>
+      <member refid="classah__udp__client__qt_1a6f5f1fda25a3fbbf454ecd06a88f1c15" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>ah_udp_client_qt</name></member>
+      <member refid="classah__udp__client__qt_1a41a18c6a0d48604eb554bf91c2f25fa4" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>ah_udp_client_qt</name></member>
+      <member refid="classah__udp__client__qt_1a1643f19035a092231296827a50ff8b2f" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>cnt</name></member>
+      <member refid="classah__udp__client__qt_1a1e658fc9e369f8a09bb44fbc51c18ca9" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>cont</name></member>
+      <member refid="classah__udp__client__qt_1ab486c19dd07003a978b31786afc9748a" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>data_ready</name></member>
+      <member refid="classah__udp__client__qt_1a8fe7e7672fa609ca532a50b39ed887bd" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>loop</name></member>
+      <member refid="classah__udp__client__qt_1a8d48ac2d5abf13bed8adc04c01ddcb2c" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>message</name></member>
+      <member refid="classah__udp__client__qt_1a3a288afdee0db5f4214aa8a3cfceb6da" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>mreq</name></member>
+      <member refid="classah__udp__client__qt_1af9809075f2ea2aa3e0db2f3c726dc872" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>port</name></member>
+      <member refid="classah__udp__client__qt_1a29353e5b41ca8af7f64927869a20c9c5" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>setup</name></member>
+      <member refid="classah__udp__client__qt_1a312f25a50ba5babff6d87ddc83e8880f" prot="private" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>sock</name></member>
+      <member refid="classah__udp__client__qt_1a778aa269b32603ecda50c95e9e9f8c42" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>start</name></member>
+      <member refid="classah__udp__client__qt_1a8d48e3480be15afa654e4d23df3cf1d9" prot="public" virt="non-virtual"><scope>ah_udp_client_qt</scope><name>start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

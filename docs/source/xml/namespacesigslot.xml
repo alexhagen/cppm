@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacesigslot" kind="namespace" language="C++">
+    <compoundname>sigslot</compoundname>
+    <innerclass refid="classsigslot_1_1__connection0" prot="public">sigslot::_connection0</innerclass>
+    <innerclass refid="classsigslot_1_1__connection1" prot="public">sigslot::_connection1</innerclass>
+    <innerclass refid="classsigslot_1_1__connection2" prot="public">sigslot::_connection2</innerclass>
+    <innerclass refid="classsigslot_1_1__connection3" prot="public">sigslot::_connection3</innerclass>
+    <innerclass refid="classsigslot_1_1__connection4" prot="public">sigslot::_connection4</innerclass>
+    <innerclass refid="classsigslot_1_1__connection5" prot="public">sigslot::_connection5</innerclass>
+    <innerclass refid="classsigslot_1_1__connection6" prot="public">sigslot::_connection6</innerclass>
+    <innerclass refid="classsigslot_1_1__connection7" prot="public">sigslot::_connection7</innerclass>
+    <innerclass refid="classsigslot_1_1__connection8" prot="public">sigslot::_connection8</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base0" prot="public">sigslot::_connection_base0</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base1" prot="public">sigslot::_connection_base1</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base2" prot="public">sigslot::_connection_base2</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base3" prot="public">sigslot::_connection_base3</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base4" prot="public">sigslot::_connection_base4</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base5" prot="public">sigslot::_connection_base5</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base6" prot="public">sigslot::_connection_base6</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base7" prot="public">sigslot::_connection_base7</innerclass>
+    <innerclass refid="classsigslot_1_1__connection__base8" prot="public">sigslot::_connection_base8</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base" prot="public">sigslot::_signal_base</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base0" prot="public">sigslot::_signal_base0</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base1" prot="public">sigslot::_signal_base1</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base2" prot="public">sigslot::_signal_base2</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base3" prot="public">sigslot::_signal_base3</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base4" prot="public">sigslot::_signal_base4</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base5" prot="public">sigslot::_signal_base5</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base6" prot="public">sigslot::_signal_base6</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base7" prot="public">sigslot::_signal_base7</innerclass>
+    <innerclass refid="classsigslot_1_1__signal__base8" prot="public">sigslot::_signal_base8</innerclass>
+    <innerclass refid="classsigslot_1_1has__slots" prot="public">sigslot::has_slots</innerclass>
+    <innerclass refid="classsigslot_1_1lock__block" prot="public">sigslot::lock_block</innerclass>
+    <innerclass refid="classsigslot_1_1signal0" prot="public">sigslot::signal0</innerclass>
+    <innerclass refid="classsigslot_1_1signal1" prot="public">sigslot::signal1</innerclass>
+    <innerclass refid="classsigslot_1_1signal2" prot="public">sigslot::signal2</innerclass>
+    <innerclass refid="classsigslot_1_1signal3" prot="public">sigslot::signal3</innerclass>
+    <innerclass refid="classsigslot_1_1signal4" prot="public">sigslot::signal4</innerclass>
+    <innerclass refid="classsigslot_1_1signal5" prot="public">sigslot::signal5</innerclass>
+    <innerclass refid="classsigslot_1_1signal6" prot="public">sigslot::signal6</innerclass>
+    <innerclass refid="classsigslot_1_1signal7" prot="public">sigslot::signal7</innerclass>
+    <innerclass refid="classsigslot_1_1signal8" prot="public">sigslot::signal8</innerclass>
+    <innerclass refid="classsigslot_1_1single__threaded" prot="public">sigslot::single_threaded</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sigslot.h" line="105" column="1"/>
+  </compounddef>
+</doxygen>

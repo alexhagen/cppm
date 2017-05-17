@@ -4,13 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* node class
+/** node class
  *
  * Node is an implementation of a storage node for a circular linked list.
  */
 template <class T> class node {
 public:
-  /* Initializes a node
+  /** Initializes a node
    * @_data the data that will be added to the node
    * @_next the pointer of the next node
    *

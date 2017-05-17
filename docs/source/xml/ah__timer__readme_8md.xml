@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="ah__timer__readme_8md" kind="file" language="Markdown">
+    <compoundname>ah_timer_readme.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;&lt;&lt;&lt;&lt;&lt;&lt;<sp/>HEAD</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>cppm</highlight></codeline>
+<codeline><highlight class="normal">cppm<sp/>(C++<sp/>Minus)<sp/>is<sp/>a<sp/>set<sp/>of<sp/>data<sp/>structures<sp/>that<sp/>sit<sp/>right<sp/>in<sp/>between<sp/>the<sp/>power<sp/>of<sp/>C++<sp/>and<sp/>the<sp/>economy<sp/>of<sp/>C</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>AH<sp/>Timer<sp/>Class</highlight></codeline>
+<codeline><highlight class="normal">By<sp/>Alex<sp/>Hagen</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>AH<sp/>Timer<sp/>class<sp/>provides<sp/>a<sp/>linux<sp/>supported<sp/>C++<sp/>class<sp/>for<sp/>using<sp/>interrupts<sp/>to<sp/>emit<sp/>signals<sp/>resonably<sp/>accurately.<sp/><sp/>By<sp/>using<sp/>slots<sp/>and<sp/>connecting<sp/>those<sp/>slots<sp/>to<sp/>the<sp/>signals<sp/>emitted<sp/>from<sp/>the<sp/>timer<sp/>class,<sp/>actions<sp/>can<sp/>be<sp/>triggered<sp/>at<sp/>the<sp/>interrupt<sp/>priority<sp/>level<sp/>at<sp/>times<sp/>accurate<sp/>to<sp/>within<sp/>several<sp/>milliseconds.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>To<sp/>Do</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">Installation<sp/>of<sp/>the<sp/>AH<sp/>Timer<sp/>library<sp/>is<sp/>easy,<sp/>simply<sp/>download<sp/>the<sp/>contents<sp/>of<sp/>this<sp/>library<sp/>and<sp/>unpack<sp/>them<sp/>(excluding<sp/>the<sp/>readme<sp/>and<sp/>tests)<sp/>into<sp/>the<sp/>folder<sp/>you&apos;re<sp/>compiling<sp/>out<sp/>of.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">Follow<sp/>the<sp/>steps<sp/>below<sp/>to<sp/>use<sp/>the<sp/>AH<sp/>Timer<sp/>library.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Lets<sp/>say<sp/>we<sp/>have<sp/>a<sp/>class<sp/>that<sp/>needs<sp/>to<sp/>do<sp/>something<sp/>at<sp/>a<sp/>certain<sp/>time.<sp/><sp/>For<sp/>the<sp/>sake<sp/>of<sp/>example,<sp/>we&apos;ll<sp/>use<sp/>the<sp/>following<sp/>bomb:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c++</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>in<sp/>file<sp/>bomb.h</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;ah_timer.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;sigslot.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">class<sp/>bomb<sp/>:<sp/>public<sp/>sigslot::has_slots&lt;&gt;{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>we<sp/>must<sp/>inherit<sp/>slot<sp/>properties<sp/>from<sp/>sigslot</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>functions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bomb(void);<sp/>//<sp/>our<sp/>constructor</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>explode(void);<sp/>//<sp/>the<sp/>actual<sp/>bang</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>interval(void);<sp/>//<sp/>showing<sp/>interval<sp/>functionality</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>objects<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>timer<sp/>*t;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">bomb::bomb(void){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>we<sp/>want<sp/>to<sp/>create<sp/>a<sp/>timer<sp/>that<sp/>will<sp/>go<sp/>off<sp/>at<sp/>a<sp/>certain<sp/>time</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>new<sp/>timer();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>we<sp/>now<sp/>set<sp/>the<sp/>first<sp/>fire<sp/>to<sp/>be<sp/>in<sp/>3.5<sp/>seconds</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;set(3.5);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>we<sp/>have<sp/>to<sp/>connect<sp/>our<sp/>bang<sp/>to<sp/>the<sp/>timer</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;sig-&gt;connect(this,&amp;bomb::explode);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>now<sp/>we<sp/>have<sp/>to<sp/>start<sp/>the<sp/>timer</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;start();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>bomb:explode(void){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>tell<sp/>everybody<sp/>that<sp/>we<sp/>exploded</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;BOOM!\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>using<sp/>built<sp/>in<sp/>diagnostics,<sp/>we<sp/>can<sp/>see<sp/>how<sp/>much<sp/>time<sp/>it<sp/>actually<sp/>took</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Bomb<sp/>went<sp/>off<sp/>after<sp/>%f<sp/>seconds.\n&quot;,t-&gt;realtime);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>bomb::interval(void){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>we<sp/>can<sp/>also<sp/>set<sp/>off<sp/>our<sp/>bomb<sp/>every<sp/>x<sp/>seconds,<sp/>here<sp/>using<sp/>5.25</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>new<sp/>timer();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>we<sp/>have<sp/>to<sp/>set<sp/>the<sp/>interval<sp/>instead<sp/>of<sp/>just<sp/>the<sp/>first<sp/>instance</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;set_int(5.25);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>it&apos;s<sp/>already<sp/>connected<sp/>so<sp/>we<sp/>don&apos;t<sp/>have<sp/>to<sp/>do<sp/>that,<sp/>but<sp/>we<sp/>must<sp/>start</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;start();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>This<sp/>class<sp/>can<sp/>be<sp/>run<sp/>using<sp/>the<sp/>following<sp/>tester</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c++</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>in<sp/>file<sp/>test_bomb.cpp</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;bomb.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;unistd.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main(void){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>tell<sp/>that<sp/>we&apos;re<sp/>running<sp/>the<sp/>bomb</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Setting<sp/>the<sp/>bomb<sp/>to<sp/>go<sp/>off<sp/>after<sp/>3.5<sp/>seconds\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>set<sp/>off<sp/>the<sp/>timer<sp/>and<sp/>bomb</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bomb<sp/>*b<sp/>=<sp/>new<sp/>bomb();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wait<sp/>until<sp/>bomb<sp/>has<sp/>gone<sp/>off</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(4);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>now<sp/>switch<sp/>tacts<sp/>and<sp/>do<sp/>intervals</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;Setting<sp/>the<sp/>bomb<sp/>to<sp/>go<sp/>off<sp/>every<sp/>5.25<sp/>seconds\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>use<sp/>our<sp/>function<sp/>to<sp/>make<sp/>it<sp/>go<sp/>off</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>b-&gt;interval();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wait<sp/>till<sp/>it<sp/>goes<sp/>off<sp/>once</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(6);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wait<sp/>till<sp/>it<sp/>goes<sp/>off<sp/>again</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sleep(6)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>end<sp/>program</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>can<sp/>be<sp/>compiled<sp/>using<sp/>(assuming<sp/>that<sp/>sigslot.h,<sp/>bomb.h,<sp/>and<sp/>ah_timer.h<sp/>are<sp/>in<sp/>the<sp/>current<sp/>directory):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>g++<sp/>-std=c++11<sp/>test_bomb.cpp<sp/>-o<sp/>test_bomb</highlight></codeline>
+<codeline><highlight class="normal">$<sp/>./test_bomb</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>To<sp/>Do</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Windows<sp/>compatibility<sp/>(added<sp/>10/12/14)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Different<sp/>start<sp/>and<sp/>interval<sp/>times<sp/>functionality<sp/>(added<sp/>10/12/14)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[<sp/>]<sp/>Better<sp/>deconstructor<sp/>(added<sp/>10/12/14)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;&gt;&gt;&gt;&gt;<sp/>timer/master</highlight></codeline>
+    </programlisting>
+    <location file="ah_timer_readme.md"/>
+  </compounddef>
+</doxygen>

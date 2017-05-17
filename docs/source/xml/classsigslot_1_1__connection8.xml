@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classsigslot_1_1__connection8" kind="class" language="C++" prot="public">
+    <compoundname>sigslot::_connection8</compoundname>
+    <basecompoundref refid="classsigslot_1_1__connection__base8" prot="public" virt="non-virtual">sigslot::_connection_base8&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class dest_type</type>
+      </param>
+      <param>
+        <type>class arg1_type</type>
+      </param>
+      <param>
+        <type>class arg2_type</type>
+      </param>
+      <param>
+        <type>class arg3_type</type>
+      </param>
+      <param>
+        <type>class arg4_type</type>
+      </param>
+      <param>
+        <type>class arg5_type</type>
+      </param>
+      <param>
+        <type>class arg6_type</type>
+      </param>
+      <param>
+        <type>class arg7_type</type>
+      </param>
+      <param>
+        <type>class arg8_type</type>
+      </param>
+      <param>
+        <type>class mt_policy</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsigslot_1_1__connection8_1a12882d3382b2d9da24191cc836ba0fa2" prot="private" static="no" mutable="no">
+        <type>dest_type *</type>
+        <definition>dest_type* sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::m_pobject</definition>
+        <argsstring></argsstring>
+        <name>m_pobject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1931" column="1" bodyfile="sigslot.h" bodystart="1931" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsigslot_1_1__connection8_1af7fc869400c3e1010022df62f93b9493" prot="private" static="no" mutable="no">
+        <type>void(dest_type::*</type>
+        <definition>void(dest_type::*  sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::m_pmemfun) (arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type)</definition>
+        <argsstring>)(arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type)</argsstring>
+        <name>m_pmemfun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1932" column="1" bodyfile="sigslot.h" bodystart="1932" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1a56b160598ef9ecf4132e569af08d76bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::_connection8</definition>
+        <argsstring>()</argsstring>
+        <name>_connection8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1891" column="1" bodyfile="sigslot.h" bodystart="1891" bodyend="1895"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1ad955c39f73572c18bc946cb8a63aeee9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::_connection8</definition>
+        <argsstring>(dest_type *pobject, void(dest_type::*pmemfun)(arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type))</argsstring>
+        <name>_connection8</name>
+        <param>
+          <type>dest_type *</type>
+          <declname>pobject</declname>
+        </param>
+        <param>
+          <type>void(dest_type::*)(arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type)</type>
+          <declname>pmemfun</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1897" column="1" bodyfile="sigslot.h" bodystart="1897" bodyend="1903"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1ae8177a343689b3f364f68dda898e53ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1__connection__base8" kindref="compound">_connection_base8</ref>&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt; *</type>
+        <definition>virtual _connection_base8&lt;arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy&gt;* sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::clone</definition>
+        <argsstring>()</argsstring>
+        <name>clone</name>
+        <reimplements refid="classsigslot_1_1__connection__base8_1a2ac7eb05911c4a7416aa00b690e06ef0">clone</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1906" column="1" bodyfile="sigslot.h" bodystart="1906" bodyend="1910"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1add564362899c66f0cfd0d489518124ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1__connection__base8" kindref="compound">_connection_base8</ref>&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt; *</type>
+        <definition>virtual _connection_base8&lt;arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy&gt;* sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::duplicate</definition>
+        <argsstring>(has_slots&lt; mt_policy &gt; *pnewdest)</argsstring>
+        <name>duplicate</name>
+        <reimplements refid="classsigslot_1_1__connection__base8_1af0a6fb261345e25a90f24ab233b34de7">duplicate</reimplements>
+        <param>
+          <type><ref refid="classsigslot_1_1has__slots" kindref="compound">has_slots</ref>&lt; mt_policy &gt; *</type>
+          <declname>pnewdest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1913" column="1" bodyfile="sigslot.h" bodystart="1913" bodyend="1917"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1a7b8f97be21e44d52d1e6fc45df64fdec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::emit</definition>
+        <argsstring>(arg1_type a1, arg2_type a2, arg3_type a3, arg4_type a4, arg5_type a5, arg6_type a6, arg7_type a7, arg8_type a8)</argsstring>
+        <name>emit</name>
+        <reimplements refid="classsigslot_1_1__connection__base8_1acb4209712da1716170c159113b84daec">emit</reimplements>
+        <param>
+          <type>arg1_type</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>arg2_type</type>
+          <declname>a2</declname>
+        </param>
+        <param>
+          <type>arg3_type</type>
+          <declname>a3</declname>
+        </param>
+        <param>
+          <type>arg4_type</type>
+          <declname>a4</declname>
+        </param>
+        <param>
+          <type>arg5_type</type>
+          <declname>a5</declname>
+        </param>
+        <param>
+          <type>arg6_type</type>
+          <declname>a6</declname>
+        </param>
+        <param>
+          <type>arg7_type</type>
+          <declname>a7</declname>
+        </param>
+        <param>
+          <type>arg8_type</type>
+          <declname>a8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1919" column="1" bodyfile="sigslot.h" bodystart="1919" bodyend="1923"/>
+      </memberdef>
+      <memberdef kind="function" id="classsigslot_1_1__connection8_1a6051ed9c325a6a4fa9ca75a5da63fdf6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classsigslot_1_1has__slots" kindref="compound">has_slots</ref>&lt; mt_policy &gt; *</type>
+        <definition>virtual has_slots&lt;mt_policy&gt;* sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;::getdest</definition>
+        <argsstring>() const </argsstring>
+        <name>getdest</name>
+        <reimplements refid="classsigslot_1_1__connection__base8_1a6f74403127089e5b5cdae9d382abaff2">getdest</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sigslot.h" line="1925" column="1" bodyfile="sigslot.h" bodystart="1925" bodyend="1928"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="32">
+        <label>sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection8"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>sigslot::_connection_base8&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection__base8"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>sigslot::_connection8&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection8"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>sigslot::_connection_base8&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, arg8_type, mt_policy &gt;</label>
+        <link refid="classsigslot_1_1__connection__base8"/>
+      </node>
+    </collaborationgraph>
+    <location file="sigslot.h" line="1889" column="1" bodyfile="sigslot.h" bodystart="1887" bodyend="1934"/>
+    <listofallmembers>
+      <member refid="classsigslot_1_1__connection8_1a56b160598ef9ecf4132e569af08d76bc" prot="public" virt="non-virtual"><scope>sigslot::_connection8</scope><name>_connection8</name></member>
+      <member refid="classsigslot_1_1__connection8_1ad955c39f73572c18bc946cb8a63aeee9" prot="public" virt="non-virtual"><scope>sigslot::_connection8</scope><name>_connection8</name></member>
+      <member refid="classsigslot_1_1__connection8_1ae8177a343689b3f364f68dda898e53ae" prot="public" virt="virtual"><scope>sigslot::_connection8</scope><name>clone</name></member>
+      <member refid="classsigslot_1_1__connection8_1add564362899c66f0cfd0d489518124ad" prot="public" virt="virtual"><scope>sigslot::_connection8</scope><name>duplicate</name></member>
+      <member refid="classsigslot_1_1__connection8_1a7b8f97be21e44d52d1e6fc45df64fdec" prot="public" virt="virtual"><scope>sigslot::_connection8</scope><name>emit</name></member>
+      <member refid="classsigslot_1_1__connection8_1a6051ed9c325a6a4fa9ca75a5da63fdf6" prot="public" virt="virtual"><scope>sigslot::_connection8</scope><name>getdest</name></member>
+      <member refid="classsigslot_1_1__connection8_1af7fc869400c3e1010022df62f93b9493" prot="private" virt="non-virtual"><scope>sigslot::_connection8</scope><name>m_pmemfun</name></member>
+      <member refid="classsigslot_1_1__connection8_1a12882d3382b2d9da24191cc836ba0fa2" prot="private" virt="non-virtual"><scope>sigslot::_connection8</scope><name>m_pobject</name></member>
+      <member refid="classsigslot_1_1__connection__base8_1a7152a87c0091bf893f78c06e51200282" prot="public" virt="virtual"><scope>sigslot::_connection8</scope><name>~_connection_base8</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

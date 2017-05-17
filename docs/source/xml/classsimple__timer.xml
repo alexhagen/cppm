@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classsimple__timer" kind="class" language="C++" prot="public">
+    <compoundname>simple_timer</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsimple__timer_1a3c56015250373ef8bdf24b9eafe0c3b3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_timer::delt</definition>
+        <argsstring></argsstring>
+        <name>delt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="23" column="1" bodyfile="simple_timer.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a29c0f8bbcbbb3bba1fd8a28628782ed3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_timer::t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="24" column="1" bodyfile="simple_timer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1accca713389f8889389a0b1cca17a6dec" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double simple_timer::start_t</definition>
+        <argsstring></argsstring>
+        <name>start_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="25" column="1" bodyfile="simple_timer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a0fd0d99884ccb2091851c1378c9bbb9b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_timer::signum</definition>
+        <argsstring></argsstring>
+        <name>signum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="26" column="1" bodyfile="simple_timer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a45ce2c8c093e2bec6e86e3ee43bb38c5" prot="private" static="no" mutable="no">
+        <type>timer_t</type>
+        <definition>timer_t simple_timer::timerID</definition>
+        <argsstring></argsstring>
+        <name>timerID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="27" column="1" bodyfile="simple_timer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a6718078319e9a7f36a11ababf3ea66c8" prot="private" static="no" mutable="no">
+        <type>struct timespec</type>
+        <definition>struct timespec simple_timer::now</definition>
+        <argsstring></argsstring>
+        <name>now</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="27" column="1" bodyfile="simple_timer.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a9e9d47b2279f02d104429174795df574" prot="private" static="no" mutable="no">
+        <type>struct sigevent</type>
+        <definition>struct sigevent simple_timer::te</definition>
+        <argsstring></argsstring>
+        <name>te</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="27" column="1" bodyfile="simple_timer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__timer_1a17a2d92d0ad60dac62213765e4a520fb" prot="private" static="no" mutable="no">
+        <type>struct itimerspec</type>
+        <definition>struct itimerspec simple_timer::its</definition>
+        <argsstring></argsstring>
+        <name>its</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="27" column="1" bodyfile="simple_timer.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimple__timer_1a898609d0d335bd1c000012a997f5883f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simple_timer::simple_timer</definition>
+        <argsstring>(void)</argsstring>
+        <name>simple_timer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="11" column="1" bodyfile="simple_timer.h" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a47a32ee6744a6fe3c9ea6b5e8dd8848a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simple_timer::simple_timer</definition>
+        <argsstring>(int)</argsstring>
+        <name>simple_timer</name>
+        <param>
+          <type>int</type>
+          <defname>_signum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="12" column="1" bodyfile="simple_timer.h" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a98d4bf4b61df405849475fb129acfde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_timer::set</definition>
+        <argsstring>(double)</argsstring>
+        <name>set</name>
+        <param>
+          <type>double</type>
+          <defname>_delt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="13" column="1" bodyfile="simple_timer.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a10aa12064f90fa175f111f3e7fbdb94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_timer::start</definition>
+        <argsstring>(void)</argsstring>
+        <name>start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="14" column="1" bodyfile="simple_timer.h" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1aea9eb4c196e68f2f9859ae633d6689ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_timer::start</definition>
+        <argsstring>(double)</argsstring>
+        <name>start</name>
+        <param>
+          <type>double</type>
+          <defname>_delt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="15" column="1" bodyfile="simple_timer.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1ae76ead34ed278488850a09938581fec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simple_timer::stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="16" column="1" bodyfile="simple_timer.h" bodystart="60" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a1d047587b316ba89d3ec08d7ce4a3c93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simple_timer::get_t</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_t</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="17" column="1" bodyfile="simple_timer.h" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a2baa942b22ad04a8be4b1752b36ed97c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simple_timer::get_delt</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_delt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="18" column="1" bodyfile="simple_timer.h" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__timer_1a0e2bb90995ea0d64a8b3369f12efc604" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double simple_timer::check_time</definition>
+        <argsstring>(void)</argsstring>
+        <name>check_time</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="19" column="1" bodyfile="simple_timer.h" bodystart="90" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsimple__timer_1a8f64b6fcc2c9d5123ca5ddbfd7a59546" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_timer::_start</definition>
+        <argsstring>(void)</argsstring>
+        <name>_start</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_timer.h" line="22" column="1" bodyfile="simple_timer.h" bodystart="73" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="simple_timer.h" line="9" column="1" bodyfile="simple_timer.h" bodystart="9" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classsimple__timer_1a8f64b6fcc2c9d5123ca5ddbfd7a59546" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>_start</name></member>
+      <member refid="classsimple__timer_1a0e2bb90995ea0d64a8b3369f12efc604" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>check_time</name></member>
+      <member refid="classsimple__timer_1a3c56015250373ef8bdf24b9eafe0c3b3" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>delt</name></member>
+      <member refid="classsimple__timer_1a2baa942b22ad04a8be4b1752b36ed97c" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>get_delt</name></member>
+      <member refid="classsimple__timer_1a1d047587b316ba89d3ec08d7ce4a3c93" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>get_t</name></member>
+      <member refid="classsimple__timer_1a17a2d92d0ad60dac62213765e4a520fb" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>its</name></member>
+      <member refid="classsimple__timer_1a6718078319e9a7f36a11ababf3ea66c8" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>now</name></member>
+      <member refid="classsimple__timer_1a98d4bf4b61df405849475fb129acfde9" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>set</name></member>
+      <member refid="classsimple__timer_1a0fd0d99884ccb2091851c1378c9bbb9b" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>signum</name></member>
+      <member refid="classsimple__timer_1a898609d0d335bd1c000012a997f5883f" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>simple_timer</name></member>
+      <member refid="classsimple__timer_1a47a32ee6744a6fe3c9ea6b5e8dd8848a" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>simple_timer</name></member>
+      <member refid="classsimple__timer_1a10aa12064f90fa175f111f3e7fbdb94f" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>start</name></member>
+      <member refid="classsimple__timer_1aea9eb4c196e68f2f9859ae633d6689ba" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>start</name></member>
+      <member refid="classsimple__timer_1accca713389f8889389a0b1cca17a6dec" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>start_t</name></member>
+      <member refid="classsimple__timer_1ae76ead34ed278488850a09938581fec0" prot="public" virt="non-virtual"><scope>simple_timer</scope><name>stop</name></member>
+      <member refid="classsimple__timer_1a29c0f8bbcbbb3bba1fd8a28628782ed3" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>t</name></member>
+      <member refid="classsimple__timer_1a9e9d47b2279f02d104429174795df574" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>te</name></member>
+      <member refid="classsimple__timer_1a45ce2c8c093e2bec6e86e3ee43bb38c5" prot="private" virt="non-virtual"><scope>simple_timer</scope><name>timerID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

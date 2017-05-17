@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classsimple__tcp__client" kind="class" language="C++" prot="public">
+    <compoundname>simple_tcp_client</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsimple__tcp__client_1a98f2a05f10872f2bb291a7dd8c7acc52" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_tcp_client::sd</definition>
+        <argsstring></argsstring>
+        <name>sd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="39" column="1" bodyfile="simple_tcp_client.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a6ac175ce0797df941e425482680b335b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_tcp_client::rc</definition>
+        <argsstring></argsstring>
+        <name>rc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="39" column="1" bodyfile="simple_tcp_client.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a3644d48c38353338125d42ef543e5b7a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_tcp_client::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <initializer>= sizeof(int)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="39" column="1" bodyfile="simple_tcp_client.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a80bbf89f0f008f9e0081eab348c77c44" prot="public" static="no" mutable="no">
+        <type>struct sockaddr_in</type>
+        <definition>struct sockaddr_in simple_tcp_client::serveraddr</definition>
+        <argsstring></argsstring>
+        <name>serveraddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="39" column="1" bodyfile="simple_tcp_client.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a8e0a1a070749a68c460858bb1686aa36" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char simple_tcp_client::buffer[BufferLength]</definition>
+        <argsstring>[BufferLength]</argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="41" column="1" bodyfile="simple_tcp_client.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1aaa005b054f7e768b48779d406488cf64" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char simple_tcp_client::temp</definition>
+        <argsstring></argsstring>
+        <name>temp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="42" column="1" bodyfile="simple_tcp_client.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1ae155f101d1e609da7a9c6242a9871e2b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_tcp_client::totalcnt</definition>
+        <argsstring></argsstring>
+        <name>totalcnt</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="43" column="1" bodyfile="simple_tcp_client.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1aa94278e2fe58f73db0a3c847e2670b00" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool simple_tcp_client::data_ready_sig</definition>
+        <argsstring></argsstring>
+        <name>data_ready_sig</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="44" column="1" bodyfile="simple_tcp_client.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a805ad4b700f41b109218e8d620dfadfd" prot="public" static="no" mutable="no">
+        <type>struct hostent *</type>
+        <definition>struct hostent* simple_tcp_client::hostp</definition>
+        <argsstring></argsstring>
+        <name>hostp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="45" column="1" bodyfile="simple_tcp_client.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a99bfca319e74b29e1954bbc59d648e07" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char simple_tcp_client::err_str[255]</definition>
+        <argsstring>[255]</argsstring>
+        <name>err_str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="46" column="1" bodyfile="simple_tcp_client.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a9e4b0cdeed9ec35679980a2278163c9b" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char simple_tcp_client::data[BufferLength]</definition>
+        <argsstring>[BufferLength]</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="46" column="1" bodyfile="simple_tcp_client.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a6e0e900d32bc06bffabd080c9de3b143" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simple_tcp_client::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <initializer>= DEFAULTPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="47" column="1" bodyfile="simple_tcp_client.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple__tcp__client_1a09f34cb160b218a1858c25f2736ca6f5" prot="public" static="no" mutable="no">
+        <type>unsigned long int</type>
+        <definition>unsigned long int simple_tcp_client::ipAddr</definition>
+        <argsstring></argsstring>
+        <name>ipAddr</name>
+        <initializer>= INADDR_NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="48" column="1" bodyfile="simple_tcp_client.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimple__tcp__client_1a0a2e3b1be9b6351874d8a6ff0498b7b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>simple_tcp_client::simple_tcp_client</definition>
+        <argsstring>(void)</argsstring>
+        <name>simple_tcp_client</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="50" column="1" bodyfile="simple_tcp_client.h" bodystart="58" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__tcp__client_1a6140cdc2789251a1fdcf891f9b36fb67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_tcp_client::tcp_connect</definition>
+        <argsstring>(char *_ipAddr, int _port)</argsstring>
+        <name>tcp_connect</name>
+        <param>
+          <type>char *</type>
+          <declname>_ipAddr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="51" column="1" bodyfile="simple_tcp_client.h" bodystart="72" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__tcp__client_1ab40dcb19e62b41b4ec1c13551b178f7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_tcp_client::disconnect</definition>
+        <argsstring>(void)</argsstring>
+        <name>disconnect</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="52" column="1" bodyfile="simple_tcp_client.h" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__tcp__client_1a8c6d96598363a0a58dbf3d5df313f9a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_tcp_client::send_data</definition>
+        <argsstring>(char *)</argsstring>
+        <name>send_data</name>
+        <param>
+          <type>char *</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="53" column="1" bodyfile="simple_tcp_client.h" bodystart="143" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__tcp__client_1aa9f094425d740d204e2de8aab06b5cae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_tcp_client::accumulate</definition>
+        <argsstring>(int)</argsstring>
+        <name>accumulate</name>
+        <param>
+          <type>int</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="54" column="1" bodyfile="simple_tcp_client.h" bodystart="111" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classsimple__tcp__client_1ab801b4410ec1e05380596389caa447a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simple_tcp_client::accumulate</definition>
+        <argsstring>(char)</argsstring>
+        <name>accumulate</name>
+        <param>
+          <type>char</type>
+          <defname>start_byte</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple_tcp_client.h" line="55" column="1" bodyfile="simple_tcp_client.h" bodystart="122" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="simple_tcp_client.h" line="37" column="1" bodyfile="simple_tcp_client.h" bodystart="37" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classsimple__tcp__client_1aa9f094425d740d204e2de8aab06b5cae" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>accumulate</name></member>
+      <member refid="classsimple__tcp__client_1ab801b4410ec1e05380596389caa447a8" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>accumulate</name></member>
+      <member refid="classsimple__tcp__client_1a8e0a1a070749a68c460858bb1686aa36" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>buffer</name></member>
+      <member refid="classsimple__tcp__client_1a9e4b0cdeed9ec35679980a2278163c9b" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>data</name></member>
+      <member refid="classsimple__tcp__client_1aa94278e2fe58f73db0a3c847e2670b00" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>data_ready_sig</name></member>
+      <member refid="classsimple__tcp__client_1ab40dcb19e62b41b4ec1c13551b178f7a" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>disconnect</name></member>
+      <member refid="classsimple__tcp__client_1a99bfca319e74b29e1954bbc59d648e07" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>err_str</name></member>
+      <member refid="classsimple__tcp__client_1a805ad4b700f41b109218e8d620dfadfd" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>hostp</name></member>
+      <member refid="classsimple__tcp__client_1a09f34cb160b218a1858c25f2736ca6f5" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>ipAddr</name></member>
+      <member refid="classsimple__tcp__client_1a3644d48c38353338125d42ef543e5b7a" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>length</name></member>
+      <member refid="classsimple__tcp__client_1a6e0e900d32bc06bffabd080c9de3b143" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>port</name></member>
+      <member refid="classsimple__tcp__client_1a6ac175ce0797df941e425482680b335b" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>rc</name></member>
+      <member refid="classsimple__tcp__client_1a98f2a05f10872f2bb291a7dd8c7acc52" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>sd</name></member>
+      <member refid="classsimple__tcp__client_1a8c6d96598363a0a58dbf3d5df313f9a3" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>send_data</name></member>
+      <member refid="classsimple__tcp__client_1a80bbf89f0f008f9e0081eab348c77c44" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>serveraddr</name></member>
+      <member refid="classsimple__tcp__client_1a0a2e3b1be9b6351874d8a6ff0498b7b5" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>simple_tcp_client</name></member>
+      <member refid="classsimple__tcp__client_1a6140cdc2789251a1fdcf891f9b36fb67" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>tcp_connect</name></member>
+      <member refid="classsimple__tcp__client_1aaa005b054f7e768b48779d406488cf64" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>temp</name></member>
+      <member refid="classsimple__tcp__client_1ae155f101d1e609da7a9c6242a9871e2b" prot="public" virt="non-virtual"><scope>simple_tcp_client</scope><name>totalcnt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
