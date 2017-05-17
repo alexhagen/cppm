@@ -39,8 +39,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'breathe']
+    'sphinx.ext.viewcode', 'breathe']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -90,13 +89,8 @@ todo_include_todos = True
 # -- Options for HTML output ----------------------------------------------
 
 html_theme = 'bootstrap'
-print sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {
-    # Navigation bar title. (Default: ``project`` value)
-    #'navbar_title': "Demo",
-
-    # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Alex Hagen",
 
     # A list of tuples containing pages or urls to link to.
@@ -110,38 +104,20 @@ html_theme_options = {
         ("Alex Hagen", "http://alexhagen.github.io", True),
     ],
 
-    # Render the next and previous page links in navbar. (Default: true)
     'navbar_sidebarrel': True,
 
-    # Render the current pages TOC in the navbar. (Default: true)
     'navbar_pagenav': True,
 
-    # Tab name for the current pages TOC. (Default: "Page")
-    'navbar_pagenav_name': "Page",
+    'navbar_pagenav_name': "",
 
-    # Global TOC depth for "site" navbar tab. (Default: 1)
-    # Switching to -1 shows all levels.
     'globaltoc_depth': 2,
 
-    # Include hidden TOCs in Site navbar?
-    #
-    # Note: If this is "false", you cannot have mixed ``:hidden:`` and
-    # non-hidden ``toctree`` directives in the same page, or else the build
-    # will break.
-    #
-    # Values: "true" (default) or "false"
     'globaltoc_includehidden': "true",
 
-    # HTML navbar class (Default: "navbar") to attach to <div> element.
-    # For black navbar, do "navbar navbar-inverse"
     'navbar_class': "navbar",
 
-    # Fix navigation bar to top of page?
-    # Values: "true" (default) or "false"
     'navbar_fixed_top': "true",
 
-    # Location of link to source.
-    # Options are "nav" (default), "footer" or anything else to exclude.
     'source_link_position': None,
 
     # Bootswatch (http://bootswatch.com/) theme.
