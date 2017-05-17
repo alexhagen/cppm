@@ -642,6 +642,8 @@
   </compound>
   <compound refid="ah__value_8h" kind="file"><name>ah_value.h</name>
   </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
   <compound refid="sigslot_8h" kind="file"><name>sigslot.h</name>
     <member refid="sigslot_8h_1a508836f2f8ff8a69c36de3a8e63ef8b3" kind="define"><name>_SIGSLOT_SINGLE_THREADED</name></member>
     <member refid="sigslot_8h_1ac65af9f317435e0674cfb3678906e2be" kind="define"><name>SIGSLOT_DEFAULT_MT_POLICY</name></member>
@@ -663,5 +665,7 @@
     <member refid="timer_8h_1ae3704857f1717ed660b7696c3e75e5dd" kind="function"><name>signalHandler</name></member>
   </compound>
   <compound refid="md_ah_timer_readme" kind="page"><name>md_ah_timer_readme</name>
+  </compound>
+  <compound refid="md_README" kind="page"><name>md_README</name>
   </compound>
 </doxygenindex>

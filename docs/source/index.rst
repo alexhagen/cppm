@@ -3,11 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+cppm - C++ objects for people with no time
+==========================================
+
+.. include:: README.rst
+
 Memory Objects
 --------------
 
 ah_cll - Circular Linked Lists
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: README_CLL.rst
 
 .. doxygenfile:: ah_cll.h
  :project: cppm
@@ -26,6 +33,8 @@ ah_shm - Shared Memory Objects
 
 ah_value - A stateful variable class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: README_VALUE.rst
 
 .. doxygenfile:: ah_value.h
  :project: cppm

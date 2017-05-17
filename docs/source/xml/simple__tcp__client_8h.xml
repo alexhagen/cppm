@@ -14,19 +14,15 @@
     <includes local="no">errno.h</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="134">
+      <node id="136">
         <label>netinet/in.h</label>
       </node>
-      <node id="135">
+      <node id="137">
         <label>arpa/inet.h</label>
       </node>
-      <node id="128">
+      <node id="130">
         <label>simple_tcp_client.h</label>
         <link refid="simple_tcp_client.h"/>
-        <childnode refid="129" relation="include">
-        </childnode>
-        <childnode refid="130" relation="include">
-        </childnode>
         <childnode refid="131" relation="include">
         </childnode>
         <childnode refid="132" relation="include">
@@ -45,32 +41,36 @@
         </childnode>
         <childnode refid="139" relation="include">
         </childnode>
-      </node>
-      <node id="130">
-        <label>stdlib.h</label>
-      </node>
-      <node id="138">
-        <label>errno.h</label>
-      </node>
-      <node id="139">
-        <label>string</label>
-      </node>
-      <node id="136">
-        <label>netdb.h</label>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
       </node>
       <node id="132">
+        <label>stdlib.h</label>
+      </node>
+      <node id="140">
+        <label>errno.h</label>
+      </node>
+      <node id="141">
+        <label>string</label>
+      </node>
+      <node id="138">
+        <label>netdb.h</label>
+      </node>
+      <node id="134">
         <label>sys/types.h</label>
       </node>
-      <node id="131">
+      <node id="133">
         <label>string.h</label>
       </node>
-      <node id="137">
+      <node id="139">
         <label>unistd.h</label>
       </node>
-      <node id="133">
+      <node id="135">
         <label>sys/socket.h</label>
       </node>
-      <node id="129">
+      <node id="131">
         <label>stdio.h</label>
       </node>
     </incdepgraph>

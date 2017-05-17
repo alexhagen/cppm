@@ -15,12 +15,12 @@
         <argsstring></argsstring>
         <name>length</name>
         <briefdescription>
-        </briefdescription>
+<para>the length of each datum </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="47" column="1" bodyfile="ah_cll.h" bodystart="47" bodyend="-1"/>
+        <location file="ah_cll.h" line="56" column="1" bodyfile="ah_cll.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcll_1ac8d30a3f2c526c688dea4897053bd7a1" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -28,12 +28,12 @@
         <argsstring></argsstring>
         <name>size</name>
         <briefdescription>
-        </briefdescription>
+<para>the current size of the whole linked list </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="48" column="1" bodyfile="ah_cll.h" bodystart="48" bodyend="-1"/>
+        <location file="ah_cll.h" line="60" column="1" bodyfile="ah_cll.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -43,12 +43,12 @@
         <argsstring></argsstring>
         <name>head</name>
         <briefdescription>
-        </briefdescription>
+<para>the pointer to the first datum </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="51" column="1" bodyfile="ah_cll.h" bodystart="51" bodyend="-1"/>
+        <location file="ah_cll.h" line="66" column="1" bodyfile="ah_cll.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classcll_1a1ef9249ea5e1dcab9dce364c1b794116" prot="private" static="no" mutable="no">
         <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
@@ -56,12 +56,12 @@
         <argsstring></argsstring>
         <name>tail</name>
         <briefdescription>
-        </briefdescription>
+<para>the pointer to the last datum </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="52" column="1" bodyfile="ah_cll.h" bodystart="52" bodyend="-1"/>
+        <location file="ah_cll.h" line="70" column="1" bodyfile="ah_cll.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -80,7 +80,7 @@
 <para>Initializes a circular linked list initializes the linked list with data object type of length _length </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="38" column="1" bodyfile="ah_cll.h" bodystart="55" bodyend="62"/>
+        <location file="ah_cll.h" line="40" column="1" bodyfile="ah_cll.h" bodystart="73" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classcll_1a4ef3a7bc08e667464530d8236d5b18a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -106,7 +106,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="45" column="1" bodyfile="ah_cll.h" bodystart="64" bodyend="76"/>
+        <location file="ah_cll.h" line="47" column="1" bodyfile="ah_cll.h" bodystart="82" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classcll_1ac9ae22569c31a01698bd248306ff47d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -114,19 +114,20 @@
         <argsstring>()</argsstring>
         <name>pop</name>
         <briefdescription>
-        </briefdescription>
+<para>returns the last datum and removes it from the list </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>last datum </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="46" column="1" bodyfile="ah_cll.h" bodystart="78" bodyend="90"/>
+        <location file="ah_cll.h" line="52" column="1" bodyfile="ah_cll.h" bodystart="96" bodyend="108"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>a circular linked list </para>    </briefdescription>
     <detaileddescription>
-<para>cll class</para><para>cll is a circular linked list </para>    </detaileddescription>
-    <location file="ah_cll.h" line="32" column="1" bodyfile="ah_cll.h" bodystart="32" bodyend="53"/>
+    </detaileddescription>
+    <location file="ah_cll.h" line="34" column="1" bodyfile="ah_cll.h" bodystart="34" bodyend="71"/>
     <listofallmembers>
       <member refid="classcll_1a6b2b48326e7fdfb849993a7c5dc5bd9a" prot="public" virt="non-virtual"><scope>cll</scope><name>cll</name></member>
       <member refid="classcll_1a5e02fc48a7f3e17ac02a844eeb51ecc2" prot="private" virt="non-virtual"><scope>cll</scope><name>head</name></member>

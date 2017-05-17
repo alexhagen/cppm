@@ -1,6 +1,7 @@
 build/
 docs/build/*
 README.rst
+docs/source/README_*.rst
 test.rst
 test.html
 
