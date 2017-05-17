@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="ah__value_8h" kind="file" language="C++">
     <compoundname>ah_value.h</compoundname>
     <includes local="no">stdio.h</includes>
@@ -14,13 +14,19 @@
       </node>
       <node id="111">
         <label>ah_value.h</label>
-        <link refid="ah_value.h"/>
+        <link refid="ah__value_8h"/>
         <childnode refid="112" relation="include">
         </childnode>
         <childnode refid="113" relation="include">
         </childnode>
         <childnode refid="114" relation="include">
         </childnode>
+      </node>
+      <node id="115">
+        <label>set</label>
+      </node>
+      <node id="112">
+        <label>stdio.h</label>
       </node>
       <node id="114">
         <label>sigslot.h</label>
@@ -29,12 +35,6 @@
         </childnode>
         <childnode refid="116" relation="include">
         </childnode>
-      </node>
-      <node id="115">
-        <label>set</label>
-      </node>
-      <node id="112">
-        <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classvalue" prot="public">value</innerclass>

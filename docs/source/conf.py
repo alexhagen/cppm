@@ -22,6 +22,9 @@ import shlex
 import sphinx_bootstrap_theme
 sys.path.insert(0, os.path.abspath('../..'))
 
+def setup(app):
+    app.add_stylesheet('bootstrap.css')
+    app.add_stylesheet('extra.css')
 
 # -- General configuration ------------------------------------------------
 

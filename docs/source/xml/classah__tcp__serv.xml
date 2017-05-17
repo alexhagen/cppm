@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classah__tcp__serv" kind="class" language="C++" prot="public">
     <compoundname>ah_tcp_serv</compoundname>
     <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
@@ -443,22 +443,16 @@
       <node id="164">
         <label>SIGSLOT_DEFAULT_MT_POLICY</label>
       </node>
-      <node id="170">
-        <label>sigslot::signal2&lt; int, char * &gt;</label>
-        <link refid="classsigslot_1_1signal2"/>
-        <childnode refid="171" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="168">
-        <label>sigslot::signal1&lt; char * &gt;</label>
-        <link refid="classsigslot_1_1signal1"/>
-        <childnode refid="169" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="163">
         <label>sigslot::has_slots&lt;&gt;</label>
         <link refid="classsigslot_1_1has__slots"/>
         <childnode refid="164" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>sigslot::signal2&lt; int, char *&gt;</label>
+        <link refid="classsigslot_1_1signal2"/>
+        <childnode refid="169" relation="public-inheritance">
         </childnode>
       </node>
       <node id="166">
@@ -477,22 +471,28 @@
           <edgelabel>client_disconnected</edgelabel>
         </childnode>
         <childnode refid="168" relation="usage">
-          <edgelabel>command_recv</edgelabel>
-        </childnode>
-        <childnode refid="170" relation="usage">
           <edgelabel>error</edgelabel>
         </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>command_recv</edgelabel>
+        </childnode>
       </node>
-      <node id="169">
+      <node id="171">
         <label>sigslot::_signal_base1&lt; char *, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
         <link refid="classsigslot_1_1__signal__base1"/>
         <childnode refid="167" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="171">
+      <node id="169">
         <label>sigslot::_signal_base2&lt; int, char *, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
         <link refid="classsigslot_1_1__signal__base2"/>
         <childnode refid="167" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>sigslot::signal1&lt; char *&gt;</label>
+        <link refid="classsigslot_1_1signal1"/>
+        <childnode refid="171" relation="public-inheritance">
         </childnode>
       </node>
       <node id="167">

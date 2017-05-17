@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="simple__tcp__client_8h" kind="file" language="C++">
     <compoundname>simple_tcp_client.h</compoundname>
     <includes local="no">stdio.h</includes>
@@ -19,32 +19,6 @@
       </node>
       <node id="137">
         <label>arpa/inet.h</label>
-      </node>
-      <node id="130">
-        <label>simple_tcp_client.h</label>
-        <link refid="simple_tcp_client.h"/>
-        <childnode refid="131" relation="include">
-        </childnode>
-        <childnode refid="132" relation="include">
-        </childnode>
-        <childnode refid="133" relation="include">
-        </childnode>
-        <childnode refid="134" relation="include">
-        </childnode>
-        <childnode refid="135" relation="include">
-        </childnode>
-        <childnode refid="136" relation="include">
-        </childnode>
-        <childnode refid="137" relation="include">
-        </childnode>
-        <childnode refid="138" relation="include">
-        </childnode>
-        <childnode refid="139" relation="include">
-        </childnode>
-        <childnode refid="140" relation="include">
-        </childnode>
-        <childnode refid="141" relation="include">
-        </childnode>
       </node>
       <node id="132">
         <label>stdlib.h</label>
@@ -72,6 +46,32 @@
       </node>
       <node id="131">
         <label>stdio.h</label>
+      </node>
+      <node id="130">
+        <label>simple_tcp_client.h</label>
+        <link refid="simple__tcp__client_8h"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="classsimple__tcp__client" prot="public">simple_tcp_client</innerclass>

@@ -4,6 +4,7 @@ README.rst
 docs/source/README_*.rst
 test.rst
 test.html
+docs/source/xml/
 
 # Mac Files
 .DS_Store

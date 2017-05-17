@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classsigslot_1_1signal3" kind="class" language="C++" prot="public">
     <compoundname>sigslot::signal3</compoundname>
     <basecompoundref refid="classsigslot_1_1__signal__base3" prot="public" virt="non-virtual">sigslot::_signal_base3&lt; arg1_type, arg2_type, arg3_type, mt_policy &gt;</basecompoundref>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="ah__tcp__client_8h" kind="file" language="C++">
     <compoundname>ah_tcp_client.h</compoundname>
     <includes local="no">stdio.h</includes>
@@ -24,27 +24,9 @@
       <node id="32">
         <label>arpa/inet.h</label>
       </node>
-      <node id="27">
-        <label>stdlib.h</label>
-      </node>
-      <node id="35">
-        <label>errno.h</label>
-      </node>
-      <node id="36">
-        <label>string</label>
-      </node>
-      <node id="33">
-        <label>netdb.h</label>
-      </node>
-      <node id="29">
-        <label>sys/types.h</label>
-      </node>
-      <node id="28">
-        <label>string.h</label>
-      </node>
       <node id="25">
         <label>ah_tcp_client.h</label>
-        <link refid="ah_tcp_client.h"/>
+        <link refid="ah__tcp__client_8h"/>
         <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
@@ -70,11 +52,35 @@
         <childnode refid="37" relation="include">
         </childnode>
       </node>
+      <node id="27">
+        <label>stdlib.h</label>
+      </node>
+      <node id="35">
+        <label>errno.h</label>
+      </node>
+      <node id="36">
+        <label>string</label>
+      </node>
+      <node id="33">
+        <label>netdb.h</label>
+      </node>
+      <node id="29">
+        <label>sys/types.h</label>
+      </node>
+      <node id="28">
+        <label>string.h</label>
+      </node>
       <node id="34">
         <label>unistd.h</label>
       </node>
       <node id="30">
         <label>sys/socket.h</label>
+      </node>
+      <node id="38">
+        <label>set</label>
+      </node>
+      <node id="26">
+        <label>stdio.h</label>
       </node>
       <node id="37">
         <label>sigslot.h</label>
@@ -83,12 +89,6 @@
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
-      </node>
-      <node id="38">
-        <label>set</label>
-      </node>
-      <node id="26">
-        <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classah__tcp__client" prot="public">ah_tcp_client</innerclass>

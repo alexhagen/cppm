@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
   <compound refid="classsigslot_1_1__connection0" kind="class"><name>sigslot::_connection0</name>
     <member refid="classsigslot_1_1__connection0_1aeb02b93286a6b14e92b1dae031bce6eb" kind="variable"><name>m_pobject</name></member>
     <member refid="classsigslot_1_1__connection0_1ac37afe9ecd838633fecbd0db68fb2984" kind="variable"><name>m_pmemfun</name></member>
@@ -8,7 +8,7 @@
     <member refid="classsigslot_1_1__connection0_1a80f5988e6205f357c66f4a493471cd57" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection0_1ab1ad999301f8ef66cfc56f1203c59982" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection0_1aecf936cd64e17e33f052fa6768f70437" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection0_1aa0d501b98270a9bac344cc04df5b95ff" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection0_1ac4cb906739c2775466e20a9fc0d7e0fa" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection1" kind="class"><name>sigslot::_connection1</name>
     <member refid="classsigslot_1_1__connection1_1aef3dcc66cf9719daa7966b2fdd9d5340" kind="variable"><name>m_pobject</name></member>
@@ -18,7 +18,7 @@
     <member refid="classsigslot_1_1__connection1_1ac51f8ad0c820934345ce743255822e1d" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection1_1ae9d53a39d81e555b716254efedb0c427" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection1_1a26ed4f815a617ae14481503798a16736" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection1_1ab551ed981e3e7c48a258944161a4b409" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection1_1ab1a6e6b2c06e5255eaedbb86cac7cdcf" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection2" kind="class"><name>sigslot::_connection2</name>
     <member refid="classsigslot_1_1__connection2_1a23fdac0d6fe04839654f6927b8806b13" kind="variable"><name>m_pobject</name></member>
@@ -28,7 +28,7 @@
     <member refid="classsigslot_1_1__connection2_1a2cf882a4d1722f938f4e615a9517ff34" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection2_1a660d4d99dcd26199317934106befc36b" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection2_1a4d95c5441a9cc8515af0686a16445839" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection2_1a4bad19cd4ea7d5a67c3d05f2c344313d" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection2_1acdbbffdc76163617d7426ecb955260d5" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection3" kind="class"><name>sigslot::_connection3</name>
     <member refid="classsigslot_1_1__connection3_1ad50396fa7a24d22013e5d67d2d248089" kind="variable"><name>m_pobject</name></member>
@@ -38,7 +38,7 @@
     <member refid="classsigslot_1_1__connection3_1a7eace0f1e4cf5a1f510d2fd52774f110" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection3_1a0e7383de3ba101773120970e21823697" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection3_1ab8a4fd45a9cb964a7d22c6c9f65230f9" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection3_1ab4fe1a6e14467796a73ce2ca21c3dae1" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection3_1a2d6194a8e5cf441d4147bf019b5c2666" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection4" kind="class"><name>sigslot::_connection4</name>
     <member refid="classsigslot_1_1__connection4_1a37384597caee5d983078a886a53b0bea" kind="variable"><name>m_pobject</name></member>
@@ -48,7 +48,7 @@
     <member refid="classsigslot_1_1__connection4_1ad0f0a4447de3c9b95b9981510f51c36a" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection4_1abe11f4959b279cb33a2533fc0a96c8c0" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection4_1a189098014b93bd2de45b5097ce263936" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection4_1a7438d0ac9a2f72f9f14932b021c0fdd5" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection4_1ac65c889f8c291173ae7ef3b7455afa88" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection5" kind="class"><name>sigslot::_connection5</name>
     <member refid="classsigslot_1_1__connection5_1adf1071a276c565c616bf00da006100d1" kind="variable"><name>m_pobject</name></member>
@@ -58,7 +58,7 @@
     <member refid="classsigslot_1_1__connection5_1a6c354668c75823261d7f6ce6e85b185c" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection5_1aee1a5b91cedb249c0ecaf3ccf033ad28" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection5_1acf3cf991e14f96e7b70aacf8091f4634" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection5_1a350a8526f8cb7cafe6aeff0f9be1b8ca" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection5_1a3b9583905a7e69f34a9b89f1e527c8d2" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection6" kind="class"><name>sigslot::_connection6</name>
     <member refid="classsigslot_1_1__connection6_1afb617565de58c3ebcf3d4ab95e77d9d1" kind="variable"><name>m_pobject</name></member>
@@ -68,7 +68,7 @@
     <member refid="classsigslot_1_1__connection6_1ad37c4a5506ac3d8473cabb6988047580" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection6_1a294feef087cdf07668a7b9eb18991930" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection6_1ad692f26b55348a05e91fa549e61248a0" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection6_1a24b4e5c27a109edc2736d39690031a25" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection6_1a601becd64fd25f5d0b41d04646013b19" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection7" kind="class"><name>sigslot::_connection7</name>
     <member refid="classsigslot_1_1__connection7_1a723d0bfe2cc07cd3d96c45d78ec876fd" kind="variable"><name>m_pobject</name></member>
@@ -78,7 +78,7 @@
     <member refid="classsigslot_1_1__connection7_1aed07f0e4e2b7f2dc4da9ac072d36233a" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection7_1ae65c7a07828113d33309732b4e7b5f31" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection7_1ac05239fc2a354f902faa6ee85b12730f" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection7_1acce5a7800205367a0c1b44c2065b96d1" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection7_1a9f13b3492fd7af533824a7d2662af8f1" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection8" kind="class"><name>sigslot::_connection8</name>
     <member refid="classsigslot_1_1__connection8_1a12882d3382b2d9da24191cc836ba0fa2" kind="variable"><name>m_pobject</name></member>
@@ -88,7 +88,7 @@
     <member refid="classsigslot_1_1__connection8_1ae8177a343689b3f364f68dda898e53ae" kind="function"><name>clone</name></member>
     <member refid="classsigslot_1_1__connection8_1add564362899c66f0cfd0d489518124ad" kind="function"><name>duplicate</name></member>
     <member refid="classsigslot_1_1__connection8_1a7b8f97be21e44d52d1e6fc45df64fdec" kind="function"><name>emit</name></member>
-    <member refid="classsigslot_1_1__connection8_1a6051ed9c325a6a4fa9ca75a5da63fdf6" kind="function"><name>getdest</name></member>
+    <member refid="classsigslot_1_1__connection8_1a20503e85e4c3f583e9a0c5f15d093558" kind="function"><name>getdest</name></member>
   </compound>
   <compound refid="classsigslot_1_1__connection__base0" kind="class"><name>sigslot::_connection_base0</name>
     <member refid="classsigslot_1_1__connection__base0_1a5e9b9f434465281aea124742ea1f8a3b" kind="function"><name>~_connection_base0</name></member>
@@ -666,6 +666,6 @@
   </compound>
   <compound refid="md_ah_timer_readme" kind="page"><name>md_ah_timer_readme</name>
   </compound>
-  <compound refid="md_README" kind="page"><name>md_README</name>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
   </compound>
 </doxygenindex>
