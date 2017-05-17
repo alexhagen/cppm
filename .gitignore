@@ -1,3 +1,18 @@
+build/
+docs/build/*
+README.rst
+test.rst
+test.html
+
+# Mac Files
+.DS_Store
+
+# Ignore the build of the documentation
+docs/build/*
+
+# module
+modules.rst
+
 # Compiled Object files
 *.slo
 *.lo
