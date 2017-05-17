@@ -370,8 +370,8 @@
     <member refid="classcll_1ac8d30a3f2c526c688dea4897053bd7a1" kind="variable"><name>size</name></member>
     <member refid="classcll_1a5e02fc48a7f3e17ac02a844eeb51ecc2" kind="variable"><name>head</name></member>
     <member refid="classcll_1a1ef9249ea5e1dcab9dce364c1b794116" kind="variable"><name>tail</name></member>
-    <member refid="classcll_1a09f49da94648322767e50d76460d0204" kind="function"><name>cll</name></member>
-    <member refid="classcll_1a938dadad92b1e12d8a309ff2c282205f" kind="function"><name>insert</name></member>
+    <member refid="classcll_1a6b2b48326e7fdfb849993a7c5dc5bd9a" kind="function"><name>cll</name></member>
+    <member refid="classcll_1a4ef3a7bc08e667464530d8236d5b18a2" kind="function"><name>insert</name></member>
     <member refid="classcll_1ac9ae22569c31a01698bd248306ff47d8" kind="function"><name>pop</name></member>
   </compound>
   <compound refid="classsigslot_1_1has__slots" kind="class"><name>sigslot::has_slots</name>

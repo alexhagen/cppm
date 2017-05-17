@@ -19,10 +19,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Detailed description after the member </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="20" column="1" bodyfile="ah_cll.h" bodystart="20" bodyend="-1"/>
+        <location file="ah_cll.h" line="19" column="1" bodyfile="ah_cll.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnode_1a5ebece409931a531c8cb37aa353a1afb" prot="public" static="no" mutable="no">
         <type><ref refid="classnode" kindref="compound">node</ref>&lt; T &gt; *</type>
@@ -32,10 +32,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Detailed description after the member </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="21" column="1" bodyfile="ah_cll.h" bodystart="21" bodyend="-1"/>
+        <location file="ah_cll.h" line="20" column="1" bodyfile="ah_cll.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -58,7 +58,7 @@
 <para>Initializes a node  the data that will be added to the node  the pointer of the next node</para><para>initializes the node with the pointer to the next node </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_cll.h" line="19" column="1" bodyfile="ah_cll.h" bodystart="24" bodyend="27"/>
+        <location file="ah_cll.h" line="18" column="1" bodyfile="ah_cll.h" bodystart="23" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classnode_1a450a272c33e46c168529cc976b45f805" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -83,8 +83,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>node class</para><para>Node is an implementation of a storage node for a circular linked list. </para>    </detaileddescription>
-    <location file="ah_cll.h" line="11" column="1" bodyfile="ah_cll.h" bodystart="11" bodyend="22"/>
+<para>Node is an implementation of a storage node for a circular linked list. </para>    </detaileddescription>
+    <location file="ah_cll.h" line="10" column="1" bodyfile="ah_cll.h" bodystart="10" bodyend="21"/>
     <listofallmembers>
       <member refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" prot="public" virt="non-virtual"><scope>node</scope><name>data</name></member>
       <member refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" prot="public" virt="non-virtual"><scope>node</scope><name>next</name></member>

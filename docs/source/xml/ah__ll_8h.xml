@@ -55,13 +55,13 @@
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnode" kindref="compound">node</ref><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><ref refid="classnode_1a1a1fd7a93c794d083ede92519958ca86" kindref="member">node</ref>(T,<ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/>T<sp/>data;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>next;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>T<sp/><ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/><ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="19"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/><ref refid="classnode_1a1a1fd7a93c794d083ede92519958ca86" kindref="member">node&lt;T&gt;::node</ref>(T<sp/>_data,<sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>_next){</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/>data=_data;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/>next=_next;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref>=_data;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>=_next;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26" refid="classll" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classll" kindref="compound">ll</ref><sp/>{</highlight></codeline>
@@ -86,11 +86,11 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/>tail<sp/>=<sp/>head;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::insert</ref>(T<sp/>data)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::insert</ref>(T<sp/><ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref>)</highlight></codeline>
 <codeline lineno="49"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tail-&gt;next<sp/>=<sp/>(<ref refid="classnode" kindref="compound">node&lt;T&gt;</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>));</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tail<sp/>=<sp/>tail-&gt;next;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tail-&gt;data<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tail-&gt;data<sp/>=<sp/><ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref>;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tail-&gt;next<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::isempty</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
@@ -104,33 +104,33 @@
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/>T<sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::pop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/>assert(head<sp/>!=<sp/>NULL);</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/>T<sp/>object;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>next<sp/>=<sp/>head-&gt;next;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/><ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref><sp/>=<sp/>head-&gt;next;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>=<sp/>head-&gt;data;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/>free(head);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/>head<sp/>=<sp/>next;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>head<sp/>=<sp/><ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/>T<sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::mean</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>_next<sp/>=<sp/>head-&gt;next;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>_next<sp/>=<sp/>head-&gt;<ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/>T<sp/>sum<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>counter<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>sum<sp/>+<sp/>_next-&gt;data;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>_next<sp/>=<sp/>_next-&gt;next;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>sum<sp/>+<sp/>_next-&gt;<ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>_next<sp/>=<sp/>_next-&gt;<ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>counter<sp/>=<sp/>counter<sp/>+<sp/>1;</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(_next<sp/>!=<sp/>NULL);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sum/(counter);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/>T<sp/><ref refid="classll" kindref="compound">ll&lt;T&gt;::stdev</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>_next<sp/>=<sp/>head-&gt;next;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="classnode" kindref="compound">node&lt;T&gt;</ref>*<sp/>_next<sp/>=<sp/>head-&gt;<ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/>T<sp/>_mean<sp/>=<sp/>mean();</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>sum<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>counter<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>sum<sp/>+<sp/>pow(_next-&gt;data<sp/>-<sp/>_mean,2.0);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>_next<sp/>=<sp/>_next-&gt;next;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>sum<sp/>+<sp/>pow(_next-&gt;<ref refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kindref="member">data</ref><sp/>-<sp/>_mean,2.0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>_next<sp/>=<sp/>_next-&gt;<ref refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kindref="member">next</ref>;</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>counter<sp/>=<sp/>counter<sp/>+<sp/>1;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(_next<sp/>!=<sp/>NULL);</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sqrt((T)1.0/((T)(counter-1))*sum);</highlight></codeline>
