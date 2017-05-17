@@ -54,7 +54,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'C++-'
+project = u'cppm'
 copyright = u'2017, Alex Hagen'
 author = u'Alex Hagen'
 
@@ -167,7 +167,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'C-.tex', u'C++- Documentation',
+    (master_doc, 'cppm.tex', u'C++- Documentation',
      u'Alex Hagen', 'manual'),
 ]
 
@@ -177,7 +177,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'c-', u'C++- Documentation',
+    (master_doc, 'c-', u'cppm Documentation',
      [author], 1)
 ]
 
@@ -188,7 +188,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'C-', u'C++- Documentation',
+    (master_doc, 'C-', u'cppm Documentation',
      author, 'C-', 'One line description of project.',
      'Miscellaneous'),
 ]
