@@ -4,19 +4,13 @@ values change, corresponding.  This is a way to decrease the overhead that must
 happen to trace some values (such as checking if something is over a certain
 value every loop).
 
-## Contents
-
-1. Installation
-2. Usage
-3. To Do
-
-## 1. Installation
+#### Installation
 
 Installation of the ah_value class is simple.  Place the ah_value.h file
 somewhere where your compiler can see it (as well as the common directory, as it
 includes sigslot.h).  Then, connect your signals and move forward.
 
-## 2. Usage
+#### Usage
 
 Follow the steps below to use the `ah_value` class.
 
@@ -24,7 +18,7 @@ Lets say we want to create a program that indicates whether a motor is up to
 speed, and thereafter, how much it has varied from that speed.  We would write a
 notifier class, as below.
 
-```c++
+```cpp
 
 // in file notifier.h
 #include "sigslot.h"
@@ -100,6 +94,6 @@ $ g++ -std=c++11 test_value.cpp -I/dir/to/notifier.h -I/dir/to/ah_value.h \
 $ ./test_value
 ```
 
-## 3. To Do
+#### To Do
 - [ ] Absolute value support (added 10/16/14)
 - [ ] "Smart" change, indicating if value was changed and is still at speed (added 10/16/14)

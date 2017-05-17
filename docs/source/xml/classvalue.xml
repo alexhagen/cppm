@@ -3,6 +3,7 @@
   <compounddef id="classvalue" kind="class" language="C++" prot="public">
     <compoundname>value</compoundname>
     <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+    <includes refid="ah__value_8h" local="no">ah_value.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -15,12 +16,12 @@
         <argsstring></argsstring>
         <name>changed</name>
         <briefdescription>
-        </briefdescription>
+<para>a signal that is triggered when the value changes </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="10" column="1" bodyfile="ah_value.h" bodystart="10" bodyend="-1"/>
+        <location file="ah_value.h" line="16" column="1" bodyfile="ah_value.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa" prot="public" static="no" mutable="no">
         <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
@@ -28,12 +29,12 @@
         <argsstring></argsstring>
         <name>levelchanged</name>
         <briefdescription>
-        </briefdescription>
+<para>a signal that is triggered when someone changes the trigger level </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="11" column="1" bodyfile="ah_value.h" bodystart="11" bodyend="-1"/>
+        <location file="ah_value.h" line="20" column="1" bodyfile="ah_value.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a0027cf12cbcc6031c7eb40f7013f76d5" prot="public" static="no" mutable="no">
         <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
@@ -41,12 +42,12 @@
         <argsstring></argsstring>
         <name>abovelevel</name>
         <briefdescription>
-        </briefdescription>
+<para>a signal triggered when the value goes from below to above the trigger level </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="12" column="1" bodyfile="ah_value.h" bodystart="12" bodyend="-1"/>
+        <location file="ah_value.h" line="25" column="1" bodyfile="ah_value.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a0744303135beb5b6cbcb1599ec8e6d4d" prot="public" static="no" mutable="no">
         <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
@@ -54,12 +55,12 @@
         <argsstring></argsstring>
         <name>belowlevel</name>
         <briefdescription>
-        </briefdescription>
+<para>a signal triggered when the value goes from above to below the trigger level </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="13" column="1" bodyfile="ah_value.h" bodystart="13" bodyend="-1"/>
+        <location file="ah_value.h" line="30" column="1" bodyfile="ah_value.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" static="no" mutable="no">
         <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
@@ -67,12 +68,12 @@
         <argsstring></argsstring>
         <name>atlevel</name>
         <briefdescription>
-        </briefdescription>
+<para>a signal triggered when the value goes from not equal to equal the trigger level </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="16" column="1" bodyfile="ah_value.h" bodystart="16" bodyend="-1"/>
+        <location file="ah_value.h" line="35" column="1" bodyfile="ah_value.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -82,12 +83,12 @@
         <argsstring></argsstring>
         <name>val</name>
         <briefdescription>
-        </briefdescription>
+<para>the value of the variable </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="28" column="1" bodyfile="ah_value.h" bodystart="28" bodyend="-1"/>
+        <location file="ah_value.h" line="88" column="1" bodyfile="ah_value.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a34ed56cb9db06893d3b5acf65279d200" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -95,12 +96,12 @@
         <argsstring></argsstring>
         <name>level</name>
         <briefdescription>
-        </briefdescription>
+<para>the trigger level </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="29" column="1" bodyfile="ah_value.h" bodystart="29" bodyend="-1"/>
+        <location file="ah_value.h" line="92" column="1" bodyfile="ah_value.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a7c92e95a70f06c68429e329f774102ec" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -108,12 +109,12 @@
         <argsstring></argsstring>
         <name>max</name>
         <briefdescription>
-        </briefdescription>
+<para>the current maximum </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="30" column="1" bodyfile="ah_value.h" bodystart="30" bodyend="-1"/>
+        <location file="ah_value.h" line="96" column="1" bodyfile="ah_value.h" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1ad2ebbde2f43f00d276509732eb177737" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -121,12 +122,12 @@
         <argsstring></argsstring>
         <name>min</name>
         <briefdescription>
-        </briefdescription>
+<para>the current minimum </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="31" column="1" bodyfile="ah_value.h" bodystart="31" bodyend="-1"/>
+        <location file="ah_value.h" line="100" column="1" bodyfile="ah_value.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a313f1bd2ebdde33206e393d4218bc1c4" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -134,12 +135,12 @@
         <argsstring></argsstring>
         <name>old</name>
         <briefdescription>
-        </briefdescription>
+<para>the last value </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="32" column="1" bodyfile="ah_value.h" bodystart="32" bodyend="-1"/>
+        <location file="ah_value.h" line="104" column="1" bodyfile="ah_value.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -153,12 +154,20 @@
           <declname>x</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>sets the variable to a certain value </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="18" column="1" bodyfile="ah_value.h" bodystart="35" bodyend="61"/>
+        <location file="ah_value.h" line="40" column="1" bodyfile="ah_value.h" bodystart="107" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,12 +179,20 @@
           <declname>x</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>sets the variable to a value and silences all signals (for this operation) </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="19" column="1" bodyfile="ah_value.h" bodystart="63" bodyend="67"/>
+        <location file="ah_value.h" line="46" column="1" bodyfile="ah_value.h" bodystart="135" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1af126a5d3141d20654bb8c8d643b35139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -186,12 +203,13 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>returns the value of the variable </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>the value of the variable </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="20" column="1" bodyfile="ah_value.h" bodystart="69" bodyend="72"/>
+        <location file="ah_value.h" line="51" column="1" bodyfile="ah_value.h" bodystart="141" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -203,12 +221,20 @@
           <declname>x</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>sets the trigger threshold </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="21" column="1" bodyfile="ah_value.h" bodystart="74" bodyend="81"/>
+        <location file="ah_value.h" line="56" column="1" bodyfile="ah_value.h" bodystart="146" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1a0ec9d92bebbbb8716991c2d4784835e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -219,12 +245,13 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>returns the value of the trigger threshold </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>the value of the trigger threshold </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="22" column="1" bodyfile="ah_value.h" bodystart="83" bodyend="86"/>
+        <location file="ah_value.h" line="61" column="1" bodyfile="ah_value.h" bodystart="155" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1ad1f83bbb9c1fda8839784e4a34568d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -235,12 +262,12 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>resets the states of maximum and minimum during the data-logging time </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="23" column="1" bodyfile="ah_value.h" bodystart="88" bodyend="92"/>
+        <location file="ah_value.h" line="66" column="1" bodyfile="ah_value.h" bodystart="160" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1ab84bad3e9f625c72051a679ed3da4d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -251,12 +278,13 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>returns the maximum value encountered since the start of the program or since the last call to resetmaxmin </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>maximum value during data-logging time </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="24" column="1" bodyfile="ah_value.h" bodystart="94" bodyend="97"/>
+        <location file="ah_value.h" line="72" column="1" bodyfile="ah_value.h" bodystart="166" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1af9f93b5c9cbca674acd478c3eab0dc40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -267,12 +295,13 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>returns the minimum value encountered since the start of the program or since the last call to resetmaxmin </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>minimum value during data-logging time </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="25" column="1" bodyfile="ah_value.h" bodystart="99" bodyend="102"/>
+        <location file="ah_value.h" line="78" column="1" bodyfile="ah_value.h" bodystart="171" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="classvalue_1a60a1e8dbe5a09728d26b3320a9b5e576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -283,16 +312,17 @@
           <type>void</type>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>returns the last value before the last call to set </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>value of variable before last call to set </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_value.h" line="26" column="1" bodyfile="ah_value.h" bodystart="104" bodyend="107"/>
+        <location file="ah_value.h" line="83" column="1" bodyfile="ah_value.h" bodystart="176" bodyend="179"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>a stateful variable class - simplistically </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
@@ -357,7 +387,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="ah_value.h" line="8" column="1" bodyfile="ah_value.h" bodystart="7" bodyend="33"/>
+    <location file="ah_value.h" line="11" column="1" bodyfile="ah_value.h" bodystart="10" bodyend="105"/>
     <listofallmembers>
       <member refid="classvalue_1a0027cf12cbcc6031c7eb40f7013f76d5" prot="public" virt="non-virtual"><scope>value</scope><name>abovelevel</name></member>
       <member refid="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" virt="non-virtual"><scope>value</scope><name>atlevel</name></member>

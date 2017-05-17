@@ -4,31 +4,103 @@
 #include <limits>
 #include "sigslot.h"
 
+/*!
+   \brief a stateful variable class - simplistically
+ */
 template <class T> class value : public sigslot::has_slots<>
 {
   public:
+    /*!
+       \brief a signal that is triggered when the value changes
+     */
   	sigslot::signal0<> changed;
+    /*!
+       \brief a signal that is triggered when someone changes the trigger level
+     */
   	sigslot::signal0<> levelchanged;
+    /*!
+       \brief a signal triggered when the value goes from below to above the
+       trigger level
+     */
   	sigslot::signal0<> abovelevel;
+    /*!
+       \brief a signal triggered when the value goes from above to below the
+       trigger level
+     */
   	sigslot::signal0<> belowlevel;
-	//sigslot::signal0<> magabovelevel;
-	//sigslot::signal0<> magbelowlevel;
+    /*!
+       \brief a signal triggered when the value goes from not equal to equal the
+       trigger level
+     */
   	sigslot::signal0<> atlevel;
-	//sigslot::signal0<> magatlevel;
+    /*!
+       \brief sets the variable to a certain value
+       \param x\
+     */
     void set(T x);
+    /*!
+       \brief sets the variable to a value and silences all signals (for this
+       operation)
+       \param x\
+     */
     void silentset(T x);
+    /*!
+       \brief returns the value of the variable
+       \returns the value of the variable
+     */
     T get(void);
+    /*!
+       \brief sets the trigger threshold
+       \param x\
+     */
     void setlevel(T x);
+    /*!
+       \brief returns the value of the trigger threshold
+       \returns the value of the trigger threshold
+     */
     T getlevel(void);
+    /*!
+       \brief resets the states of maximum and minimum during the data-logging
+       time
+     */
     void resetmaxmin(void);
+    /*!
+       \brief returns the maximum value encountered since the start of the
+       program or since the last call to resetmaxmin
+       \returns maximum value during data-logging time
+     */
     T getmax(void);
+    /*!
+       \brief returns the minimum value encountered since the start of the
+       program or since the last call to resetmaxmin
+       \returns minimum value during data-logging time
+     */
     T getmin(void);
+    /*!
+       \brief returns the last value before the last call to set
+       \returns value of variable before last call to set
+     */
     T getold(void);
   private:
+    /*!
+       \brief the value of the variable
+     */
   	T val;
+    /*!
+       \brief the trigger level
+     */
   	T level;
+    /*!
+       \brief the current maximum
+     */
     T max;
+    /*!
+       \brief the current minimum
+     */
     T min;
+    /*!
+       \brief the last value
+     */
     T old;
 };
 
