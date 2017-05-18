@@ -3,9 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-cppm - C++ objects for people with no time
-==========================================
-
 .. include:: README.rst
 
 Memory Objects
@@ -101,20 +98,3 @@ timer - A signal/slot method timer
 
 .. doxygenfile:: simple_timer.h
  :project: cppm
-
-
-Welcome to C++-'s documentation!
-================================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
