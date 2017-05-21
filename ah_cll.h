@@ -40,7 +40,6 @@ public:
   cll(int _length);
   /*!
       \brief Inserts a datum into the linked list
-      \see cll()
       \param datum\ - the datum
       \return none
    */

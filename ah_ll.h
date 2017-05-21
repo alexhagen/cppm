@@ -6,31 +6,70 @@
 #include <assert.h>
 #include <math.h>
 
-/*                        AH Circular Linked List Class                       */
-/*                             Author: Alex Hagen                             */
-/* This is an implementation of a linked list class that is circular for fast
-and efficient data storage.  */
-
+/*!
+   \brief an implementation of a storage node for a linked list.
+ */
 template <class T> class node {
 public:
+  /*!
+     \brief initializes a node or datum to be put into the linked list
+   */
   node(T,node<T>*);
-  T data;
+  /*!
+     \brief a data type to be put into the datum
+   */
+  T datum;
+  /*!
+     \brief the pointer to the next node in the linked list
+   */
   node<T>* next;
 };
 
-template <class T> node<T>::node(T _data, node<T>* _next){
-  data=_data;
+template <class T> node<T>::node(T _datum, node<T>* _next){
+  datum=_datum;
   next=_next;
 }
 
+/*!
+   \brief a linked list
+ */
 template <class T> class ll {
 public:
+  /*!
+   * Initializes a linked list
+   * initializes the linked list with data object type of length _length
+   */
   ll();
-  void insert(T);
+  /*!
+      \brief Inserts a datum into the linked list
+      \param datum\ - the datum
+      \return none
+   */
+  void insert(T datum);
+  /*!
+     \brief returns the last datum and removes it from the list
+     \return last datum
+   */
   T pop();
+  /*!
+    \brief returns whether the linked list includes any data
+    \return boolean True if empty, False if not
+   */
   bool isempty();
+  /*!
+    \brief the mean of any data in the linked list that can be summed
+    \return the mean of the data
+   */
   T mean();
+  /*!
+    \brief the standard deviation of any data in the linekd list that can be
+    summed
+    \return the standard deviation of the data
+   */
   T stdev();
+  /*!
+    \brief removes all pointers to the linked list and destroys the instance
+   */
   void destroy();
 
 private:
