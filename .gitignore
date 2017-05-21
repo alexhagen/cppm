@@ -5,6 +5,8 @@ docs/source/README_*.rst
 test.rst
 test.html
 docs/source/xml/
+examples/*.cpp
+examples/*.o
 
 #python files
 *.pyc

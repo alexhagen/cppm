@@ -35,15 +35,28 @@ class cppmagics(Magics):
         cmd = "{cmp} {opts} {inp} -o {out}".format(cmp=self.compiler,
                                                   opts=self.opts,
                                                   inp=self.filename + '.cpp',
-                                                  out=self.filename)
+                                                  out=self.filename + '.o')
         p = subprocess.Popen([cmd], stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE, shell=True)
+        (out, err) = p.communicate()
+        if len(err) > 0:
+            raise CompilationError(err)
 
     def run(self, binary, args):
-        cmd = "./{cmd} {args}".format(cmd=binary, args=args)
+        cmd = "./{cmd}.o {args}".format(cmd=binary, args=args)
         p = subprocess.Popen([cmd], stdout=subprocess.PIPE, shell=True)
-        print str(p.communicate()[0])
+        (out, err) = p.communicate()
+        if len(err) > 0:
+            raise RuntimeError(err)
+        print out
 
+class CompilationError(Exception):
+    def __init__(self, message):
+        super(CompilationError, self).__init__(message)
+
+class RuntimeError(Exception):
+    def __init__(self, message):
+        super(RuntimeError, self).__init__(message)
 
 ip = get_ipython()
 
