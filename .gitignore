@@ -6,6 +6,9 @@ test.rst
 test.html
 docs/source/xml/
 
+#python files
+*.pyc
+
 # Mac Files
 .DS_Store
 
