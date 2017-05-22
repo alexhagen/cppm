@@ -7,6 +7,7 @@ test.html
 docs/source/xml/
 examples/*.cpp
 examples/*.o
+.ipynb_checkpoints/
 
 #python files
 *.pyc
