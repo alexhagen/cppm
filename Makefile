@@ -1,4 +1,4 @@
-all: doxygen breathe
+all: doxygen breathe publish
 
 doxygen: FORCE
 	doxygen docs/source/Doxyfile
