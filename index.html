@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cppm - cpp firmware objects for people with no time &#8212; cppm a documentation</title>
+    <title>cppm &#8212; cppm a documentation</title>
     
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -31,6 +31,7 @@
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ah_shm Documentation" href="ah_shm.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -63,10 +64,14 @@
      id="dLabelGlobalToc"
      data-toggle="dropdown"
      data-target="#"
-     href="#">Alex Hagen <b class="caret"></b></a>
+     href="#">C++- Docs <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="ah_shm.html">ah_shm Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ah_value.html">ah_value Documentation</a></li>
+</ul>
+</ul>
 </li>
             
               <li class="dropdown">
@@ -78,18 +83,10 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">cppm - cpp firmware objects for people with no time</a><ul>
+<li><a class="reference internal" href="#">cppm</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#memory-objects">Memory Objects</a><ul>
-<li><a class="reference internal" href="#ah-value-a-stateful-variable-class">ah_value - A stateful variable class</a><ul>
-<li><a class="reference internal" href="#id1">Installation</a></li>
-<li><a class="reference internal" href="#id2">Usage</a></li>
-<li><a class="reference internal" href="#to-do">To Do</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#memory-objects">Memory Objects</a></li>
 <li><a class="reference internal" href="#tcp-objects">TCP Objects</a></li>
 <li><a class="reference internal" href="#udp-objects">UDP Objects</a></li>
 <li><a class="reference internal" href="#signals-and-timing">Signals and Timing</a></li>
@@ -112,10 +109,6 @@
           
           
           
-            
-              
-            
-          
           
           
           
@@ -131,8 +124,9 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="cppm-cpp-firmware-objects-for-people-with-no-time">
-<h1>cppm - cpp firmware objects for people with no time<a class="headerlink" href="#cppm-cpp-firmware-objects-for-people-with-no-time" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cppm">
+<h1>cppm<a class="headerlink" href="#cppm" title="Permalink to this headline">¶</a></h1>
+<p><strong>c++ objects for people with no time</strong></p>
 <p>I write a lot of firmware for the detectors I make. And I have to say,
 <code class="docutils literal"><span class="pre">c++</span></code> has some of the most convoluted classes imaginable. So,
 everytime I have to use one of the complex <code class="docutils literal"><span class="pre">c++</span></code> objects, or - even
@@ -167,8 +161,8 @@ included in the readmes folder.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="shm---Shared-Memory">shm - Shared Memory<a class="anchor-link" href="#shm---Shared-Memory">&#182;</a></h2><p>I created this shared memory interface to pass variables amongst processes in linux for a detector firmware I was writing.  It uses the <code>shmget</code> and <code>shmat</code> C interface under the hood, but that's all so non-semantic when you code it that you shouldn't have to worry about it.</p>
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>My fiance is watching the tv show Sherlock Holmes behind me, so this example is themed on that show.</p>
+<h3 id="shm---Shared-Memory">shm - Shared Memory<a class="anchor-link" href="#shm---Shared-Memory">&#182;</a></h3><p>I created this shared memory interface to pass variables amongst processes in linux for a detector firmware I was writing.  It uses the <code>shmget</code> and <code>shmat</code> C interface under the hood, but that's all so non-semantic when you code it that you shouldn't have to worry about it.</p>
+<h4 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h4><p>My fiance is watching the tv show Sherlock Holmes behind me, so this example is themed on that show.</p>
 <p>First, we have to create some server for the shared memory.  This server has to be open for the client process to read it, so we'll just keep it open indefinitely.  We also have to define a unique identifier for the shared memory server.</p>
 
 </div>
@@ -207,7 +201,7 @@ int main(void){
     // create the shm server
     shm_server&lt;std::string&gt; *sherlock = new shm_server&lt;std::string&gt;(5678);
     // latch a cleanup function onto the SIGTERM signal
-    ah_signal(SIGINT, &amp;cleanup);
+    ah_signal(SIGTERM, &amp;cleanup);
 
     while (run){
         sherlock-&gt;set(&quot;is a good guy!&quot;);
@@ -252,7 +246,8 @@ int main(void){
 int main(void){
     shm_client&lt;std::string&gt; *holmes = new shm_client&lt;std::string&gt;(5678);
     for(int i=1; i&lt;5; i++){
-        printf(&quot;Episode %d in which Sherlock %s\n&quot;, i, holmes-&gt;get().c_str());
+        const char* desc = holmes-&gt;get().c_str();
+        printf(&quot;Episode %d in which Sherlock %s\n&quot;, i, desc);
         sleep(1);
     }
     delete holmes;
@@ -338,14 +333,14 @@ Episode 4 in which Sherlock is now alive again!
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>IPC status from &lt;running system&gt; as of Tue May 23 22:42:26 EDT 2017
+<pre>IPC status from &lt;running system&gt; as of Wed May 24 10:44:34 EDT 2017
 T     ID     KEY        MODE       OWNER    GROUP
 Message Queues:
 
 T     ID     KEY        MODE       OWNER    GROUP
 Shared Memory:
-m  65536 0x52010016 --rw-------     root    wheel
-m 786435 0x0000162e --rw-rw-rw-   ahagen    staff
+m  65536 0x52020016 --rw-------     root    wheel
+m 983041 0x0000162e --rw-rw-rw-   ahagen    staff
 
 T     ID     KEY        MODE       OWNER    GROUP
 Semaphores:
@@ -363,7 +358,7 @@ Semaphores:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>and to remove it, find the <code>KEY</code> corresponding to it and use</p>
+<p>and to remove it, find the <code>KEY</code> corresponding to it and use <code>ipcrm</code>.  Note that the KEY is usually the hexadecimal representation of the <code>key</code> you used in <code>c++</code>, so you can just use that:</p>
 
 </div>
 </div>
@@ -373,7 +368,7 @@ Semaphores:
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>ipcrm -M 0x0000162e
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>ipcrm -M <span class="m">5678</span>
 </pre></div>
 
 </div>
@@ -383,391 +378,164 @@ Semaphores:
 </div>
  
 
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Defines</p>
-<dl class="macro">
-<dt id="c.SHMSZ">
-<span class="target" id="cppmah__shm_8h_1af328b6ce3cae231d90cfbf2f340d03c2"></span><code class="descname">SHMSZ</code> 27<a class="headerlink" href="#c.SHMSZ" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ah_value---Stateful-Variables">ah_value - Stateful Variables<a class="anchor-link" href="#ah_value---Stateful-Variables">&#182;</a></h3><p>The <code>ah_value</code> class is a simple, encapsulated c++ class to help track values.  It is written with the signal-slot paradigm so that events can be triggered as the values change.  This is a way to decrease the overhead that must happen to trace some values (such as checking if something is over a certain value every loop).</p>
+<h4 id="Usage">Usage<a class="anchor-link" href="#Usage">&#182;</a></h4><p>Lets say we want to create a program that indicates whether a motor is up to speed, and thereafter, how much it has varied from that speed.  First, we need some sort of notifier class.  This class holds the value object, and also the notifier (duh) method, that will ring back and tell us when the alarm goes off.</p>
 
 </div>
-<dl class="class">
-<dt>
-<span class="target" id="cppmclassshm__server"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
-<dt id="_CPPv210shm_server">
-<span id="shm_server"></span><em class="property">class </em><code class="descname">shm_server</code><a class="headerlink" href="#_CPPv210shm_server" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv2N10shm_server10shm_serverE5key_t">
-<span id="shm_server::shm_server__key_t"></span><span class="target" id="cppmclassshm__server_1ae0d4f128deeac84d7a4999653e9f07a4"></span><code class="descname">shm_server</code><span class="sig-paren">(</span>key_t <em>_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server10shm_serverE5key_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N10shm_serverD0Ev">
-<span id="shm_server::~shm_server"></span><span class="target" id="cppmclassshm__server_1a304e4b7d993e2653de91242c9389041c"></span><code class="descname">~shm_server</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_serverD0Ev" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N10shm_server3setE1T">
-<span id="shm_server::set__T"></span><span class="target" id="cppmclassshm__server_1ac9c474b73046158390db5a3ecd405262"></span>void <code class="descname">set</code><span class="sig-paren">(</span>T <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server3setE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N10shm_server3getEv">
-<span id="shm_server::get__void"></span><span class="target" id="cppmclassshm__server_1a523edb5ef3376a564e13d92d1a3d8d55"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server3getEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
 </div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv2N10shm_server1cE">
-<span id="shm_server::c__c"></span><span class="target" id="cppmclassshm__server_1ab2697041f9bf742b667b7b1a59a0739a"></span>char <code class="descname">c</code><a class="headerlink" href="#_CPPv2N10shm_server1cE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N10shm_server5shmidE">
-<span id="shm_server::shmid__i"></span><span class="target" id="cppmclassshm__server_1a6f5bb5a5918627af57c588c5f9235152"></span>int <code class="descname">shmid</code><a class="headerlink" href="#_CPPv2N10shm_server5shmidE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N10shm_server3keyE">
-<span id="shm_server::key__key_t"></span><span class="target" id="cppmclassshm__server_1a695168a8b6ba7f11316d8863fa3a5027"></span>key_t <code class="descname">key</code><a class="headerlink" href="#_CPPv2N10shm_server3keyE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N10shm_server3shmE">
-<span id="shm_server::shm__TP"></span><span class="target" id="cppmclassshm__server_1ae88f1d786dc363c9123f31057f370f93"></span>T *<code class="descname">shm</code><a class="headerlink" href="#_CPPv2N10shm_server3shmE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
 </div>
-</dd></dl>
-
-<dl class="class">
-<dt>
-<span class="target" id="cppmclassshm__client"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
-<dt id="_CPPv210shm_client">
-<span id="shm_client"></span><em class="property">class </em><code class="descname">shm_client</code><a class="headerlink" href="#_CPPv210shm_client" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv2N10shm_client10shm_clientE5key_t">
-<span id="shm_client::shm_client__key_t"></span><span class="target" id="cppmclassshm__client_1ae00cb647c123b26895dc19f57fa30e7b"></span><code class="descname">shm_client</code><span class="sig-paren">(</span>key_t <em>_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_client10shm_clientE5key_t" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N10shm_clientD0Ev">
-<span id="shm_client::~shm_client"></span><span class="target" id="cppmclassshm__client_1a2c44788b93f9557ba0c59c195c606ac8"></span><code class="descname">~shm_client</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_clientD0Ev" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N10shm_client3getEv">
-<span id="shm_client::get__void"></span><span class="target" id="cppmclassshm__client_1ac914522e1dbf17bdb473f4254caf55c0"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_client3getEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv2N10shm_client5shmidE">
-<span id="shm_client::shmid__i"></span><span class="target" id="cppmclassshm__client_1a4263c527eadf3bc1d701ced30d76b28f"></span>int <code class="descname">shmid</code><a class="headerlink" href="#_CPPv2N10shm_client5shmidE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N10shm_client3keyE">
-<span id="shm_client::key__key_t"></span><span class="target" id="cppmclassshm__client_1a6b7ac7e4038cbe3c6cb39d8e8d8f79e9"></span>key_t <code class="descname">key</code><a class="headerlink" href="#_CPPv2N10shm_client3keyE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N10shm_client3shmE">
-<span id="shm_client::shm__TP"></span><span class="target" id="cppmclassshm__client_1aa8b5be306fb17bc7264b1e875c0bd697"></span>T *<code class="descname">shm</code><a class="headerlink" href="#_CPPv2N10shm_client3shmE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
-<div class="section" id="ah-value-a-stateful-variable-class">
-<h3>ah_value - A stateful variable class<a class="headerlink" href="#ah-value-a-stateful-variable-class" title="Permalink to this headline">¶</a></h3>
-<p>The AH Value class is a simple, encapsulated c++ class to help track
-values. It is written with the signal-slot paradigm so that events can
-be triggered as the values change, corresponding. This is a way to
-decrease the overhead that must happen to trace some values (such as
-checking if something is over a certain value every loop).</p>
-<div class="section" id="id1">
-<h4>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>Installation of the ah_value class is simple. Place the ah_value.h
-file somewhere where your compiler can see it (as well as the common
-directory, as it includes sigslot.h). Then, connect your signals and
-move forward.</p>
-</div>
-<div class="section" id="id2">
-<h4>Usage<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p>Follow the steps below to use the <code class="docutils literal"><span class="pre">ah_value</span></code> class.</p>
-<p>Lets say we want to create a program that indicates whether a motor is
-up to speed, and thereafter, how much it has varied from that speed. We
-would write a notifier class, as below.</p>
-<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="ow">in</span> <span class="n">file</span> <span class="n">notifier</span><span class="o">.</span><span class="n">h</span>
-<span class="c1">#include &quot;sigslot.h&quot;</span>
-<span class="c1">#include &quot;ah_value.h&quot;</span>
-<span class="c1">#include &lt;stdio.h&gt;</span>
-
-<span class="k">class</span> <span class="nc">notifier</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sigslot</span><span class="p">::</span><span class="n">has_slots</span><span class="o">&lt;&gt;</span><span class="p">{</span>
-                 <span class="o">//</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="n">make</span> <span class="n">this</span> <span class="n">a</span> <span class="n">sigslot</span> <span class="n">so</span> <span class="n">that</span> <span class="n">it</span> <span class="n">can</span> <span class="n">accept</span> <span class="n">slots</span>
-<span class="n">public</span><span class="p">:</span>
-    <span class="o">//</span> <span class="n">a</span> <span class="n">value</span> <span class="nb">object</span> <span class="k">for</span> <span class="n">our</span> <span class="n">notifier</span> <span class="k">class</span>
-    <span class="nc">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">vl</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">a</span> <span class="n">constructor</span> <span class="n">to</span> <span class="k">pass</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">external</span> <span class="n">notifier</span> <span class="k">class</span>
-    <span class="nc">notifier</span><span class="p">(</span><span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;*</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">slot</span> <span class="n">that</span> <span class="n">will</span> <span class="n">tell</span> <span class="n">when</span> <span class="n">it</span><span class="s1">&#39;s up to speed</span>
-    <span class="n">void</span> <span class="n">up_to_speed</span><span class="p">(</span><span class="n">void</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="n">notifier</span><span class="p">::</span><span class="n">notifier</span><span class="p">(</span><span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">_vl</span><span class="p">){</span>
-    <span class="n">vl</span> <span class="o">=</span> <span class="n">_vl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">void</span> <span class="n">notifier</span><span class="p">::</span><span class="n">up_to_speed</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
-    <span class="o">//</span> <span class="n">let</span> <span class="n">us</span> <span class="n">know</span> <span class="n">that</span> <span class="n">we</span><span class="s1">&#39;re up to speed</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Motor is up to speed</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">now</span> <span class="n">reset</span> <span class="n">the</span> <span class="nb">max</span> <span class="nb">min</span> <span class="n">so</span> <span class="n">we</span> <span class="n">only</span> <span class="n">get</span> <span class="n">the</span> <span class="n">maximum</span> <span class="ow">and</span> <span class="n">minimum</span> <span class="n">when</span> <span class="n">up</span> <span class="n">to</span>
-    <span class="o">//</span> <span class="n">speed</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">resetmaxmin</span><span class="p">();</span>
-<span class="p">}</span>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">cppm</span> <span class="kn">import</span> <span class="n">cppmagic</span>
 </pre></div>
+
 </div>
-<ul class="simple">
-<li>This can be run using the following tester</li>
-</ul>
-<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="ow">in</span> <span class="n">file</span> <span class="n">test_value</span><span class="o">.</span><span class="n">cpp</span>
-<span class="c1">#include &quot;ah_value.h&quot;</span>
-<span class="c1">#include &quot;notifier.h&quot;</span>
+</div>
+</div>
 
-<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
-    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">value</span> <span class="k">class</span> <span class="nc">of</span> <span class="nb">type</span> <span class="nb">int</span>
-    <span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">vl</span> <span class="o">=</span> <span class="n">new</span> <span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">notifier</span> <span class="k">class</span> <span class="nc">and</span> <span class="k">pass</span> <span class="ow">in</span> <span class="n">our</span> <span class="n">value</span>
-    <span class="n">notifier</span> <span class="o">*</span><span class="n">ntfr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">notifier</span><span class="p">(</span><span class="n">vl</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">the</span> <span class="n">signal</span> <span class="k">for</span> <span class="n">above</span> <span class="n">level</span> <span class="n">to</span> <span class="n">the</span> <span class="n">slot</span> <span class="n">telling</span> <span class="n">us</span>
-    <span class="o">//</span> <span class="n">we</span><span class="s1">&#39;re up to speed</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">abovelevel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ntfr</span><span class="p">,</span><span class="n">notifier</span><span class="p">::</span><span class="n">up_to_speed</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">now</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">what</span> <span class="n">level</span> <span class="n">we</span><span class="s1">&#39;re up to speed at</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">setlevel</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">now</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">slowly</span> <span class="n">increase</span> <span class="n">the</span> <span class="n">speed</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-    <span class="o">//</span> <span class="n">now</span> <span class="n">that</span> <span class="n">we</span><span class="s1">&#39;re back below speed (remember we said *above* 5), we can end</span>
-    <span class="o">//</span> <span class="ow">and</span> <span class="n">look</span> <span class="n">at</span> <span class="n">details</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;The maximum when up to speed was </span><span class="si">%d</span><span class="s2">, and the minimum was </span><span class="si">%d</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> \
-        <span class="n">vl</span><span class="o">-&gt;</span><span class="n">getmax</span><span class="p">(),</span><span class="n">vl</span><span class="o">-&gt;</span><span class="n">getmin</span><span class="p">());</span>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">include</span> notifier
+#include &quot;../common/sigslot.h&quot;
+#include &quot;../ah_value.h&quot;
+#include &lt;stdio.h&gt;
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+class notifier : public sigslot::has_slots&lt;&gt;{
+// we have to make this a sigslot so that it can accept slots
+public:
+    // a value object for our notifier class
+    value&lt;int&gt; *vl;
+    // a constructor to pass in an external notifier class
+    notifier(value&lt;int&gt;*);
+    // we need a slot that will tell when it&#39;s up to speed
+    void up_to_speed(void);
+};
+
+notifier::notifier(value&lt;int&gt; *_vl){
+    vl = _vl;
+}
+
+void notifier::up_to_speed(void){
+    // let us know that we&#39;re up to speed
+    printf(&quot;Motor is up to speed\n&quot;);
+    // now reset the max min so we only get the maximum and minimum when up to
+    // speed
+    vl-&gt;resetmaxmin();
+}
 </pre></div>
+
 </div>
-<p>This can be compiled and run using:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ g++ -std=c++11 test_value.cpp -I/dir/to/notifier.h -I/dir/to/ah_value.h \
-&gt; -I/dir/to/sigslot.h -o test_value
-$ ./test_value
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a great example for using a custom compiler with the <code>cppmagics</code> class.  Below we'll  add the <code>-Wall</code> option.  I don't think this is necessary, but it'll work and it's informative.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">set_compiler</span> g++ --std=c++11 -Wall
 </pre></div>
-</div>
-</div>
-<div class="section" id="to-do">
-<h4>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li>[ ] Absolute value support (added 10/16/14)</li>
-<li>[ ] “Smart” change, indicating if value was changed and is still at
-speed (added 10/16/14)</li>
-</ul>
-<dl class="class">
-<dt>
-<span class="target" id="cppmclassvalue"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
-<dt id="_CPPv25value">
-<span id="value"></span><em class="property">class </em><code class="descname">value</code><a class="headerlink" href="#_CPPv25value" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;ah_value.h&gt;</em><p>a stateful variable class - simplistically </p>
-<p>Inherits from sigslot::has_slots&lt;&gt;</p>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
-<dl class="function">
-<dt id="_CPPv2N5value3setE1T">
-<span id="value::set__T"></span><span class="target" id="cppmclassvalue_1a17449aee748a7f024efc91c6a0efbbba"></span>void <code class="descname">set</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value3setE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>sets the variable to a certain value </p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">x</span></code></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value9silentsetE1T">
-<span id="value::silentset__T"></span><span class="target" id="cppmclassvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f"></span>void <code class="descname">silentset</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value9silentsetE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>sets the variable to a value and silences all signals (for this operation) </p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">x</span></code></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value3getEv">
-<span id="value::get__void"></span><span class="target" id="cppmclassvalue_1af126a5d3141d20654bb8c8d643b35139"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value3getEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>returns the value of the variable </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>the value of the variable </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value8setlevelE1T">
-<span id="value::setlevel__T"></span><span class="target" id="cppmclassvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1"></span>void <code class="descname">setlevel</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value8setlevelE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>sets the trigger threshold </p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">x</span></code></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value8getlevelEv">
-<span id="value::getlevel__void"></span><span class="target" id="cppmclassvalue_1a0ec9d92bebbbb8716991c2d4784835e5"></span>T <code class="descname">getlevel</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value8getlevelEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>returns the value of the trigger threshold </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>the value of the trigger threshold </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value11resetmaxminEv">
-<span id="value::resetmaxmin__void"></span><span class="target" id="cppmclassvalue_1ad1f83bbb9c1fda8839784e4a34568d7f"></span>void <code class="descname">resetmaxmin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value11resetmaxminEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>resets the states of maximum and minimum during the data-logging time </p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value6getmaxEv">
-<span id="value::getmax__void"></span><span class="target" id="cppmclassvalue_1ab84bad3e9f625c72051a679ed3da4d2f"></span>T <code class="descname">getmax</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getmaxEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>returns the maximum value encountered since the start of the program or since the last call to resetmaxmin </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>maximum value during data-logging time </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value6getminEv">
-<span id="value::getmin__void"></span><span class="target" id="cppmclassvalue_1af9f93b5c9cbca674acd478c3eab0dc40"></span>T <code class="descname">getmin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getminEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>returns the minimum value encountered since the start of the program or since the last call to resetmaxmin </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>minimum value during data-logging time </dd>
-</dl>
-</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="_CPPv2N5value6getoldEv">
-<span id="value::getold__void"></span><span class="target" id="cppmclassvalue_1a60a1e8dbe5a09728d26b3320a9b5e576"></span>T <code class="descname">getold</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getoldEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>returns the last value before the last call to set </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>value of variable before last call to set </dd>
-</dl>
-</p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
-<dl class="member">
-<dt id="_CPPv2N5value7changedE">
-<span id="value::changed__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16"></span>sigslot::signal0 <code class="descname">changed</code><a class="headerlink" href="#_CPPv2N5value7changedE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>a signal that is triggered when the value changes </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value12levelchangedE">
-<span id="value::levelchanged__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa"></span>sigslot::signal0 <code class="descname">levelchanged</code><a class="headerlink" href="#_CPPv2N5value12levelchangedE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>a signal that is triggered when someone changes the trigger level </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value10abovelevelE">
-<span id="value::abovelevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a0027cf12cbcc6031c7eb40f7013f76d5"></span>sigslot::signal0 <code class="descname">abovelevel</code><a class="headerlink" href="#_CPPv2N5value10abovelevelE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>a signal triggered when the value goes from below to above the trigger level </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value10belowlevelE">
-<span id="value::belowlevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a0744303135beb5b6cbcb1599ec8e6d4d"></span>sigslot::signal0 <code class="descname">belowlevel</code><a class="headerlink" href="#_CPPv2N5value10belowlevelE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>a signal triggered when the value goes from above to below the trigger level </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value7atlevelE">
-<span id="value::atlevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1ad63d94fa3706b525613a37ab5251f8ee"></span>sigslot::signal0 <code class="descname">atlevel</code><a class="headerlink" href="#_CPPv2N5value7atlevelE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>a signal triggered when the value goes from not equal to equal the trigger level </p>
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Private Members</p>
-<dl class="member">
-<dt id="_CPPv2N5value3valE">
-<span id="value::val__T"></span><span class="target" id="cppmclassvalue_1aad42c1c3a08ae1381cbbef2b4520a019"></span>T <code class="descname">val</code><a class="headerlink" href="#_CPPv2N5value3valE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>the value of the variable </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value5levelE">
-<span id="value::level__T"></span><span class="target" id="cppmclassvalue_1a34ed56cb9db06893d3b5acf65279d200"></span>T <code class="descname">level</code><a class="headerlink" href="#_CPPv2N5value5levelE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>the trigger level </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value3maxE">
-<span id="value::max__T"></span><span class="target" id="cppmclassvalue_1a7c92e95a70f06c68429e329f774102ec"></span>T <code class="descname">max</code><a class="headerlink" href="#_CPPv2N5value3maxE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>the current maximum </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value3minE">
-<span id="value::min__T"></span><span class="target" id="cppmclassvalue_1ad2ebbde2f43f00d276509732eb177737"></span>T <code class="descname">min</code><a class="headerlink" href="#_CPPv2N5value3minE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>the current minimum </p>
-</dd></dl>
-
-<dl class="member">
-<dt id="_CPPv2N5value3oldE">
-<span id="value::old__T"></span><span class="target" id="cppmclassvalue_1a313f1bd2ebdde33206e393d4218bc1c4"></span>T <code class="descname">old</code><a class="headerlink" href="#_CPPv2N5value3oldE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>the last value </p>
-</dd></dl>
-
-</div>
-</dd></dl>
 
 </div>
 </div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we need to write the main.  We create our value and instantiate our notifier.  We'll use the wonderful <code>sigslot.h</code> from Sarah Thomson (which I believe has no license, but if it does, tell me and I'll comply), to connect the <code>up_to_speed</code> method/slot to when the <code>abovelevel</code> signal is tripped.  Finally, we'll make up some data, and then look at the max and min of the data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">runcpp</span> test_value
+#include &quot;../ah_value.h&quot;
+#include &quot;notifier.h&quot;
+
+int main(void){
+    // we need to create a new value class of type int
+    value&lt;int&gt; *vl = new value&lt;int&gt;();
+    // we need to create a new notifier class and pass in our value
+    notifier *ntfr = new notifier(vl);
+    // we need to connect the signal for above level to the slot telling us
+    // we&#39;re up to speed
+    vl-&gt;abovelevel.connect(ntfr, &amp;notifier::up_to_speed);
+    // now we have to set what level we&#39;re up to speed at
+    vl-&gt;setlevel(5);
+    // now we want to slowly increase the speed
+    vl-&gt;set(0);
+    vl-&gt;set(1);
+    vl-&gt;set(3);
+    vl-&gt;set(5);
+    vl-&gt;set(7);
+    vl-&gt;set(9);
+    vl-&gt;set(7);
+    vl-&gt;set(5);
+    // now that we&#39;re back below speed (remember we said *above* 5), we can end
+    // and look at details
+    printf(&quot;The maximum when up to speed was %d, and the minimum was %d.&quot;, \
+        vl-&gt;getmax(),vl-&gt;getmin());
+
+    return 0;
+}
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Motor is up to speed
+The maximum when up to speed was 9, and the minimum was 5.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+
 </div>
 <div class="section" id="tcp-objects">
 <h2>TCP Objects<a class="headerlink" href="#tcp-objects" title="Permalink to this headline">¶</a></h2>
@@ -777,6 +545,12 @@ speed (added 10/16/14)</li>
 </div>
 <div class="section" id="signals-and-timing">
 <h2>Signals and Timing<a class="headerlink" href="#signals-and-timing" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ah_shm.html">ah_shm Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ah_value.html">ah_value Documentation</a></li>
+</ul>
+</div>
 </div>
 </div>
 
