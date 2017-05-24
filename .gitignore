@@ -10,6 +10,7 @@ examples/*.o
 .ipynb_checkpoints/
 docs/cppm*.rst
 docs/source/README_*.html
+examples/*.h
 
 #python files
 *.pyc
