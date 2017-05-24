@@ -14,10 +14,8 @@ Memory Objects
 .. doxygenfile:: ah_shm.h
  :project: cppm
 
-ah_value - A stateful variable class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: README_VALUE.rst
+.. raw:: html
+  :file: README_VALUE.html
 
 .. doxygenfile:: ah_value.h
  :project: cppm

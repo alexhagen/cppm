@@ -14,7 +14,7 @@ import signal
 class cppmagics(Magics):
     def __init__(self, **kwargs):
         self.compiler = 'g++'
-        self.opts = '--std=c++11'
+        self.opts = ['--std=c++11', '-Wall']
         self.ps = []
         self.includes = []
         super(cppmagics, self).__init__(**kwargs)

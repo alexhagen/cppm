@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="simple__timer_8h" kind="file" language="C++">
     <compoundname>simple_timer.h</compoundname>
     <includes local="no">sys/time.h</includes>
@@ -24,9 +24,12 @@
       <node id="148">
         <label>sys/time.h</label>
       </node>
+      <node id="151">
+        <label>stdio.h</label>
+      </node>
       <node id="147">
         <label>simple_timer.h</label>
-        <link refid="simple__timer_8h"/>
+        <link refid="simple_timer.h"/>
         <childnode refid="148" relation="include">
         </childnode>
         <childnode refid="149" relation="include">
@@ -39,9 +42,6 @@
         </childnode>
         <childnode refid="153" relation="include">
         </childnode>
-      </node>
-      <node id="151">
-        <label>stdio.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classsimple__timer" prot="public">simple_timer</innerclass>

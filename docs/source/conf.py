@@ -112,7 +112,7 @@ html_theme_options = {
 
     'navbar_pagenav_name': "",
 
-    'globaltoc_depth': -1,
+    'globaltoc_depth': 4,
 
     'globaltoc_includehidden': "true",
 

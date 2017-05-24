@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classsigslot_1_1__connection0" kind="class" language="C++" prot="public">
     <compoundname>sigslot::_connection0</compoundname>
     <basecompoundref refid="classsigslot_1_1__connection__base0" prot="public" virt="non-virtual">sigslot::_connection_base0&lt; mt_policy &gt;</basecompoundref>
@@ -124,10 +124,10 @@
         </inbodydescription>
         <location file="sigslot.h" line="1548" column="1" bodyfile="sigslot.h" bodystart="1548" bodyend="1551"/>
       </memberdef>
-      <memberdef kind="function" id="classsigslot_1_1__connection0_1ac4cb906739c2775466e20a9fc0d7e0fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classsigslot_1_1__connection0_1aa0d501b98270a9bac344cc04df5b95ff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classsigslot_1_1has__slots" kindref="compound">has_slots</ref>&lt; mt_policy &gt; *</type>
         <definition>virtual has_slots&lt;mt_policy&gt;* sigslot::_connection0&lt; dest_type, mt_policy &gt;::getdest</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const </argsstring>
         <name>getdest</name>
         <reimplements refid="classsigslot_1_1__connection__base0_1ac298c58c25a6a96b02ce0ecf250103ba">getdest</reimplements>
         <briefdescription>
@@ -174,7 +174,7 @@
       <member refid="classsigslot_1_1__connection0_1a80f5988e6205f357c66f4a493471cd57" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>clone</name></member>
       <member refid="classsigslot_1_1__connection0_1ab1ad999301f8ef66cfc56f1203c59982" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>duplicate</name></member>
       <member refid="classsigslot_1_1__connection0_1aecf936cd64e17e33f052fa6768f70437" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>emit</name></member>
-      <member refid="classsigslot_1_1__connection0_1ac4cb906739c2775466e20a9fc0d7e0fa" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>getdest</name></member>
+      <member refid="classsigslot_1_1__connection0_1aa0d501b98270a9bac344cc04df5b95ff" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>getdest</name></member>
       <member refid="classsigslot_1_1__connection0_1ac37afe9ecd838633fecbd0db68fb2984" prot="private" virt="non-virtual"><scope>sigslot::_connection0</scope><name>m_pmemfun</name></member>
       <member refid="classsigslot_1_1__connection0_1aeb02b93286a6b14e92b1dae031bce6eb" prot="private" virt="non-virtual"><scope>sigslot::_connection0</scope><name>m_pobject</name></member>
       <member refid="classsigslot_1_1__connection__base0_1a5e9b9f434465281aea124742ea1f8a3b" prot="public" virt="virtual"><scope>sigslot::_connection0</scope><name>~_connection_base0</name></member>
