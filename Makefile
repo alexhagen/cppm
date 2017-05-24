@@ -13,4 +13,18 @@ breathe: FORCE
 	sphinx-apidoc -e -f -M -o ./ ../; \
 	make html
 
+publish: FORCE
+	mkdir -p ~/pages/cppm; \
+	cd ~/pages/cppm; \
+	git rm -r *; \
+	cd ~/code/cppm/docs; \
+	cp -r build/html/* ~/pages/cppm; \
+	cd ~/pages/cppm; \
+	git add *; \
+	touch .nojekyll; \
+	git add .nojekyll; \
+	git commit -am "$(shell git log -1 --pretty=%B | tr -d '\n')"; \
+	git push origin gh-pages; \
+	cd ~/code/cppm
+
 FORCE:
