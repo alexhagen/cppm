@@ -14,50 +14,42 @@
     <includes local="no">errno.h</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="136">
+      <node id="140">
         <label>netinet/in.h</label>
       </node>
-      <node id="137">
+      <node id="141">
         <label>arpa/inet.h</label>
       </node>
-      <node id="132">
+      <node id="136">
         <label>stdlib.h</label>
       </node>
-      <node id="140">
+      <node id="144">
         <label>errno.h</label>
       </node>
-      <node id="141">
+      <node id="145">
         <label>string</label>
       </node>
-      <node id="138">
+      <node id="142">
         <label>netdb.h</label>
       </node>
-      <node id="134">
+      <node id="138">
         <label>sys/types.h</label>
       </node>
-      <node id="133">
+      <node id="137">
         <label>string.h</label>
       </node>
-      <node id="139">
+      <node id="143">
         <label>unistd.h</label>
       </node>
-      <node id="135">
+      <node id="139">
         <label>sys/socket.h</label>
       </node>
-      <node id="131">
+      <node id="135">
         <label>stdio.h</label>
       </node>
-      <node id="130">
+      <node id="134">
         <label>simple_tcp_client.h</label>
         <link refid="simple__tcp__client_8h"/>
-        <childnode refid="131" relation="include">
-        </childnode>
-        <childnode refid="132" relation="include">
-        </childnode>
-        <childnode refid="133" relation="include">
-        </childnode>
-        <childnode refid="134" relation="include">
-        </childnode>
         <childnode refid="135" relation="include">
         </childnode>
         <childnode refid="136" relation="include">
@@ -71,6 +63,14 @@
         <childnode refid="140" relation="include">
         </childnode>
         <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
         </childnode>
       </node>
     </incdepgraph>

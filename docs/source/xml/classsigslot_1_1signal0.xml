@@ -115,48 +115,48 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="207">
+      <node id="219">
         <label>sigslot::signal0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1signal0"/>
-        <childnode refid="208" relation="public-inheritance">
+        <childnode refid="220" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="210">
+      <node id="222">
         <label>mt_policy</label>
       </node>
-      <node id="209">
+      <node id="221">
         <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="210" relation="public-inheritance">
+        <childnode refid="222" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="208">
+      <node id="220">
         <label>sigslot::_signal_base0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base0"/>
-        <childnode refid="209" relation="public-inheritance">
+        <childnode refid="221" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="211">
+      <node id="223">
         <label>sigslot::signal0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1signal0"/>
-        <childnode refid="212" relation="public-inheritance">
+        <childnode refid="224" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="214">
+      <node id="226">
         <label>mt_policy</label>
       </node>
-      <node id="213">
+      <node id="225">
         <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="214" relation="public-inheritance">
+        <childnode refid="226" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="212">
+      <node id="224">
         <label>sigslot::_signal_base0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base0"/>
-        <childnode refid="213" relation="public-inheritance">
+        <childnode refid="225" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

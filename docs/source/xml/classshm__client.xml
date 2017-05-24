@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="58" column="1" bodyfile="ah_shm.h" bodystart="58" bodyend="-1"/>
+        <location file="ah_shm.h" line="70" column="1" bodyfile="ah_shm.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classshm__client_1a6b7ac7e4038cbe3c6cb39d8e8d8f79e9" prot="public" static="no" mutable="no">
         <type>key_t</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="59" column="1" bodyfile="ah_shm.h" bodystart="59" bodyend="-1"/>
+        <location file="ah_shm.h" line="71" column="1" bodyfile="ah_shm.h" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classshm__client_1aa8b5be306fb17bc7264b1e875c0bd697" prot="public" static="no" mutable="no">
         <type>T *</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="60" column="1" bodyfile="ah_shm.h" bodystart="60" bodyend="-1"/>
+        <location file="ah_shm.h" line="72" column="1" bodyfile="ah_shm.h" bodystart="72" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -64,7 +64,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="62" column="1" bodyfile="ah_shm.h" bodystart="67" bodyend="83"/>
+        <location file="ah_shm.h" line="74" column="1" bodyfile="ah_shm.h" bodystart="80" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classshm__client_1a2c44788b93f9557ba0c59c195c606ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shm_client&lt; T &gt;::~shm_client</definition>
+        <argsstring>()</argsstring>
+        <name>~shm_client</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_shm.h" line="75" column="1" bodyfile="ah_shm.h" bodystart="99" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classshm__client_1ac914522e1dbf17bdb473f4254caf55c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -80,20 +93,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="63" column="1" bodyfile="ah_shm.h" bodystart="86" bodyend="88"/>
+        <location file="ah_shm.h" line="76" column="1" bodyfile="ah_shm.h" bodystart="105" bodyend="107"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="ah_shm.h" line="56" column="1" bodyfile="ah_shm.h" bodystart="56" bodyend="64"/>
+    <location file="ah_shm.h" line="68" column="1" bodyfile="ah_shm.h" bodystart="68" bodyend="77"/>
     <listofallmembers>
       <member refid="classshm__client_1ac914522e1dbf17bdb473f4254caf55c0" prot="public" virt="non-virtual"><scope>shm_client</scope><name>get</name></member>
       <member refid="classshm__client_1a6b7ac7e4038cbe3c6cb39d8e8d8f79e9" prot="public" virt="non-virtual"><scope>shm_client</scope><name>key</name></member>
       <member refid="classshm__client_1aa8b5be306fb17bc7264b1e875c0bd697" prot="public" virt="non-virtual"><scope>shm_client</scope><name>shm</name></member>
       <member refid="classshm__client_1ae00cb647c123b26895dc19f57fa30e7b" prot="public" virt="non-virtual"><scope>shm_client</scope><name>shm_client</name></member>
       <member refid="classshm__client_1a4263c527eadf3bc1d701ced30d76b28f" prot="public" virt="non-virtual"><scope>shm_client</scope><name>shmid</name></member>
+      <member refid="classshm__client_1a2c44788b93f9557ba0c59c195c606ac8" prot="public" virt="non-virtual"><scope>shm_client</scope><name>~shm_client</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

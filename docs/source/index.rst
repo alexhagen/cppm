@@ -25,6 +25,9 @@ ah_ll - Linked Lists
 ah_shm - Shared Memory Objects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. raw:: html
+  :file: README_SHM.html
+
 .. doxygenfile:: ah_shm.h
  :project: cppm
 

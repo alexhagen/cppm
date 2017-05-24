@@ -326,44 +326,44 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="297">
+      <node id="309">
         <label>SIGSLOT_DEFAULT_MT_POLICY</label>
       </node>
-      <node id="296">
+      <node id="308">
         <label>sigslot::has_slots&lt;&gt;</label>
         <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="297" relation="public-inheritance">
+        <childnode refid="309" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="295">
+      <node id="307">
         <label>value&lt; T &gt;</label>
         <link refid="classvalue"/>
-        <childnode refid="296" relation="public-inheritance">
+        <childnode refid="308" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="300">
+      <node id="312">
         <label>SIGSLOT_DEFAULT_MT_POLICY</label>
       </node>
-      <node id="299">
+      <node id="311">
         <label>sigslot::has_slots&lt;&gt;</label>
         <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="300" relation="public-inheritance">
+        <childnode refid="312" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="301">
+      <node id="313">
         <label>sigslot::signal0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1signal0"/>
-        <childnode refid="302" relation="public-inheritance">
+        <childnode refid="314" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="298">
+      <node id="310">
         <label>value&lt; T &gt;</label>
         <link refid="classvalue"/>
-        <childnode refid="299" relation="public-inheritance">
+        <childnode refid="311" relation="public-inheritance">
         </childnode>
-        <childnode refid="301" relation="usage">
+        <childnode refid="313" relation="usage">
           <edgelabel>levelchanged</edgelabel>
           <edgelabel>changed</edgelabel>
           <edgelabel>belowlevel</edgelabel>
@@ -371,19 +371,19 @@
           <edgelabel>atlevel</edgelabel>
         </childnode>
       </node>
-      <node id="304">
+      <node id="316">
         <label>mt_policy</label>
       </node>
-      <node id="303">
+      <node id="315">
         <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="304" relation="public-inheritance">
+        <childnode refid="316" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="302">
+      <node id="314">
         <label>sigslot::_signal_base0&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base0"/>
-        <childnode refid="303" relation="public-inheritance">
+        <childnode refid="315" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

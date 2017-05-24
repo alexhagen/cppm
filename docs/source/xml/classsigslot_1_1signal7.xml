@@ -190,48 +190,48 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="263">
+      <node id="275">
         <label>sigslot::signal7&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, mt_policy &gt;</label>
         <link refid="classsigslot_1_1signal7"/>
-        <childnode refid="264" relation="public-inheritance">
+        <childnode refid="276" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="266">
+      <node id="278">
         <label>mt_policy</label>
       </node>
-      <node id="265">
+      <node id="277">
         <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="266" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="264">
+      <node id="276">
         <label>sigslot::_signal_base7&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base7"/>
-        <childnode refid="265" relation="public-inheritance">
+        <childnode refid="277" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="267">
+      <node id="279">
         <label>sigslot::signal7&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, mt_policy &gt;</label>
         <link refid="classsigslot_1_1signal7"/>
-        <childnode refid="268" relation="public-inheritance">
+        <childnode refid="280" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="270">
+      <node id="282">
         <label>mt_policy</label>
       </node>
-      <node id="269">
+      <node id="281">
         <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="270" relation="public-inheritance">
+        <childnode refid="282" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="268">
+      <node id="280">
         <label>sigslot::_signal_base7&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, arg7_type, mt_policy &gt;</label>
         <link refid="classsigslot_1_1__signal__base7"/>
-        <childnode refid="269" relation="public-inheritance">
+        <childnode refid="281" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

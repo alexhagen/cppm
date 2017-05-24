@@ -24,11 +24,12 @@ int send_signal(int _signal,char *gname){
     sprintf(fname,"/usr/share/.%s",gname);
     ifp = fopen(fname,"r");
     int _pid;
-    while (!feof(ifp)){  
+    while (!feof(ifp)){
       fscanf (ifp, "%d", &_pid);
-      kill(_pid,_signal); 
+      kill(_pid,_signal);
     }
     fclose(ifp);
+		return 0;
 }
 
 void clean_group(char *gname){

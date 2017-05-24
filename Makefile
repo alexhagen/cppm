@@ -5,6 +5,8 @@ doxygen: FORCE
 
 breathe: FORCE
 	pandoc README.md -o docs/source/README.rst; \
+	jupyter nbconvert examples/example_shm.ipynb --to html --template basic --execute; \
+	mv examples/example_shm.html docs/source/README_SHM.html; \
 	pandoc readmes/readme_cll.md -o docs/source/README_CLL.rst; \
 	pandoc readmes/readme_ah_value.md -o docs/source/README_VALUE.rst; \
 	cd docs/; \

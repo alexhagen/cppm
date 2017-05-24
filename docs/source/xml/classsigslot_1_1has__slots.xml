@@ -151,24 +151,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="193">
+      <node id="201">
         <label>sigslot::has_slots&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="194" relation="public-inheritance">
+        <childnode refid="202" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="194">
+      <node id="202">
         <label>mt_policy</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="195">
+      <node id="203">
         <label>sigslot::has_slots&lt; mt_policy &gt;</label>
         <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="196" relation="public-inheritance">
+        <childnode refid="204" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="196">
+      <node id="204">
         <label>mt_policy</label>
       </node>
     </collaborationgraph>

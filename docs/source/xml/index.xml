@@ -374,6 +374,27 @@
     <member refid="classcll_1a4ef3a7bc08e667464530d8236d5b18a2" kind="function"><name>insert</name></member>
     <member refid="classcll_1ac9ae22569c31a01698bd248306ff47d8" kind="function"><name>pop</name></member>
   </compound>
+  <compound refid="classcppm_1_1cppmagic_1_1_compilation_error" kind="class"><name>cppm::cppmagic::CompilationError</name>
+    <member refid="classcppm_1_1cppmagic_1_1_compilation_error_1a4b2c593201c018f5f2b32582c9d6a018" kind="function"><name>__init__</name></member>
+  </compound>
+  <compound refid="classcppm_1_1cppmagic_1_1cppmagics" kind="class"><name>cppm::cppmagic::cppmagics</name>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a177392b15fce64d357f80f9a7dadd6a4" kind="variable"><name>compiler</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a85a0f01630da3e68edaa7f374be57125" kind="variable"><name>opts</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a2ea78d1b1f85f915216f0c569dc87ce6" kind="variable"><name>ps</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1abb98680bed40af93ed88c59154e637df" kind="variable"><name>filename</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1ac112552ec3b0db3803a7259c8a94e6f5" kind="variable"><name>code</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1ab161cd583690b7092c2829419127ae61" kind="function"><name>__init__</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1adda1e7ff306518be77732adf9c808af6" kind="function"><name>compiler</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1ad6b2ec5b29440560b7ed7699b4fdee85" kind="function"><name>cpp</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1aae29c3d3f98051c018438f3016831a82" kind="function"><name>runcpp</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a9a99833ff3ae2c5189a814bc729383e4" kind="function"><name>runcppnb</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a9674942e1af0a3bf4a283f1aeb9f4a42" kind="function"><name>compile</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1aa546beba45d3d4635026d45d5fead132" kind="function"><name>run</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a5d8287a549264ddb08534dd8c28d8dec" kind="function"><name>runnb</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a2902b911e58c125a1d49e663865011b4" kind="function"><name>killall</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1aee1f13996537562e87610b1905221877" kind="function"><name>print_output</name></member>
+    <member refid="classcppm_1_1cppmagic_1_1cppmagics_1a0cd31adbba11f8d4ced6ca71e6797941" kind="function"><name>_run</name></member>
+  </compound>
   <compound refid="classsigslot_1_1has__slots" kind="class"><name>sigslot::has_slots</name>
     <member refid="classsigslot_1_1has__slots_1a21dac98de621ee25dc13188f61e5c605" kind="typedef"><name>sender_set</name></member>
     <member refid="classsigslot_1_1has__slots_1ac3245ac4d17621fc51da2af9a64fc760" kind="typedef"><name>const_iterator</name></member>
@@ -389,7 +410,7 @@
     <member refid="classll_1a243197867545d2d548761841cd5b8aa9" kind="variable"><name>head</name></member>
     <member refid="classll_1a227174746d623f56702b21f98e6401c7" kind="variable"><name>tail</name></member>
     <member refid="classll_1a8a81bca9ed7ec3da16b61a03ad18bbb6" kind="function"><name>ll</name></member>
-    <member refid="classll_1a7ac9983e6dc0413f5dcecae8d2856b61" kind="function"><name>insert</name></member>
+    <member refid="classll_1af194c42aa183947174ab6927b2b20bb6" kind="function"><name>insert</name></member>
     <member refid="classll_1a3463cf369d98f7fb54a952a4bb7e3fbb" kind="function"><name>pop</name></member>
     <member refid="classll_1a0163fed6c2bacd0b0c335e03dae8431a" kind="function"><name>isempty</name></member>
     <member refid="classll_1af899e14180d38597127fd6f91c27894b" kind="function"><name>mean</name></member>
@@ -404,14 +425,19 @@
   <compound refid="classnode" kind="class"><name>node</name>
     <member refid="classnode_1a0a3e961e5caf1562f0c27caef3940e7a" kind="variable"><name>data</name></member>
     <member refid="classnode_1a5ebece409931a531c8cb37aa353a1afb" kind="variable"><name>next</name></member>
+    <member refid="classnode_1a92cf8896005a7357b22d5c299f076e51" kind="variable"><name>datum</name></member>
     <member refid="classnode_1a1a1fd7a93c794d083ede92519958ca86" kind="function"><name>node</name></member>
     <member refid="classnode_1a450a272c33e46c168529cc976b45f805" kind="function"><name>node</name></member>
+  </compound>
+  <compound refid="classcppm_1_1cppmagic_1_1_runtime_error" kind="class"><name>cppm::cppmagic::RuntimeError</name>
+    <member refid="classcppm_1_1cppmagic_1_1_runtime_error_1a9403ff7a369c27e4ca8758829feb84a0" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classshm__client" kind="class"><name>shm_client</name>
     <member refid="classshm__client_1a4263c527eadf3bc1d701ced30d76b28f" kind="variable"><name>shmid</name></member>
     <member refid="classshm__client_1a6b7ac7e4038cbe3c6cb39d8e8d8f79e9" kind="variable"><name>key</name></member>
     <member refid="classshm__client_1aa8b5be306fb17bc7264b1e875c0bd697" kind="variable"><name>shm</name></member>
     <member refid="classshm__client_1ae00cb647c123b26895dc19f57fa30e7b" kind="function"><name>shm_client</name></member>
+    <member refid="classshm__client_1a2c44788b93f9557ba0c59c195c606ac8" kind="function"><name>~shm_client</name></member>
     <member refid="classshm__client_1ac914522e1dbf17bdb473f4254caf55c0" kind="function"><name>get</name></member>
   </compound>
   <compound refid="classshm__server" kind="class"><name>shm_server</name>
@@ -420,6 +446,7 @@
     <member refid="classshm__server_1a695168a8b6ba7f11316d8863fa3a5027" kind="variable"><name>key</name></member>
     <member refid="classshm__server_1ae88f1d786dc363c9123f31057f370f93" kind="variable"><name>shm</name></member>
     <member refid="classshm__server_1ae0d4f128deeac84d7a4999653e9f07a4" kind="function"><name>shm_server</name></member>
+    <member refid="classshm__server_1a304e4b7d993e2653de91242c9389041c" kind="function"><name>~shm_server</name></member>
     <member refid="classshm__server_1ac9c474b73046158390db5a3ecd405262" kind="function"><name>set</name></member>
     <member refid="classshm__server_1a523edb5ef3376a564e13d92d1a3d8d55" kind="function"><name>get</name></member>
   </compound>
@@ -584,9 +611,16 @@
     <member refid="classvalue_1af9f93b5c9cbca674acd478c3eab0dc40" kind="function"><name>getmin</name></member>
     <member refid="classvalue_1a60a1e8dbe5a09728d26b3320a9b5e576" kind="function"><name>getold</name></member>
   </compound>
+  <compound refid="namespacecppm" kind="namespace"><name>cppm</name>
+  </compound>
+  <compound refid="namespacecppm_1_1cppmagic" kind="namespace"><name>cppm::cppmagic</name>
+    <member refid="cppmagic_8py_1abc8b1a8e6dfd67ba1b7449ff6c8363ff" kind="variable"><name>ip</name></member>
+  </compound>
   <compound refid="namespacesigslot" kind="namespace"><name>sigslot</name>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
   </compound>
   <compound refid="ah__cll_8h" kind="file"><name>ah_cll.h</name>
   </compound>
@@ -641,6 +675,8 @@
     <member refid="ah__udp__serv_8h_1a5f6b617b45eb12646bb651ecf77f6dcd" kind="define"><name>GROUP</name></member>
   </compound>
   <compound refid="ah__value_8h" kind="file"><name>ah_value.h</name>
+  </compound>
+  <compound refid="cppmagic_8py" kind="file"><name>cppmagic.py</name>
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>

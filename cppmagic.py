@@ -1,19 +1,21 @@
 from IPython.core.magic import (Magics, magics_class, line_magic,
                                 cell_magic, line_cell_magic)
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
-from .spinner import Spinner
 import os
 import subprocess
 import select
 import threading
 import itertools
 import time
+import multiprocessing
+import psutil
+import signal
 
 @magics_class
 class cppmagics(Magics):
     def __init__(self, **kwargs):
         self.compiler = 'g++'
         self.opts = '--std=c++11'
+        self.ps = []
         super(cppmagics, self).__init__(**kwargs)
 
     @line_magic
@@ -60,17 +62,41 @@ class cppmagics(Magics):
                              stderr=subprocess.PIPE, shell=True)
         (out, err) = p.communicate()
         if len(err) > 0:
+            print "output: " + out
             raise RuntimeError(err)
         print out
+        return p
 
-    def runnb(self, binary, args):
+    def _run(self, binary, args):
         cmd = "./{cmd}.o {args}".format(cmd=binary, args=args)
         p = subprocess.Popen([cmd], stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE, shell=True)
-        out = select.select(p.stdout, [], [], 1)
-        err = select.select(p.stderr, [], [], 1)
-        print out, err
-        #print out
+        self.ps.extend([p])
+        (out, err) = p.communicate()
+        if len(err) > 0:
+            raise RuntimeError(err)
+        return p
+
+    def runnb(self, binary, args):
+        p = multiprocessing.Process(target=self._run, args=[binary, args])
+        self.ps.extend([p])
+        p.start()
+
+    @line_magic
+    def killall(self, line):
+        for p in self.ps:
+            pid = p.pid
+            parent = psutil.Process(pid)
+            for child in parent.children(recursive=True):
+                os.kill(child.pid, signal.SIGTERM)
+            p.terminate()
+        self.ps = []
+
+    @line_magic
+    def print_output(self, line):
+        for p in self.ps:
+            p.poll(1)
+
 
 class CompilationError(Exception):
     def __init__(self, message):

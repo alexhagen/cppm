@@ -77,7 +77,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="23" column="1" bodyfile="ah_shm.h" bodystart="29" bodyend="43"/>
+        <location file="ah_shm.h" line="23" column="1" bodyfile="ah_shm.h" bodystart="30" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classshm__server_1a304e4b7d993e2653de91242c9389041c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>shm_server&lt; T &gt;::~shm_server</definition>
+        <argsstring>()</argsstring>
+        <name>~shm_server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ah_shm.h" line="24" column="1" bodyfile="ah_shm.h" bodystart="50" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classshm__server_1ac9c474b73046158390db5a3ecd405262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -94,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="24" column="1" bodyfile="ah_shm.h" bodystart="46" bodyend="48"/>
+        <location file="ah_shm.h" line="25" column="1" bodyfile="ah_shm.h" bodystart="58" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classshm__server_1a523edb5ef3376a564e13d92d1a3d8d55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>T</type>
@@ -110,14 +123,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ah_shm.h" line="25" column="1" bodyfile="ah_shm.h" bodystart="51" bodyend="53"/>
+        <location file="ah_shm.h" line="26" column="1" bodyfile="ah_shm.h" bodystart="63" bodyend="65"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="ah_shm.h" line="16" column="1" bodyfile="ah_shm.h" bodystart="16" bodyend="26"/>
+    <location file="ah_shm.h" line="16" column="1" bodyfile="ah_shm.h" bodystart="16" bodyend="27"/>
     <listofallmembers>
       <member refid="classshm__server_1ab2697041f9bf742b667b7b1a59a0739a" prot="public" virt="non-virtual"><scope>shm_server</scope><name>c</name></member>
       <member refid="classshm__server_1a523edb5ef3376a564e13d92d1a3d8d55" prot="public" virt="non-virtual"><scope>shm_server</scope><name>get</name></member>
@@ -126,6 +139,7 @@
       <member refid="classshm__server_1ae88f1d786dc363c9123f31057f370f93" prot="public" virt="non-virtual"><scope>shm_server</scope><name>shm</name></member>
       <member refid="classshm__server_1ae0d4f128deeac84d7a4999653e9f07a4" prot="public" virt="non-virtual"><scope>shm_server</scope><name>shm_server</name></member>
       <member refid="classshm__server_1a6f5bb5a5918627af57c588c5f9235152" prot="public" virt="non-virtual"><scope>shm_server</scope><name>shmid</name></member>
+      <member refid="classshm__server_1a304e4b7d993e2653de91242c9389041c" prot="public" virt="non-virtual"><scope>shm_server</scope><name>~shm_server</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

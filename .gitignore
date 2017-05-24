@@ -8,6 +8,8 @@ docs/source/xml/
 examples/*.cpp
 examples/*.o
 .ipynb_checkpoints/
+docs/cppm*.rst
+docs/source/README_*.html
 
 #python files
 *.pyc

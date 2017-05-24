@@ -21,6 +21,7 @@ public:
 	T *shm;
 
 	shm_server(key_t);
+	~shm_server();
 	void set(T);
 	T get(void);
 };
@@ -29,6 +30,9 @@ template <class T>
 shm_server<T>::shm_server(key_t _key){
 	// use the passed in key to set the location
     key = _key;
+		printf("size of T: %lu\n", sizeof(T));
+		printf("key: %d\n", key);
+		printf("flags: %i\n", IPC_CREAT | 0666);
     // create the actual segment
     if ((shmid = shmget(key, sizeof(T), IPC_CREAT | 0666)) < 0) {
         perror("shmget");
@@ -40,6 +44,14 @@ shm_server<T>::shm_server(key_t _key){
         exit(1);
     }
 
+}
+
+template <class T>
+shm_server<T>::~shm_server(){
+	int ret = shmdt(shm);
+	if (ret != 0) perror("shmdt");
+	ret = shmctl(key, IPC_RMID, NULL);
+	if (ret != 0) perror("shmctl");
 }
 
 template <class T>
@@ -60,6 +72,7 @@ public:
 	T *shm;
 
 	shm_client(key_t);
+	~shm_client();
 	T get(void);
 };
 
@@ -80,6 +93,12 @@ shm_client<T>::shm_client(key_t _key){
         exit(1);
     }
 
+}
+
+template <class T>
+shm_client<T>::~shm_client(void){
+	int ret = shmdt(shm);
+	if (ret != 0) perror("shmdt");
 }
 
 template <class T>
