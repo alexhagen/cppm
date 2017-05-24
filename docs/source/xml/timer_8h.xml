@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="timer_8h" kind="file" language="C++">
     <compoundname>timer.h</compoundname>
-    <includes refid="sigslot_8h" local="yes">sigslot.h</includes>
+    <includes local="yes">sigslot.h</includes>
     <includes local="no">sys/time.h</includes>
     <includes local="no">signal.h</includes>
     <includes local="no">time.h</includes>
@@ -11,59 +11,48 @@
     <includes local="no">error.h</includes>
     <includes local="no">math.h</includes>
     <incdepgraph>
-      <node id="158">
-        <label>list</label>
-      </node>
-      <node id="164">
+      <node id="142">
         <label>error.h</label>
       </node>
-      <node id="163">
+      <node id="136">
+        <label>sigslot.h</label>
+      </node>
+      <node id="141">
         <label>unistd.h</label>
       </node>
-      <node id="160">
+      <node id="138">
         <label>signal.h</label>
       </node>
-      <node id="161">
+      <node id="135">
+        <label>timer.h</label>
+        <link refid="timer_8h"/>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
         <label>time.h</label>
       </node>
-      <node id="165">
+      <node id="143">
         <label>math.h</label>
       </node>
-      <node id="159">
+      <node id="137">
         <label>sys/time.h</label>
       </node>
-      <node id="155">
-        <label>timer.h</label>
-        <link refid="timer.h"/>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="159" relation="include">
-        </childnode>
-        <childnode refid="160" relation="include">
-        </childnode>
-        <childnode refid="161" relation="include">
-        </childnode>
-        <childnode refid="162" relation="include">
-        </childnode>
-        <childnode refid="163" relation="include">
-        </childnode>
-        <childnode refid="164" relation="include">
-        </childnode>
-        <childnode refid="165" relation="include">
-        </childnode>
-      </node>
-      <node id="156">
-        <label>sigslot.h</label>
-        <link refid="sigslot_8h_source"/>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="158" relation="include">
-        </childnode>
-      </node>
-      <node id="157">
-        <label>set</label>
-      </node>
-      <node id="162">
+      <node id="140">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
@@ -115,7 +104,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classtimer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtimer" kindref="compound">timer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classsigslot_1_1has__slots" kindref="compound">sigslot::has_slots</ref>&lt;&gt;{</highlight></codeline>
+<codeline lineno="16" refid="classtimer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtimer" kindref="compound">timer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>sigslot::has_slots&lt;&gt;{</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtimer" kindref="compound">timer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classtimer" kindref="compound">timer</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
@@ -130,7 +119,7 @@
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>realtime;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>timer_t<sp/>timerID;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0&lt;&gt;</ref>*<sp/>sig;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>sigslot::signal0&lt;&gt;*<sp/>sig;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
@@ -153,7 +142,7 @@
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal">timer::timer(){</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>sig<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0&lt;&gt;</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>sig<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>sigslot::signal0&lt;&gt;;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connecting<sp/>the<sp/>hardware<sp/>signal<sp/>SIGALRM<sp/>to<sp/>the<sp/>static<sp/>function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>signalHandler,<sp/>can&apos;t<sp/>do<sp/>much<sp/>in<sp/>signalHandler<sp/>so<sp/>we<sp/>just<sp/>emit</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>signal</highlight><highlight class="normal"></highlight></codeline>

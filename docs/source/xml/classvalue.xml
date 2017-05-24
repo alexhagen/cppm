@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classvalue" kind="class" language="C++" prot="public">
     <compoundname>value</compoundname>
-    <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
     <includes refid="ah__value_8h" local="no">ah_value.h</includes>
     <templateparamlist>
       <param>
@@ -11,7 +11,7 @@
     </templateparamlist>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <type>sigslot::signal0</type>
         <definition>sigslot::signal0 value&lt; T &gt;::changed</definition>
         <argsstring></argsstring>
         <name>changed</name>
@@ -24,7 +24,7 @@
         <location file="ah_value.h" line="16" column="1" bodyfile="ah_value.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <type>sigslot::signal0</type>
         <definition>sigslot::signal0 value&lt; T &gt;::levelchanged</definition>
         <argsstring></argsstring>
         <name>levelchanged</name>
@@ -37,7 +37,7 @@
         <location file="ah_value.h" line="20" column="1" bodyfile="ah_value.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a0027cf12cbcc6031c7eb40f7013f76d5" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <type>sigslot::signal0</type>
         <definition>sigslot::signal0 value&lt; T &gt;::abovelevel</definition>
         <argsstring></argsstring>
         <name>abovelevel</name>
@@ -50,7 +50,7 @@
         <location file="ah_value.h" line="25" column="1" bodyfile="ah_value.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1a0744303135beb5b6cbcb1599ec8e6d4d" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <type>sigslot::signal0</type>
         <definition>sigslot::signal0 value&lt; T &gt;::belowlevel</definition>
         <argsstring></argsstring>
         <name>belowlevel</name>
@@ -63,7 +63,7 @@
         <location file="ah_value.h" line="30" column="1" bodyfile="ah_value.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal0" kindref="compound">sigslot::signal0</ref></type>
+        <type>sigslot::signal0</type>
         <definition>sigslot::signal0 value&lt; T &gt;::atlevel</definition>
         <argsstring></argsstring>
         <name>atlevel</name>
@@ -326,64 +326,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="309">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="308">
+      <node id="51">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="309" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="307">
+      <node id="50">
         <label>value&lt; T &gt;</label>
         <link refid="classvalue"/>
-        <childnode refid="308" relation="public-inheritance">
+        <childnode refid="51" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="312">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="311">
+      <node id="53">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="312" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="313">
-        <label>sigslot::signal0&lt; mt_policy &gt;</label>
-        <link refid="classsigslot_1_1signal0"/>
-        <childnode refid="314" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="310">
+      <node id="52">
         <label>value&lt; T &gt;</label>
         <link refid="classvalue"/>
-        <childnode refid="311" relation="public-inheritance">
-        </childnode>
-        <childnode refid="313" relation="usage">
-          <edgelabel>levelchanged</edgelabel>
-          <edgelabel>changed</edgelabel>
-          <edgelabel>belowlevel</edgelabel>
-          <edgelabel>abovelevel</edgelabel>
-          <edgelabel>atlevel</edgelabel>
-        </childnode>
-      </node>
-      <node id="316">
-        <label>mt_policy</label>
-      </node>
-      <node id="315">
-        <label>sigslot::_signal_base&lt; mt_policy &gt;</label>
-        <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="316" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="314">
-        <label>sigslot::_signal_base0&lt; mt_policy &gt;</label>
-        <link refid="classsigslot_1_1__signal__base0"/>
-        <childnode refid="315" relation="public-inheritance">
+        <childnode refid="53" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -393,14 +353,11 @@
       <member refid="classvalue_1ad63d94fa3706b525613a37ab5251f8ee" prot="public" virt="non-virtual"><scope>value</scope><name>atlevel</name></member>
       <member refid="classvalue_1a0744303135beb5b6cbcb1599ec8e6d4d" prot="public" virt="non-virtual"><scope>value</scope><name>belowlevel</name></member>
       <member refid="classvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16" prot="public" virt="non-virtual"><scope>value</scope><name>changed</name></member>
-      <member refid="classsigslot_1_1has__slots_1a6e367c801e273a0a10f198640eb6fa89" prot="public" virt="non-virtual"><scope>value</scope><name>disconnect_all</name></member>
       <member refid="classvalue_1af126a5d3141d20654bb8c8d643b35139" prot="public" virt="non-virtual"><scope>value</scope><name>get</name></member>
       <member refid="classvalue_1a0ec9d92bebbbb8716991c2d4784835e5" prot="public" virt="non-virtual"><scope>value</scope><name>getlevel</name></member>
       <member refid="classvalue_1ab84bad3e9f625c72051a679ed3da4d2f" prot="public" virt="non-virtual"><scope>value</scope><name>getmax</name></member>
       <member refid="classvalue_1af9f93b5c9cbca674acd478c3eab0dc40" prot="public" virt="non-virtual"><scope>value</scope><name>getmin</name></member>
       <member refid="classvalue_1a60a1e8dbe5a09728d26b3320a9b5e576" prot="public" virt="non-virtual"><scope>value</scope><name>getold</name></member>
-      <member refid="classsigslot_1_1has__slots_1aad7e6742f09f8abc1c216296435d236d" prot="public" virt="non-virtual"><scope>value</scope><name>has_slots</name></member>
-      <member refid="classsigslot_1_1has__slots_1a32701fef2e2a29baa463e4797bcd48c7" prot="public" virt="non-virtual"><scope>value</scope><name>has_slots</name></member>
       <member refid="classvalue_1a34ed56cb9db06893d3b5acf65279d200" prot="private" virt="non-virtual"><scope>value</scope><name>level</name></member>
       <member refid="classvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa" prot="public" virt="non-virtual"><scope>value</scope><name>levelchanged</name></member>
       <member refid="classvalue_1a7c92e95a70f06c68429e329f774102ec" prot="private" virt="non-virtual"><scope>value</scope><name>max</name></member>
@@ -409,11 +366,8 @@
       <member refid="classvalue_1ad1f83bbb9c1fda8839784e4a34568d7f" prot="public" virt="non-virtual"><scope>value</scope><name>resetmaxmin</name></member>
       <member refid="classvalue_1a17449aee748a7f024efc91c6a0efbbba" prot="public" virt="non-virtual"><scope>value</scope><name>set</name></member>
       <member refid="classvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1" prot="public" virt="non-virtual"><scope>value</scope><name>setlevel</name></member>
-      <member refid="classsigslot_1_1has__slots_1a08a0318c7c01ff6b28b37cbfe0a900c9" prot="public" virt="non-virtual"><scope>value</scope><name>signal_connect</name></member>
-      <member refid="classsigslot_1_1has__slots_1a09bcc73ab0e195af47b42c133198f2f6" prot="public" virt="non-virtual"><scope>value</scope><name>signal_disconnect</name></member>
       <member refid="classvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f" prot="public" virt="non-virtual"><scope>value</scope><name>silentset</name></member>
       <member refid="classvalue_1aad42c1c3a08ae1381cbbef2b4520a019" prot="private" virt="non-virtual"><scope>value</scope><name>val</name></member>
-      <member refid="classsigslot_1_1has__slots_1ae1b969877526cacdaa819f81e675b448" prot="public" virt="virtual"><scope>value</scope><name>~has_slots</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

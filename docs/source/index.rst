@@ -11,14 +11,9 @@ Memory Objects
 .. raw:: html
   :file: README_SHM.html
 
-.. doxygenfile:: ah_shm.h
- :project: cppm
-
 .. raw:: html
   :file: README_VALUE.html
 
-.. doxygenfile:: ah_value.h
- :project: cppm
 
 TCP Objects
 -----------
@@ -30,3 +25,9 @@ UDP Objects
 
 Signals and Timing
 ------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   ah_shm
+   ah_value

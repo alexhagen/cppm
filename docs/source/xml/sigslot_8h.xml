@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="sigslot_8h" kind="file" language="C++">
     <compoundname>sigslot.h</compoundname>
     <includes local="no">set</includes>
@@ -14,16 +14,16 @@
       <node id="126">
         <label>list</label>
       </node>
+      <node id="125">
+        <label>set</label>
+      </node>
       <node id="124">
         <label>sigslot.h</label>
-        <link refid="sigslot.h"/>
+        <link refid="sigslot_8h"/>
         <childnode refid="125" relation="include">
         </childnode>
         <childnode refid="126" relation="include">
         </childnode>
-      </node>
-      <node id="125">
-        <label>set</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -31,29 +31,29 @@
         <label>ah_tcp_serv.h</label>
         <link refid="ah__tcp__serv_8h_source"/>
       </node>
-      <node id="132">
-        <label>ah_value.h</label>
-        <link refid="ah__value_8h_source"/>
-      </node>
-      <node id="130">
-        <label>ah_udp_client.h</label>
-        <link refid="ah__udp__client_8h_source"/>
+      <node id="128">
+        <label>ah_tcp_client.h</label>
+        <link refid="ah__tcp__client_8h_source"/>
       </node>
       <node id="131">
         <label>ah_udp_serv.h</label>
         <link refid="ah__udp__serv_8h_source"/>
       </node>
-      <node id="128">
-        <label>ah_tcp_client.h</label>
-        <link refid="ah__tcp__client_8h_source"/>
+      <node id="132">
+        <label>ah_value.h</label>
+        <link refid="ah__value_8h_source"/>
       </node>
       <node id="133">
         <label>timer.h</label>
         <link refid="timer_8h_source"/>
       </node>
+      <node id="130">
+        <label>ah_udp_client.h</label>
+        <link refid="ah__udp__client_8h_source"/>
+      </node>
       <node id="127">
         <label>sigslot.h</label>
-        <link refid="sigslot.h"/>
+        <link refid="sigslot_8h"/>
         <childnode refid="128" relation="include">
         </childnode>
         <childnode refid="129" relation="include">

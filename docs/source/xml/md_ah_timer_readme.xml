@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="md_ah_timer_readme" kind="page">
     <compoundname>md_ah_timer_readme</compoundname>
     <title>ah_timer_readme</title>
@@ -83,7 +83,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>end<sp/>program</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-</programlisting></para><para>This can be compiled using (assuming that <ref refid="sigslot_8h_source" kindref="compound">sigslot.h</ref>, bomb.h, and ah_timer.h are in the current directory):</para><para><programlisting><codeline><highlight class="normal">$<sp/>g++<sp/>-std=c++11<sp/>test_bomb.cpp<sp/>-o<sp/>test_bomb</highlight></codeline>
+</programlisting></para><para>This can be compiled using (assuming that sigslot.h, bomb.h, and ah_timer.h are in the current directory):</para><para><programlisting><codeline><highlight class="normal">$<sp/>g++<sp/>-std=c++11<sp/>test_bomb.cpp<sp/>-o<sp/>test_bomb</highlight></codeline>
 <codeline><highlight class="normal">$<sp/>./test_bomb</highlight></codeline>
 </programlisting></para><para><heading level="2">3. To Do</heading>
 </para><para><itemizedlist>

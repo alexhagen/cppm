@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classsigslot_1_1__connection__base6" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>sigslot::_connection_base6</compoundname>
     <derivedcompoundref refid="classsigslot_1_1__connection6" prot="public" virt="non-virtual">sigslot::_connection6&lt; dest_type, arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, mt_policy &gt;</derivedcompoundref>
@@ -45,7 +45,7 @@
         <definition>virtual has_slots&lt;mt_policy&gt;* sigslot::_connection_base6&lt; arg1_type, arg2_type, arg3_type, arg4_type, arg5_type, arg6_type, mt_policy &gt;::getdest</definition>
         <argsstring>() const =0</argsstring>
         <name>getdest</name>
-        <reimplementedby refid="classsigslot_1_1__connection6_1a24b4e5c27a109edc2736d39690031a25">getdest</reimplementedby>
+        <reimplementedby refid="classsigslot_1_1__connection6_1a601becd64fd25f5d0b41d04646013b19">getdest</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>

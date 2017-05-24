@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="ah__tcp__client_8h" kind="file" language="C++">
     <compoundname>ah_tcp_client.h</compoundname>
     <includes local="no">stdio.h</includes>
@@ -13,38 +13,17 @@
     <includes local="no">unistd.h</includes>
     <includes local="no">errno.h</includes>
     <includes local="no">string</includes>
-    <includes refid="sigslot_8h" local="yes">sigslot.h</includes>
+    <includes local="yes">sigslot.h</includes>
     <incdepgraph>
-      <node id="41">
-        <label>list</label>
-      </node>
       <node id="33">
         <label>netinet/in.h</label>
       </node>
       <node id="34">
         <label>arpa/inet.h</label>
       </node>
-      <node id="29">
-        <label>stdlib.h</label>
-      </node>
-      <node id="37">
-        <label>errno.h</label>
-      </node>
-      <node id="38">
-        <label>string</label>
-      </node>
-      <node id="35">
-        <label>netdb.h</label>
-      </node>
-      <node id="31">
-        <label>sys/types.h</label>
-      </node>
-      <node id="30">
-        <label>string.h</label>
-      </node>
       <node id="27">
         <label>ah_tcp_client.h</label>
-        <link refid="ah_tcp_client.h"/>
+        <link refid="ah__tcp__client_8h"/>
         <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
@@ -70,22 +49,32 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
+      <node id="29">
+        <label>stdlib.h</label>
+      </node>
+      <node id="37">
+        <label>errno.h</label>
+      </node>
+      <node id="38">
+        <label>string</label>
+      </node>
+      <node id="39">
+        <label>sigslot.h</label>
+      </node>
+      <node id="35">
+        <label>netdb.h</label>
+      </node>
+      <node id="31">
+        <label>sys/types.h</label>
+      </node>
+      <node id="30">
+        <label>string.h</label>
+      </node>
       <node id="36">
         <label>unistd.h</label>
       </node>
       <node id="32">
         <label>sys/socket.h</label>
-      </node>
-      <node id="39">
-        <label>sigslot.h</label>
-        <link refid="sigslot_8h_source"/>
-        <childnode refid="40" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>set</label>
       </node>
       <node id="28">
         <label>stdio.h</label>
@@ -236,7 +225,7 @@
 <codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>overload<sp/>everything,<sp/>and<sp/>allow<sp/>for<sp/>connections<sp/>of<sp/>signals<sp/>and<sp/>slots<sp/>to<sp/>allow</highlight></codeline>
 <codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>advanced<sp/>configuration.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38" refid="classah__tcp__client" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classah__tcp__client" kindref="compound">ah_tcp_client</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classsigslot_1_1has__slots" kindref="compound">sigslot::has_slots</ref>&lt;&gt;{</highlight></codeline>
+<codeline lineno="38" refid="classah__tcp__client" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classah__tcp__client" kindref="compound">ah_tcp_client</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>sigslot::has_slots&lt;&gt;{</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sd,<sp/>rc,<sp/>length<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(int);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>serveraddr;</highlight></codeline>
@@ -246,8 +235,8 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>data_ready_sig<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hostent<sp/>*hostp;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>err_str[255],data[BufferLength];</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsigslot_1_1signal2" kindref="compound">sigslot::signal2&lt;int,char*&gt;</ref><sp/>error;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsigslot_1_1signal1" kindref="compound">sigslot::signal1&lt;char*&gt;</ref><sp/>data_ready;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>sigslot::signal2&lt;int,char*&gt;<sp/>error;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>sigslot::signal1&lt;char*&gt;<sp/>data_ready;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port<sp/>=<sp/>DEFAULTPORT;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ipAddr<sp/>=<sp/>INADDR_NONE;</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>

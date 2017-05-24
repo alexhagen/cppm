@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="ah__signal_8h" kind="file" language="C++">
     <compoundname>ah_signal.h</compoundname>
     <includes local="no">signal.h</includes>
@@ -7,18 +7,9 @@
     <includes local="no">unistd.h</includes>
     <includes local="no">errno.h</includes>
     <incdepgraph>
-      <node id="25">
-        <label>errno.h</label>
-      </node>
-      <node id="24">
-        <label>unistd.h</label>
-      </node>
-      <node id="22">
-        <label>signal.h</label>
-      </node>
       <node id="21">
         <label>ah_signal.h</label>
-        <link refid="ah_signal.h"/>
+        <link refid="ah__signal_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -27,6 +18,15 @@
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
+      </node>
+      <node id="25">
+        <label>errno.h</label>
+      </node>
+      <node id="24">
+        <label>unistd.h</label>
+      </node>
+      <node id="22">
+        <label>signal.h</label>
       </node>
       <node id="23">
         <label>stdio.h</label>

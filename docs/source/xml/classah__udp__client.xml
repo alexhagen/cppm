@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classah__udp__client" kind="class" language="C++" prot="public">
     <compoundname>ah_udp_client</compoundname>
-    <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classah__udp__client_1a1050bd762e3120bf7c33438abc65a921" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal1" kindref="compound">sigslot::signal1</ref>&lt; char * &gt;</type>
+        <type>sigslot::signal1&lt; char * &gt;</type>
         <definition>sigslot::signal1&lt;char*&gt; ah_udp_client::data_ready</definition>
         <argsstring></argsstring>
         <name>data_ready</name>
@@ -150,57 +150,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="174">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="173">
+      <node id="9">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="174" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="172">
+      <node id="8">
         <label>ah_udp_client</label>
         <link refid="classah__udp__client"/>
-        <childnode refid="173" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="177">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="178">
-        <label>sigslot::signal1&lt; char * &gt;</label>
-        <link refid="classsigslot_1_1signal1"/>
-        <childnode refid="179" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="176">
+      <node id="11">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="177" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="175">
+      <node id="10">
         <label>ah_udp_client</label>
         <link refid="classah__udp__client"/>
-        <childnode refid="176" relation="public-inheritance">
-        </childnode>
-        <childnode refid="178" relation="usage">
-          <edgelabel>data_ready</edgelabel>
-        </childnode>
-      </node>
-      <node id="179">
-        <label>sigslot::_signal_base1&lt; char *, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base1"/>
-        <childnode refid="180" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="180">
-        <label>sigslot::_signal_base&lt; SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="177" relation="public-inheritance">
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -212,16 +179,10 @@
       <member refid="classah__udp__client_1a522175ffe6cb30f73b7196ca52965d8c" prot="private" virt="non-virtual"><scope>ah_udp_client</scope><name>cnt</name></member>
       <member refid="classah__udp__client_1a3a28cb3e32e9c53f5832b98624d9b159" prot="private" virt="non-virtual"><scope>ah_udp_client</scope><name>cont</name></member>
       <member refid="classah__udp__client_1a1050bd762e3120bf7c33438abc65a921" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>data_ready</name></member>
-      <member refid="classsigslot_1_1has__slots_1a6e367c801e273a0a10f198640eb6fa89" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>disconnect_all</name></member>
-      <member refid="classsigslot_1_1has__slots_1aad7e6742f09f8abc1c216296435d236d" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>has_slots</name></member>
-      <member refid="classsigslot_1_1has__slots_1a32701fef2e2a29baa463e4797bcd48c7" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>has_slots</name></member>
       <member refid="classah__udp__client_1a03395e67c3471db6c3af7983eab0e029" prot="private" virt="non-virtual"><scope>ah_udp_client</scope><name>message</name></member>
       <member refid="classah__udp__client_1a0be932897e0c9e70341b5d823dc8c007" prot="private" virt="non-virtual"><scope>ah_udp_client</scope><name>mreq</name></member>
-      <member refid="classsigslot_1_1has__slots_1a08a0318c7c01ff6b28b37cbfe0a900c9" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>signal_connect</name></member>
-      <member refid="classsigslot_1_1has__slots_1a09bcc73ab0e195af47b42c133198f2f6" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>signal_disconnect</name></member>
       <member refid="classah__udp__client_1a3636879b2f121144260872c80dc96f66" prot="private" virt="non-virtual"><scope>ah_udp_client</scope><name>sock</name></member>
       <member refid="classah__udp__client_1a1baee3b1c5121ec5325e6317bc98d5c7" prot="public" virt="non-virtual"><scope>ah_udp_client</scope><name>start</name></member>
-      <member refid="classsigslot_1_1has__slots_1ae1b969877526cacdaa819f81e675b448" prot="public" virt="virtual"><scope>ah_udp_client</scope><name>~has_slots</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

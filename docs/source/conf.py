@@ -94,7 +94,7 @@ todo_include_todos = True
 html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {
-    'navbar_site_name': "Alex Hagen",
+    'navbar_site_name': "C++- Docs",
 
     # A list of tuples containing pages or urls to link to.
     # Valid tuples should be in the following forms:
@@ -106,7 +106,7 @@ html_theme_options = {
     'navbar_links': [
     ],
 
-    'navbar_sidebarrel': True,
+    'navbar_sidebarrel': False,
 
     'navbar_pagenav': True,
 

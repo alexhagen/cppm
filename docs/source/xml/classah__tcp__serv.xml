@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classah__tcp__serv" kind="class" language="C++" prot="public">
     <compoundname>ah_tcp_serv</compoundname>
-    <basecompoundref refid="classsigslot_1_1has__slots" prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">sigslot::has_slots&lt;&gt;</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classah__tcp__serv_1adcb4c57397976504ba75fc102a35aff1" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal1" kindref="compound">sigslot::signal1</ref>&lt; char * &gt;</type>
+        <type>sigslot::signal1&lt; char * &gt;</type>
         <definition>sigslot::signal1&lt;char*&gt; ah_tcp_serv::command_recv</definition>
         <argsstring></argsstring>
         <name>command_recv</name>
@@ -18,7 +18,7 @@
         <location file="ah_tcp_serv.h" line="52" column="1" bodyfile="ah_tcp_serv.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classah__tcp__serv_1a82ab909058d3f923eaf59c0ef7a09626" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal2" kindref="compound">sigslot::signal2</ref>&lt; int, char * &gt;</type>
+        <type>sigslot::signal2&lt; int, char * &gt;</type>
         <definition>sigslot::signal2&lt;int,char*&gt; ah_tcp_serv::error</definition>
         <argsstring></argsstring>
         <name>error</name>
@@ -31,7 +31,7 @@
         <location file="ah_tcp_serv.h" line="53" column="1" bodyfile="ah_tcp_serv.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classah__tcp__serv_1aeb99bc125a84e4571e5110d31bd7a599" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal1" kindref="compound">sigslot::signal1</ref>&lt; int &gt;</type>
+        <type>sigslot::signal1&lt; int &gt;</type>
         <definition>sigslot::signal1&lt;int&gt; ah_tcp_serv::client_connected</definition>
         <argsstring></argsstring>
         <name>client_connected</name>
@@ -44,7 +44,7 @@
         <location file="ah_tcp_serv.h" line="54" column="1" bodyfile="ah_tcp_serv.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classah__tcp__serv_1a862409973fdb3a483b33506b3aabb5c4" prot="public" static="no" mutable="no">
-        <type><ref refid="classsigslot_1_1signal1" kindref="compound">sigslot::signal1</ref>&lt; int &gt;</type>
+        <type>sigslot::signal1&lt; int &gt;</type>
         <definition>sigslot::signal1&lt;int&gt; ah_tcp_serv::client_disconnected</definition>
         <argsstring></argsstring>
         <name>client_disconnected</name>
@@ -423,88 +423,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="161">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="160">
+      <node id="5">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="161" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="159">
+      <node id="4">
         <label>ah_tcp_serv</label>
         <link refid="classah__tcp__serv"/>
-        <childnode refid="160" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="164">
-        <label>SIGSLOT_DEFAULT_MT_POLICY</label>
-      </node>
-      <node id="170">
-        <label>sigslot::signal2&lt; int, char * &gt;</label>
-        <link refid="classsigslot_1_1signal2"/>
-        <childnode refid="171" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="168">
-        <label>sigslot::signal1&lt; char * &gt;</label>
-        <link refid="classsigslot_1_1signal1"/>
-        <childnode refid="169" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="163">
+      <node id="7">
         <label>sigslot::has_slots&lt;&gt;</label>
-        <link refid="classsigslot_1_1has__slots"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
       </node>
-      <node id="166">
-        <label>sigslot::_signal_base1&lt; int, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base1"/>
-        <childnode refid="167" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="162">
+      <node id="6">
         <label>ah_tcp_serv</label>
         <link refid="classah__tcp__serv"/>
-        <childnode refid="163" relation="public-inheritance">
-        </childnode>
-        <childnode refid="165" relation="usage">
-          <edgelabel>client_connected</edgelabel>
-          <edgelabel>client_disconnected</edgelabel>
-        </childnode>
-        <childnode refid="168" relation="usage">
-          <edgelabel>command_recv</edgelabel>
-        </childnode>
-        <childnode refid="170" relation="usage">
-          <edgelabel>error</edgelabel>
-        </childnode>
-      </node>
-      <node id="169">
-        <label>sigslot::_signal_base1&lt; char *, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base1"/>
-        <childnode refid="167" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="171">
-        <label>sigslot::_signal_base2&lt; int, char *, SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base2"/>
-        <childnode refid="167" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="167">
-        <label>sigslot::_signal_base&lt; SIGSLOT_DEFAULT_MT_POLICY &gt;</label>
-        <link refid="classsigslot_1_1__signal__base"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="165">
-        <label>sigslot::signal1&lt; int &gt;</label>
-        <link refid="classsigslot_1_1signal1"/>
-        <childnode refid="166" relation="public-inheritance">
+        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -521,11 +457,8 @@
       <member refid="classah__tcp__serv_1adcb4c57397976504ba75fc102a35aff1" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>command_recv</name></member>
       <member refid="classah__tcp__serv_1a010741195acc2b4efc3137725c9644d4" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>connected_clients</name></member>
       <member refid="classah__tcp__serv_1adc80b3525190206815bc39f073e07e30" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>cont</name></member>
-      <member refid="classsigslot_1_1has__slots_1a6e367c801e273a0a10f198640eb6fa89" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>disconnect_all</name></member>
       <member refid="classah__tcp__serv_1a82ab909058d3f923eaf59c0ef7a09626" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>error</name></member>
       <member refid="classah__tcp__serv_1a678e2f5c41a1e8a32b7cff5b44501c6e" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>fdmax</name></member>
-      <member refid="classsigslot_1_1has__slots_1aad7e6742f09f8abc1c216296435d236d" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>has_slots</name></member>
-      <member refid="classsigslot_1_1has__slots_1a32701fef2e2a29baa463e4797bcd48c7" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>has_slots</name></member>
       <member refid="classah__tcp__serv_1a31830b0e154653bee74e2619d50096b6" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>i</name></member>
       <member refid="classah__tcp__serv_1a95c64abdd9e5b5c360d0ef4ef3679a86" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>ipAddr</name></member>
       <member refid="classah__tcp__serv_1aefbbc688a7ab0ba96eae90c4e3382640" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>j</name></member>
@@ -539,12 +472,9 @@
       <member refid="classah__tcp__serv_1a72aa33911b2440a51a0b31723bffe577" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>send_msg</name></member>
       <member refid="classah__tcp__serv_1ab1096583000100ce86a6e5476555c2b7" prot="public" virt="virtual"><scope>ah_tcp_serv</scope><name>send_reply</name></member>
       <member refid="classah__tcp__serv_1a01d87713a80435ef41d63bf1f8025a66" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>serveraddr</name></member>
-      <member refid="classsigslot_1_1has__slots_1a08a0318c7c01ff6b28b37cbfe0a900c9" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>signal_connect</name></member>
-      <member refid="classsigslot_1_1has__slots_1a09bcc73ab0e195af47b42c133198f2f6" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>signal_disconnect</name></member>
       <member refid="classah__tcp__serv_1af15c952d4a9a9a560217966e49d44cbb" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>start_b</name></member>
       <member refid="classah__tcp__serv_1a1ec71a7be06b5c564c199bb3eb4c35b5" prot="public" virt="non-virtual"><scope>ah_tcp_serv</scope><name>start_nb</name></member>
       <member refid="classah__tcp__serv_1a4e24a64bd8a7e5d25acca864f71c1e50" prot="private" virt="non-virtual"><scope>ah_tcp_serv</scope><name>yes</name></member>
-      <member refid="classsigslot_1_1has__slots_1ae1b969877526cacdaa819f81e675b448" prot="public" virt="virtual"><scope>ah_tcp_serv</scope><name>~has_slots</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

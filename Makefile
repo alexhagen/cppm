@@ -9,8 +9,6 @@ breathe: FORCE
 	mv examples/example_shm.html docs/source/README_SHM.html; \
 	jupyter nbconvert examples/example_value.ipynb --to html --template basic --execute; \
 	mv examples/example_value.html docs/source/README_VALUE.html; \
-	pandoc readmes/readme_cll.md -o docs/source/README_CLL.rst; \
-	pandoc readmes/readme_ah_value.md -o docs/source/README_VALUE.rst; \
 	cd docs/; \
 	sphinx-apidoc -e -f -M -o ./ ../; \
 	make html

@@ -1,4 +1,5 @@
-# cppm - cpp firmware objects for people with no time
+# cppm
+**c++ objects for people with no time**
 
 I write a lot of firmware for the detectors I make.  And I have to say, `c++`
 has some of the most convoluted classes imaginable. So, everytime I have to use
