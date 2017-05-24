@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cppm - cpp firmware objects for people with no time &#8212; cppm a documentation</title>
+    
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/extra.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        cppm</a>
+      <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse">
+        <ul class="nav navbar-nav">
+          
+            <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Alex Hagen <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+            
+              <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#"> <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">cppm - cpp firmware objects for people with no time</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#memory-objects">Memory Objects</a><ul>
+<li><a class="reference internal" href="#ah-cll-circular-linked-lists">ah_cll - Circular Linked Lists</a></li>
+<li><a class="reference internal" href="#ah-ll-linked-lists">ah_ll - Linked Lists</a></li>
+<li><a class="reference internal" href="#ah-shm-shared-memory-objects">ah_shm - Shared Memory Objects</a></li>
+<li><a class="reference internal" href="#ah-value-a-stateful-variable-class">ah_value - A stateful variable class</a><ul>
+<li><a class="reference internal" href="#id1">Installation</a></li>
+<li><a class="reference internal" href="#id2">Usage</a></li>
+<li><a class="reference internal" href="#to-do">To Do</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tcp-objects">TCP Objects</a><ul>
+<li><a class="reference internal" href="#ah-tcp-client-a-signal-slot-method-tcp-client">ah_tcp_client - A signal/slot method TCP client</a></li>
+<li><a class="reference internal" href="#ah-tcp-serv-a-signal-slot-tcp-server">ah_tcp_serv - A signal/slot TCP server</a></li>
+<li><a class="reference internal" href="#simple-tcp-client-a-simplified-tcp-client">simple_tcp_client - A simplified TCP client</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#udp-objects">UDP Objects</a><ul>
+<li><a class="reference internal" href="#ah-udp-client-a-simplified-udp-client">ah_udp_client - A simplified UDP client</a></li>
+<li><a class="reference internal" href="#ah-udp-client-qt-a-signal-slot-qt-based-udp-client">ah_udp_client_qt - A signal/slot QT based UDP client</a></li>
+<li><a class="reference internal" href="#ah-udp-serv-a-simplified-udp-server">ah_udp_serv - A simplified UDP server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#signals-and-timing">Signals and Timing</a><ul>
+<li><a class="reference internal" href="#ah-signal-signals-for-signal-slot-method">ah_signal - Signals for signal/slot method</a></li>
+<li><a class="reference internal" href="#simple-timer-a-simple-hardware-timer">simple_timer - A simple hardware timer</a></li>
+<li><a class="reference internal" href="#timer-a-signal-slot-method-timer">timer - A signal/slot method timer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+            
+          
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+          
+          
+            
+              
+            
+          
+          
+          
+          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://alexhagen.github.io/" target="_blank">Alex Hagen</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="cppm-cpp-firmware-objects-for-people-with-no-time">
+<h1>cppm - cpp firmware objects for people with no time<a class="headerlink" href="#cppm-cpp-firmware-objects-for-people-with-no-time" title="Permalink to this headline">¶</a></h1>
+<p>I write a lot of firmware for the detectors I make. And I have to say,
+<code class="docutils literal"><span class="pre">c++</span></code> has some of the most convoluted classes imaginable. So,
+everytime I have to use one of the complex <code class="docutils literal"><span class="pre">c++</span></code> objects, or - even
+worse - use the old non-semantic <code class="docutils literal"><span class="pre">c</span></code> APIs for things, I try to write
+it into a little bit more pythonic object. If you really want the full
+power of these objects, don’t use this library. But if you want the
+object to be exactly what it says it is, and no more, this library may
+be one of the faster ways.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Installation is easy. Just clone, copy into <code class="docutils literal"><span class="pre">/usr/inclue/c++</span></code>, and go.
+If you’re on Windows, good luck. Maybe someone can tell me where Windows
+developers might keep their header files.</p>
+<p><strong>Step-By-Step</strong></p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">alexhagen</span><span class="o">/</span><span class="n">cppm</span>
+<span class="n">cp</span> <span class="n">cppm</span><span class="o">/*.</span><span class="n">h</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">includes</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>There’s a bunch of different interfaces defined here, categorized
+roughly as <em>memory objects</em>, <em>tcp objects</em>, <em>udp objects</em>, and <em>signals
+and timing</em>. Specific documentation on all of those interfaces are
+included in the readmes folder.</p>
+</div>
+<div class="section" id="memory-objects">
+<h2>Memory Objects<a class="headerlink" href="#memory-objects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ah-cll-circular-linked-lists">
+<h3>ah_cll - Circular Linked Lists<a class="headerlink" href="#ah-cll-circular-linked-lists" title="Permalink to this headline">¶</a></h3>
+<p>A circular linked list in c++</p>
+<dl class="class">
+<dt>
+<span class="target" id="cppmclassnode"></span><em class="property">template </em>&lt;class <em>T</em>&gt;</dt>
+<dt id="_CPPv24node">
+<span id="node"></span><em class="property">class </em><code class="descname">node</code><a class="headerlink" href="#_CPPv24node" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;ah_cll.h&gt;</em><p>an implementation of a storage node for a circular linked list. </p>
+<p>an implementation of a storage node for a linked list. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N4node4nodeE1TP4nodeI1TE">
+<span id="node::node__T.node:T:P"></span><span class="target" id="cppmclassnode_1a1a1fd7a93c794d083ede92519958ca86"></span><code class="descname">node</code><span class="sig-paren">(</span>T <em>_data</em>, <a class="reference internal" href="#_CPPv2N4node4nodeE1TP4nodeI1TE" title="node::node">node</a>&lt;T&gt; *<em>_next</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N4node4nodeE1TP4nodeI1TE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>initializes a node or datum to be put into the linked list </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N4node4dataE">
+<span id="node::data__T"></span><span class="target" id="cppmclassnode_1a0a3e961e5caf1562f0c27caef3940e7a"></span>T <code class="descname">data</code><a class="headerlink" href="#_CPPv2N4node4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a data type to be put into the datum </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N4node4nextE">
+<span id="node::next__node:T:P"></span><span class="target" id="cppmclassnode_1a5ebece409931a531c8cb37aa353a1afb"></span><a class="reference internal" href="#_CPPv24node" title="node">node</a>&lt;T&gt; *<code class="descname">next</code><a class="headerlink" href="#_CPPv2N4node4nextE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the pointer to the next node in the circular linked list </p>
+<p>the pointer to the next node in the linked list </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<span class="target" id="cppmclasscll"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
+<dt id="_CPPv23cll">
+<span id="cll"></span><em class="property">class </em><code class="descname">cll</code><a class="headerlink" href="#_CPPv23cll" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;ah_cll.h&gt;</em><p>a circular linked list </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N3cll3cllEi">
+<span id="cll::cll__i"></span><span class="target" id="cppmclasscll_1a6b2b48326e7fdfb849993a7c5dc5bd9a"></span><code class="descname">cll</code><span class="sig-paren">(</span>int <em>_length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N3cll3cllEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes a circular linked list initializes the linked list with data object type of length _length </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N3cll6insertE1T">
+<span id="cll::insert__T"></span><span class="target" id="cppmclasscll_1a4ef3a7bc08e667464530d8236d5b18a2"></span>void <code class="descname">insert</code><span class="sig-paren">(</span>T <em>datum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N3cll6insertE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inserts a datum into the linked list. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">datum</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N3cll3popEv">
+<span id="cll::pop"></span><span class="target" id="cppmclasscll_1ac9ae22569c31a01698bd248306ff47d8"></span>T <code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N3cll3popEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the last datum and removes it from the list </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>last datum </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N3cll6lengthE">
+<span id="cll::length__i"></span><span class="target" id="cppmclasscll_1a2eabdd7dcf8ebd086637868070360c86"></span>int <code class="descname">length</code><a class="headerlink" href="#_CPPv2N3cll6lengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the length of each datum </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N3cll4sizeE">
+<span id="cll::size__i"></span><span class="target" id="cppmclasscll_1ac8d30a3f2c526c688dea4897053bd7a1"></span>int <code class="descname">size</code><a class="headerlink" href="#_CPPv2N3cll4sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the current size of the whole linked list </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N3cll4headE">
+<span id="cll::head__node:T:P"></span><span class="target" id="cppmclasscll_1a5e02fc48a7f3e17ac02a844eeb51ecc2"></span><a class="reference internal" href="#_CPPv24node" title="node">node</a>&lt;T&gt; *<code class="descname">head</code><a class="headerlink" href="#_CPPv2N3cll4headE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the pointer to the first datum </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N3cll4tailE">
+<span id="cll::tail__node:T:P"></span><span class="target" id="cppmclasscll_1a1ef9249ea5e1dcab9dce364c1b794116"></span><a class="reference internal" href="#_CPPv24node" title="node">node</a>&lt;T&gt; *<code class="descname">tail</code><a class="headerlink" href="#_CPPv2N3cll4tailE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the pointer to the last datum </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-ll-linked-lists">
+<h3>ah_ll - Linked Lists<a class="headerlink" href="#ah-ll-linked-lists" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt>
+<span class="target" id="cppmclassll"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
+<dt id="_CPPv22ll">
+<span id="ll"></span><em class="property">class </em><code class="descname">ll</code><a class="headerlink" href="#_CPPv22ll" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;ah_ll.h&gt;</em><p>a linked list </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N2ll2llEv">
+<span id="ll::ll"></span><span class="target" id="cppmclassll_1a8a81bca9ed7ec3da16b61a03ad18bbb6"></span><code class="descname">ll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll2llEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes a linked list initializes the linked list with data object type of length _length </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll6insertE1T">
+<span id="ll::insert__T"></span><span class="target" id="cppmclassll_1af194c42aa183947174ab6927b2b20bb6"></span>void <code class="descname">insert</code><span class="sig-paren">(</span>T <em>datum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll6insertE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inserts a datum into the linked list. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">datum</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll3popEv">
+<span id="ll::pop"></span><span class="target" id="cppmclassll_1a3463cf369d98f7fb54a952a4bb7e3fbb"></span>T <code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll3popEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the last datum and removes it from the list </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>last datum </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll7isemptyEv">
+<span id="ll::isempty"></span><span class="target" id="cppmclassll_1a0163fed6c2bacd0b0c335e03dae8431a"></span>bool <code class="descname">isempty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll7isemptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns whether the linked list includes any data </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>boolean True if empty, False if not </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll4meanEv">
+<span id="ll::mean"></span><span class="target" id="cppmclassll_1af899e14180d38597127fd6f91c27894b"></span>T <code class="descname">mean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll4meanEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the mean of any data in the linked list that can be summed </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the mean of the data </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll5stdevEv">
+<span id="ll::stdev"></span><span class="target" id="cppmclassll_1a1c943f143877d9eef056053862646936"></span>T <code class="descname">stdev</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll5stdevEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the standard deviation of any data in the linekd list that can be summed </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the standard deviation of the data </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N2ll7destroyEv">
+<span id="ll::destroy"></span><span class="target" id="cppmclassll_1ad5fc321bf1d05d0eed4590940969f39e"></span>void <code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N2ll7destroyEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>removes all pointers to the linked list and destroys the instance </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N2ll4headE">
+<span id="ll::head__node:T:P"></span><span class="target" id="cppmclassll_1a243197867545d2d548761841cd5b8aa9"></span><a class="reference internal" href="#_CPPv24node" title="node">node</a>&lt;T&gt; *<code class="descname">head</code><a class="headerlink" href="#_CPPv2N2ll4headE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N2ll4tailE">
+<span id="ll::tail__node:T:P"></span><span class="target" id="cppmclassll_1a227174746d623f56702b21f98e6401c7"></span><a class="reference internal" href="#_CPPv24node" title="node">node</a>&lt;T&gt; *<code class="descname">tail</code><a class="headerlink" href="#_CPPv2N2ll4tailE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-shm-shared-memory-objects">
+<h3>ah_shm - Shared Memory Objects<a class="headerlink" href="#ah-shm-shared-memory-objects" title="Permalink to this headline">¶</a></h3>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="shm---Shared-Memory">shm - Shared Memory<a class="anchor-link" href="#shm---Shared-Memory">&#182;</a></h2><p>I created this shared memory interface to pass variables amongst processes in linux for a detector firmware I was writing.  It uses the <code>shmget</code> and <code>shmat</code> C interface under the hood, but that's all so non-semantic when you code it that you shouldn't have to worry about it.</p>
+<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>My fiance is watching the tv show Sherlock Holmes behind me, so this example is themed on that show.</p>
+<p>First, we have to create some server for the shared memory.  This server has to be open for the client process to read it, so we'll just keep it open indefinitely.  We also have to define a unique identifier for the shared memory server.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">cppm</span> <span class="kn">import</span> <span class="n">cppmagic</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">runcppnb</span> shm_server
+#include &quot;../ah_shm.h&quot;
+#include &quot;../ah_signal.h&quot;
+#include &lt;string&gt;
+
+int run = 1;
+
+void cleanup(int signum){
+    run = 0;
+}
+
+int main(void){
+    // create the shm server
+    shm_server&lt;std::string&gt; *sherlock = new shm_server&lt;std::string&gt;(5678);
+    // latch a cleanup function onto the SIGTERM signal
+    ah_signal(SIGINT, &amp;cleanup);
+
+    while (run){
+        sherlock-&gt;set(&quot;is a good guy!&quot;);
+        sleep(1);
+        sherlock-&gt;set(&quot;is a bad guy!&quot;);
+        sleep(1);
+        sherlock-&gt;set(&quot;is dead!&quot;);
+        sleep(1);
+        sherlock-&gt;set(&quot;is now alive again!&quot;);
+        sleep(1);
+    }
+    
+    delete sherlock;
+    return 0;
+}
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, to connect to the memory.  We have to attach using the same key, which is a little bit of a paint, but if you use macros effectively, it'll just be like pointing at a file.  This client will be way faster than using files though, for time intensive processes, use these <code>shm</code>s.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%%</span><span class="k">runcpp</span> shm_client
+#include &quot;../ah_shm.h&quot;
+#include &lt;string&gt;
+
+int main(void){
+    shm_client&lt;std::string&gt; *holmes = new shm_client&lt;std::string&gt;(5678);
+    for(int i=1; i&lt;5; i++){
+        printf(&quot;Episode %d in which Sherlock %s\n&quot;, i, holmes-&gt;get().c_str());
+        sleep(1);
+    }
+    delete holmes;
+    return 0;
+}
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Episode 1 in which Sherlock is a good guy!
+Episode 2 in which Sherlock is a bad guy!
+Episode 3 in which Sherlock is dead!
+Episode 4 in which Sherlock is now alive again!
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we just have to stop the server to make sure we're not leaving too many things open.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">killall</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Just a note:  I'm still working on the cleanup of this.  To check that I've removed all of the attached shared memory, you can use the bash line</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>ipcs
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>IPC status from &lt;running system&gt; as of Tue May 23 22:40:55 EDT 2017
+T     ID     KEY        MODE       OWNER    GROUP
+Message Queues:
+
+T     ID     KEY        MODE       OWNER    GROUP
+Shared Memory:
+m  65536 0x52010016 --rw-------     root    wheel
+m 720899 0x0000162e --rw-rw-rw-   ahagen    staff
+
+T     ID     KEY        MODE       OWNER    GROUP
+Semaphores:
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and to remove it, find the <code>KEY</code> corresponding to it and use</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>ipcrm -M 0x0000162e
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+ 
+
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt id="c.SHMSZ">
+<span class="target" id="cppmah__shm_8h_1af328b6ce3cae231d90cfbf2f340d03c2"></span><code class="descname">SHMSZ</code> 27<a class="headerlink" href="#c.SHMSZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt>
+<span class="target" id="cppmclassshm__server"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
+<dt id="_CPPv210shm_server">
+<span id="shm_server"></span><em class="property">class </em><code class="descname">shm_server</code><a class="headerlink" href="#_CPPv210shm_server" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N10shm_server10shm_serverE5key_t">
+<span id="shm_server::shm_server__key_t"></span><span class="target" id="cppmclassshm__server_1ae0d4f128deeac84d7a4999653e9f07a4"></span><code class="descname">shm_server</code><span class="sig-paren">(</span>key_t <em>_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server10shm_serverE5key_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N10shm_serverD0Ev">
+<span id="shm_server::~shm_server"></span><span class="target" id="cppmclassshm__server_1a304e4b7d993e2653de91242c9389041c"></span><code class="descname">~shm_server</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_serverD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N10shm_server3setE1T">
+<span id="shm_server::set__T"></span><span class="target" id="cppmclassshm__server_1ac9c474b73046158390db5a3ecd405262"></span>void <code class="descname">set</code><span class="sig-paren">(</span>T <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server3setE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N10shm_server3getEv">
+<span id="shm_server::get__void"></span><span class="target" id="cppmclassshm__server_1a523edb5ef3376a564e13d92d1a3d8d55"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_server3getEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N10shm_server1cE">
+<span id="shm_server::c__c"></span><span class="target" id="cppmclassshm__server_1ab2697041f9bf742b667b7b1a59a0739a"></span>char <code class="descname">c</code><a class="headerlink" href="#_CPPv2N10shm_server1cE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10shm_server5shmidE">
+<span id="shm_server::shmid__i"></span><span class="target" id="cppmclassshm__server_1a6f5bb5a5918627af57c588c5f9235152"></span>int <code class="descname">shmid</code><a class="headerlink" href="#_CPPv2N10shm_server5shmidE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10shm_server3keyE">
+<span id="shm_server::key__key_t"></span><span class="target" id="cppmclassshm__server_1a695168a8b6ba7f11316d8863fa3a5027"></span>key_t <code class="descname">key</code><a class="headerlink" href="#_CPPv2N10shm_server3keyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10shm_server3shmE">
+<span id="shm_server::shm__TP"></span><span class="target" id="cppmclassshm__server_1ae88f1d786dc363c9123f31057f370f93"></span>T *<code class="descname">shm</code><a class="headerlink" href="#_CPPv2N10shm_server3shmE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<span class="target" id="cppmclassshm__client"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
+<dt id="_CPPv210shm_client">
+<span id="shm_client"></span><em class="property">class </em><code class="descname">shm_client</code><a class="headerlink" href="#_CPPv210shm_client" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N10shm_client10shm_clientE5key_t">
+<span id="shm_client::shm_client__key_t"></span><span class="target" id="cppmclassshm__client_1ae00cb647c123b26895dc19f57fa30e7b"></span><code class="descname">shm_client</code><span class="sig-paren">(</span>key_t <em>_key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_client10shm_clientE5key_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N10shm_clientD0Ev">
+<span id="shm_client::~shm_client"></span><span class="target" id="cppmclassshm__client_1a2c44788b93f9557ba0c59c195c606ac8"></span><code class="descname">~shm_client</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_clientD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N10shm_client3getEv">
+<span id="shm_client::get__void"></span><span class="target" id="cppmclassshm__client_1ac914522e1dbf17bdb473f4254caf55c0"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N10shm_client3getEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N10shm_client5shmidE">
+<span id="shm_client::shmid__i"></span><span class="target" id="cppmclassshm__client_1a4263c527eadf3bc1d701ced30d76b28f"></span>int <code class="descname">shmid</code><a class="headerlink" href="#_CPPv2N10shm_client5shmidE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10shm_client3keyE">
+<span id="shm_client::key__key_t"></span><span class="target" id="cppmclassshm__client_1a6b7ac7e4038cbe3c6cb39d8e8d8f79e9"></span>key_t <code class="descname">key</code><a class="headerlink" href="#_CPPv2N10shm_client3keyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10shm_client3shmE">
+<span id="shm_client::shm__TP"></span><span class="target" id="cppmclassshm__client_1aa8b5be306fb17bc7264b1e875c0bd697"></span>T *<code class="descname">shm</code><a class="headerlink" href="#_CPPv2N10shm_client3shmE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-value-a-stateful-variable-class">
+<h3>ah_value - A stateful variable class<a class="headerlink" href="#ah-value-a-stateful-variable-class" title="Permalink to this headline">¶</a></h3>
+<p>The AH Value class is a simple, encapsulated c++ class to help track
+values. It is written with the signal-slot paradigm so that events can
+be triggered as the values change, corresponding. This is a way to
+decrease the overhead that must happen to trace some values (such as
+checking if something is over a certain value every loop).</p>
+<div class="section" id="id1">
+<h4>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Installation of the ah_value class is simple. Place the ah_value.h
+file somewhere where your compiler can see it (as well as the common
+directory, as it includes sigslot.h). Then, connect your signals and
+move forward.</p>
+</div>
+<div class="section" id="id2">
+<h4>Usage<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Follow the steps below to use the <code class="docutils literal"><span class="pre">ah_value</span></code> class.</p>
+<p>Lets say we want to create a program that indicates whether a motor is
+up to speed, and thereafter, how much it has varied from that speed. We
+would write a notifier class, as below.</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="ow">in</span> <span class="n">file</span> <span class="n">notifier</span><span class="o">.</span><span class="n">h</span>
+<span class="c1">#include &quot;sigslot.h&quot;</span>
+<span class="c1">#include &quot;ah_value.h&quot;</span>
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="k">class</span> <span class="nc">notifier</span> <span class="p">:</span> <span class="n">public</span> <span class="n">sigslot</span><span class="p">::</span><span class="n">has_slots</span><span class="o">&lt;&gt;</span><span class="p">{</span>
+                 <span class="o">//</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="n">make</span> <span class="n">this</span> <span class="n">a</span> <span class="n">sigslot</span> <span class="n">so</span> <span class="n">that</span> <span class="n">it</span> <span class="n">can</span> <span class="n">accept</span> <span class="n">slots</span>
+<span class="n">public</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">a</span> <span class="n">value</span> <span class="nb">object</span> <span class="k">for</span> <span class="n">our</span> <span class="n">notifier</span> <span class="k">class</span>
+    <span class="nc">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">vl</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">a</span> <span class="n">constructor</span> <span class="n">to</span> <span class="k">pass</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">external</span> <span class="n">notifier</span> <span class="k">class</span>
+    <span class="nc">notifier</span><span class="p">(</span><span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;*</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">slot</span> <span class="n">that</span> <span class="n">will</span> <span class="n">tell</span> <span class="n">when</span> <span class="n">it</span><span class="s1">&#39;s up to speed</span>
+    <span class="n">void</span> <span class="n">up_to_speed</span><span class="p">(</span><span class="n">void</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">notifier</span><span class="p">::</span><span class="n">notifier</span><span class="p">(</span><span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">_vl</span><span class="p">){</span>
+    <span class="n">vl</span> <span class="o">=</span> <span class="n">_vl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">notifier</span><span class="p">::</span><span class="n">up_to_speed</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
+    <span class="o">//</span> <span class="n">let</span> <span class="n">us</span> <span class="n">know</span> <span class="n">that</span> <span class="n">we</span><span class="s1">&#39;re up to speed</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Motor is up to speed</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">now</span> <span class="n">reset</span> <span class="n">the</span> <span class="nb">max</span> <span class="nb">min</span> <span class="n">so</span> <span class="n">we</span> <span class="n">only</span> <span class="n">get</span> <span class="n">the</span> <span class="n">maximum</span> <span class="ow">and</span> <span class="n">minimum</span> <span class="n">when</span> <span class="n">up</span> <span class="n">to</span>
+    <span class="o">//</span> <span class="n">speed</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">resetmaxmin</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>This can be run using the following tester</li>
+</ul>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="ow">in</span> <span class="n">file</span> <span class="n">test_value</span><span class="o">.</span><span class="n">cpp</span>
+<span class="c1">#include &quot;ah_value.h&quot;</span>
+<span class="c1">#include &quot;notifier.h&quot;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">value</span> <span class="k">class</span> <span class="nc">of</span> <span class="nb">type</span> <span class="nb">int</span>
+    <span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">vl</span> <span class="o">=</span> <span class="n">new</span> <span class="n">value</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">notifier</span> <span class="k">class</span> <span class="nc">and</span> <span class="k">pass</span> <span class="ow">in</span> <span class="n">our</span> <span class="n">value</span>
+    <span class="n">notifier</span> <span class="o">*</span><span class="n">ntfr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">notifier</span><span class="p">(</span><span class="n">vl</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">the</span> <span class="n">signal</span> <span class="k">for</span> <span class="n">above</span> <span class="n">level</span> <span class="n">to</span> <span class="n">the</span> <span class="n">slot</span> <span class="n">telling</span> <span class="n">us</span>
+    <span class="o">//</span> <span class="n">we</span><span class="s1">&#39;re up to speed</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">abovelevel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ntfr</span><span class="p">,</span><span class="n">notifier</span><span class="p">::</span><span class="n">up_to_speed</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">now</span> <span class="n">we</span> <span class="n">have</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">what</span> <span class="n">level</span> <span class="n">we</span><span class="s1">&#39;re up to speed at</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="n">setlevel</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">now</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">slowly</span> <span class="n">increase</span> <span class="n">the</span> <span class="n">speed</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">vl</span><span class="o">-&gt;</span><span class="nb">set</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">now</span> <span class="n">that</span> <span class="n">we</span><span class="s1">&#39;re back below speed (remember we said *above* 5), we can end</span>
+    <span class="o">//</span> <span class="ow">and</span> <span class="n">look</span> <span class="n">at</span> <span class="n">details</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;The maximum when up to speed was </span><span class="si">%d</span><span class="s2">, and the minimum was </span><span class="si">%d</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> \
+        <span class="n">vl</span><span class="o">-&gt;</span><span class="n">getmax</span><span class="p">(),</span><span class="n">vl</span><span class="o">-&gt;</span><span class="n">getmin</span><span class="p">());</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This can be compiled and run using:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ g++ -std=c++11 test_value.cpp -I/dir/to/notifier.h -I/dir/to/ah_value.h \
+&gt; -I/dir/to/sigslot.h -o test_value
+$ ./test_value
+</pre></div>
+</div>
+</div>
+<div class="section" id="to-do">
+<h4>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>[ ] Absolute value support (added 10/16/14)</li>
+<li>[ ] “Smart” change, indicating if value was changed and is still at
+speed (added 10/16/14)</li>
+</ul>
+<dl class="class">
+<dt>
+<span class="target" id="cppmclassvalue"></span><em class="property">template </em>&lt;<em class="property">class</em> T&gt;</dt>
+<dt id="_CPPv25value">
+<span id="value"></span><em class="property">class </em><code class="descname">value</code><a class="headerlink" href="#_CPPv25value" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;ah_value.h&gt;</em><p>a stateful variable class - simplistically </p>
+<p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N5value3setE1T">
+<span id="value::set__T"></span><span class="target" id="cppmclassvalue_1a17449aee748a7f024efc91c6a0efbbba"></span>void <code class="descname">set</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value3setE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>sets the variable to a certain value </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">x</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value9silentsetE1T">
+<span id="value::silentset__T"></span><span class="target" id="cppmclassvalue_1a2cf001fee44c3c0b87b11ea7a506ff5f"></span>void <code class="descname">silentset</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value9silentsetE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>sets the variable to a value and silences all signals (for this operation) </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">x</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value3getEv">
+<span id="value::get__void"></span><span class="target" id="cppmclassvalue_1af126a5d3141d20654bb8c8d643b35139"></span>T <code class="descname">get</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value3getEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the value of the variable </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value of the variable </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value8setlevelE1T">
+<span id="value::setlevel__T"></span><span class="target" id="cppmclassvalue_1a3c28ca7a32c2ffd3dbf7c23fb5e5e4f1"></span>void <code class="descname">setlevel</code><span class="sig-paren">(</span>T <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value8setlevelE1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>sets the trigger threshold </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">x</span></code></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value8getlevelEv">
+<span id="value::getlevel__void"></span><span class="target" id="cppmclassvalue_1a0ec9d92bebbbb8716991c2d4784835e5"></span>T <code class="descname">getlevel</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value8getlevelEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the value of the trigger threshold </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value of the trigger threshold </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value11resetmaxminEv">
+<span id="value::resetmaxmin__void"></span><span class="target" id="cppmclassvalue_1ad1f83bbb9c1fda8839784e4a34568d7f"></span>void <code class="descname">resetmaxmin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value11resetmaxminEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>resets the states of maximum and minimum during the data-logging time </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value6getmaxEv">
+<span id="value::getmax__void"></span><span class="target" id="cppmclassvalue_1ab84bad3e9f625c72051a679ed3da4d2f"></span>T <code class="descname">getmax</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getmaxEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the maximum value encountered since the start of the program or since the last call to resetmaxmin </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>maximum value during data-logging time </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value6getminEv">
+<span id="value::getmin__void"></span><span class="target" id="cppmclassvalue_1af9f93b5c9cbca674acd478c3eab0dc40"></span>T <code class="descname">getmin</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getminEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the minimum value encountered since the start of the program or since the last call to resetmaxmin </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>minimum value during data-logging time </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5value6getoldEv">
+<span id="value::getold__void"></span><span class="target" id="cppmclassvalue_1a60a1e8dbe5a09728d26b3320a9b5e576"></span>T <code class="descname">getold</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5value6getoldEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>returns the last value before the last call to set </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>value of variable before last call to set </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N5value7changedE">
+<span id="value::changed__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a3bc0d9a00e93c64a2787bb1ad9431a16"></span>sigslot::signal0 <code class="descname">changed</code><a class="headerlink" href="#_CPPv2N5value7changedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a signal that is triggered when the value changes </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value12levelchangedE">
+<span id="value::levelchanged__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a1b8043a6a4e9cce21f93cd483cf8f5fa"></span>sigslot::signal0 <code class="descname">levelchanged</code><a class="headerlink" href="#_CPPv2N5value12levelchangedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a signal that is triggered when someone changes the trigger level </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value10abovelevelE">
+<span id="value::abovelevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a0027cf12cbcc6031c7eb40f7013f76d5"></span>sigslot::signal0 <code class="descname">abovelevel</code><a class="headerlink" href="#_CPPv2N5value10abovelevelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a signal triggered when the value goes from below to above the trigger level </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value10belowlevelE">
+<span id="value::belowlevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1a0744303135beb5b6cbcb1599ec8e6d4d"></span>sigslot::signal0 <code class="descname">belowlevel</code><a class="headerlink" href="#_CPPv2N5value10belowlevelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a signal triggered when the value goes from above to below the trigger level </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value7atlevelE">
+<span id="value::atlevel__sigslot::signal0"></span><span class="target" id="cppmclassvalue_1ad63d94fa3706b525613a37ab5251f8ee"></span>sigslot::signal0 <code class="descname">atlevel</code><a class="headerlink" href="#_CPPv2N5value7atlevelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>a signal triggered when the value goes from not equal to equal the trigger level </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N5value3valE">
+<span id="value::val__T"></span><span class="target" id="cppmclassvalue_1aad42c1c3a08ae1381cbbef2b4520a019"></span>T <code class="descname">val</code><a class="headerlink" href="#_CPPv2N5value3valE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the value of the variable </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value5levelE">
+<span id="value::level__T"></span><span class="target" id="cppmclassvalue_1a34ed56cb9db06893d3b5acf65279d200"></span>T <code class="descname">level</code><a class="headerlink" href="#_CPPv2N5value5levelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the trigger level </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value3maxE">
+<span id="value::max__T"></span><span class="target" id="cppmclassvalue_1a7c92e95a70f06c68429e329f774102ec"></span>T <code class="descname">max</code><a class="headerlink" href="#_CPPv2N5value3maxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the current maximum </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value3minE">
+<span id="value::min__T"></span><span class="target" id="cppmclassvalue_1ad2ebbde2f43f00d276509732eb177737"></span>T <code class="descname">min</code><a class="headerlink" href="#_CPPv2N5value3minE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the current minimum </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5value3oldE">
+<span id="value::old__T"></span><span class="target" id="cppmclassvalue_1a313f1bd2ebdde33206e393d4218bc1c4"></span>T <code class="descname">old</code><a class="headerlink" href="#_CPPv2N5value3oldE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>the last value </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="tcp-objects">
+<h2>TCP Objects<a class="headerlink" href="#tcp-objects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ah-tcp-client-a-signal-slot-method-tcp-client">
+<h3>ah_tcp_client - A signal/slot method TCP client<a class="headerlink" href="#ah-tcp-client-a-signal-slot-method-tcp-client" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt id="c.BufferLength">
+<span class="target" id="cppmah__tcp__client_8h_1a42b3e4501dac318b1384a0c2a28d1e8b"></span><code class="descname">BufferLength</code> 100<a class="headerlink" href="#c.BufferLength" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.DEFAULTPORT">
+<span class="target" id="cppmah__tcp__client_8h_1a3db4dba8d56385b62759b89c98cae447"></span><code class="descname">DEFAULTPORT</code> 9000<a class="headerlink" href="#c.DEFAULTPORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_EMERG">
+<span class="target" id="cppmah__tcp__client_8h_1a9922df1615f2bdefad557ea5ed097cc9"></span><code class="descname">ERR_EMERG</code> 0<a class="headerlink" href="#c.ERR_EMERG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_CRIT">
+<span class="target" id="cppmah__tcp__client_8h_1a1e294ccf9aa4a309ba36a100e6918c28"></span><code class="descname">ERR_CRIT</code> 1<a class="headerlink" href="#c.ERR_CRIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_ERR">
+<span class="target" id="cppmah__tcp__client_8h_1a139aedc8e582971ff6b718ab65ef90a5"></span><code class="descname">ERR_ERR</code> 2<a class="headerlink" href="#c.ERR_ERR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_WARN">
+<span class="target" id="cppmah__tcp__client_8h_1a63d07a0b4263315e90bb0c9c3670e0b2"></span><code class="descname">ERR_WARN</code> 3<a class="headerlink" href="#c.ERR_WARN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_NOTICE">
+<span class="target" id="cppmah__tcp__client_8h_1aeb9f68c965857a2bc9852c1b8ba150ff"></span><code class="descname">ERR_NOTICE</code> 4<a class="headerlink" href="#c.ERR_NOTICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_INFO">
+<span class="target" id="cppmah__tcp__client_8h_1a85dd690038737fa7336aa2f9c6db454a"></span><code class="descname">ERR_INFO</code> 5<a class="headerlink" href="#c.ERR_INFO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.ERR_DEBUG">
+<span class="target" id="cppmah__tcp__client_8h_1a9afa06c99ef7aa0128d3b9cb825e7af4"></span><code class="descname">ERR_DEBUG</code> 6<a class="headerlink" href="#c.ERR_DEBUG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv213ah_tcp_client">
+<span id="ah_tcp_client"></span><span class="target" id="cppmclassah__tcp__client"></span><em class="property">class </em><code class="descname">ah_tcp_client</code><a class="headerlink" href="#_CPPv213ah_tcp_client" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N13ah_tcp_client13ah_tcp_clientEv">
+<span id="ah_tcp_client::ah_tcp_client__void"></span><span class="target" id="cppmclassah__tcp__client_1a601fd305427e472e45a608ec672b2cb9"></span><code class="descname">ah_tcp_client</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_tcp_client13ah_tcp_clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N13ah_tcp_client11tcp_connectEPci">
+<span id="ah_tcp_client::tcp_connect__cP.i"></span><span class="target" id="cppmclassah__tcp__client_1aaf5aed6c57a5159b940fc700e6b982cb"></span>void <code class="descname">tcp_connect</code><span class="sig-paren">(</span>char *<em>_ipAddr</em>, int <em>_port</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_tcp_client11tcp_connectEPci" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N13ah_tcp_client10disconnectEv">
+<span id="ah_tcp_client::disconnect__void"></span><span class="target" id="cppmclassah__tcp__client_1a61226cb7ca1205565dba73fb34ecb3a4"></span>void <code class="descname">disconnect</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_tcp_client10disconnectEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N13ah_tcp_client9send_dataEPc">
+<span id="ah_tcp_client::send_data__cP"></span><span class="target" id="cppmclassah__tcp__client_1a12f2bdc478280cc20be144223e1b2ec0"></span>void <code class="descname">send_data</code><span class="sig-paren">(</span>char *<em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_tcp_client9send_dataEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client2sdE">
+<span id="ah_tcp_client::sd__i"></span><span class="target" id="cppmclassah__tcp__client_1a095ccea9c85894d84becee13c980f8d9"></span>int <code class="descname">sd</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client2sdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client2rcE">
+<span id="ah_tcp_client::rc__i"></span><span class="target" id="cppmclassah__tcp__client_1a61fa9b7fa8204e9e3bffea9f9f99d238"></span>int <code class="descname">rc</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client2rcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client6lengthE">
+<span id="ah_tcp_client::length__i"></span><span class="target" id="cppmclassah__tcp__client_1a11dd498997bf337e246f3dfe233b5962"></span>int <code class="descname">length</code> = sizeof(int)<a class="headerlink" href="#_CPPv2N13ah_tcp_client6lengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client10serveraddrE">
+<span id="ah_tcp_client::serveraddr__sockaddr_in"></span><span class="target" id="cppmclassah__tcp__client_1a5b07e8fb8eb89213ce51e672842f3703"></span><em class="property">struct</em> sockaddr_in <code class="descname">serveraddr</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client10serveraddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client6bufferE">
+<span id="ah_tcp_client::buffer__cA"></span><span class="target" id="cppmclassah__tcp__client_1a31e05e7724b855c34d2e1c3a3f79d46a"></span>char <code class="descname">buffer</code>[BufferLength]<a class="headerlink" href="#_CPPv2N13ah_tcp_client6bufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client4tempE">
+<span id="ah_tcp_client::temp__c"></span><span class="target" id="cppmclassah__tcp__client_1addd83d1575c21808200175b8b691bca5"></span>char <code class="descname">temp</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client4tempE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client8totalcntE">
+<span id="ah_tcp_client::totalcnt__i"></span><span class="target" id="cppmclassah__tcp__client_1a96c306ccaa23850bb168994d317453f6"></span>int <code class="descname">totalcnt</code> = 0<a class="headerlink" href="#_CPPv2N13ah_tcp_client8totalcntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client14data_ready_sigE">
+<span id="ah_tcp_client::data_ready_sig__b"></span><span class="target" id="cppmclassah__tcp__client_1af34ce5e38e080012a291ca3f4ce80733"></span>bool <code class="descname">data_ready_sig</code> = false<a class="headerlink" href="#_CPPv2N13ah_tcp_client14data_ready_sigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client5hostpE">
+<span id="ah_tcp_client::hostp__hostentP"></span><span class="target" id="cppmclassah__tcp__client_1a116c8184bf2ebd2b0c573b3aae1613e9"></span><em class="property">struct</em> hostent *<code class="descname">hostp</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client5hostpE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client7err_strE">
+<span id="ah_tcp_client::err_str__cA"></span><span class="target" id="cppmclassah__tcp__client_1a5b03789d92c2ec5d591f72a058348e76"></span>char <code class="descname">err_str</code>[255]<a class="headerlink" href="#_CPPv2N13ah_tcp_client7err_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client4dataE">
+<span id="ah_tcp_client::data__cA"></span><span class="target" id="cppmclassah__tcp__client_1a3ff69f7dec2fa0182c3ae350a4232a34"></span>char <code class="descname">data</code>[BufferLength]<a class="headerlink" href="#_CPPv2N13ah_tcp_client4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client5errorE">
+<span id="ah_tcp_client::error__sigslot::signal2:i.cP:"></span><span class="target" id="cppmclassah__tcp__client_1afe0c7e125bfaecf41fb0dbb47bb07aa1"></span>sigslot::signal2&lt;int, char *&gt; <code class="descname">error</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client5errorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client10data_readyE">
+<span id="ah_tcp_client::data_ready__sigslot::signal1:cP:"></span><span class="target" id="cppmclassah__tcp__client_1a841e0a17c609cf1fe33b049db636b4d5"></span>sigslot::signal1&lt;char *&gt; <code class="descname">data_ready</code><a class="headerlink" href="#_CPPv2N13ah_tcp_client10data_readyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client4portE">
+<span id="ah_tcp_client::port__i"></span><span class="target" id="cppmclassah__tcp__client_1a5f84d478375af2c6e661e99c8499d0da"></span>int <code class="descname">port</code> = DEFAULTPORT<a class="headerlink" href="#_CPPv2N13ah_tcp_client4portE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_tcp_client6ipAddrE">
+<span id="ah_tcp_client::ipAddr__unsigned-l-i"></span><span class="target" id="cppmclassah__tcp__client_1afd424d58cbed763631e73a816ed1dee3"></span>unsigned long int <code class="descname">ipAddr</code> = INADDR_NONE<a class="headerlink" href="#_CPPv2N13ah_tcp_client6ipAddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-tcp-serv-a-signal-slot-tcp-server">
+<h3>ah_tcp_serv - A signal/slot TCP server<a class="headerlink" href="#ah-tcp-serv-a-signal-slot-tcp-server" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a3db4dba8d56385b62759b89c98cae447"></span><code class="descname">DEFAULTPORT</code> 9000</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a9922df1615f2bdefad557ea5ed097cc9"></span><code class="descname">ERR_EMERG</code> 0</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a1e294ccf9aa4a309ba36a100e6918c28"></span><code class="descname">ERR_CRIT</code> 1</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a139aedc8e582971ff6b718ab65ef90a5"></span><code class="descname">ERR_ERR</code> 2</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a63d07a0b4263315e90bb0c9c3670e0b2"></span><code class="descname">ERR_WARN</code> 3</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1aeb9f68c965857a2bc9852c1b8ba150ff"></span><code class="descname">ERR_NOTICE</code> 4</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a85dd690038737fa7336aa2f9c6db454a"></span><code class="descname">ERR_INFO</code> 5</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__tcp__serv_8h_1a9afa06c99ef7aa0128d3b9cb825e7af4"></span><code class="descname">ERR_DEBUG</code> 6</dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv211ah_tcp_serv">
+<span id="ah_tcp_serv"></span><span class="target" id="cppmclassah__tcp__serv"></span><em class="property">class </em><code class="descname">ah_tcp_serv</code><a class="headerlink" href="#_CPPv211ah_tcp_serv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv11ah_tcp_servEv">
+<span id="ah_tcp_serv::ah_tcp_serv__void"></span><span class="target" id="cppmclassah__tcp__serv_1a49cec3208643253eed183a92b8c640c8"></span><code class="descname">ah_tcp_serv</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv11ah_tcp_servEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv13change_ipaddrEPc">
+<span id="ah_tcp_serv::change_ipaddr__cP"></span><span class="target" id="cppmclassah__tcp__serv_1a0277273f1e882879b15dffdc7f73e3e0"></span>void <code class="descname">change_ipaddr</code><span class="sig-paren">(</span>char *<em>_ipAddr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv13change_ipaddrEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv11change_portEi">
+<span id="ah_tcp_serv::change_port__i"></span><span class="target" id="cppmclassah__tcp__serv_1a5af70833aa403070143ddb558270ceb9"></span>void <code class="descname">change_port</code><span class="sig-paren">(</span>int <em>_port</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv11change_portEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv8start_nbEv">
+<span id="ah_tcp_serv::start_nb__void"></span><span class="target" id="cppmclassah__tcp__serv_1a1ec71a7be06b5c564c199bb3eb4c35b5"></span>void <code class="descname">start_nb</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv8start_nbEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv7start_bEv">
+<span id="ah_tcp_serv::start_b__void"></span><span class="target" id="cppmclassah__tcp__serv_1af15c952d4a9a9a560217966e49d44cbb"></span>void <code class="descname">start_b</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv7start_bEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv8send_msgEPc">
+<span id="ah_tcp_serv::send_msg__cP"></span><span class="target" id="cppmclassah__tcp__serv_1a72aa33911b2440a51a0b31723bffe577"></span>void <code class="descname">send_msg</code><span class="sig-paren">(</span>char *<em>rply</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv8send_msgEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv10send_replyEPc">
+<span id="ah_tcp_serv::send_reply__cP"></span><span class="target" id="cppmclassah__tcp__serv_1ab1096583000100ce86a6e5476555c2b7"></span>void <code class="descname">send_reply</code><span class="sig-paren">(</span>char *<em>buf</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv10send_replyEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_tcp_serv24return_connected_clientsEv">
+<span id="ah_tcp_serv::return_connected_clients__void"></span><span class="target" id="cppmclassah__tcp__serv_1ac95a08ae941c4f2d11194e127aed848b"></span>std::map&lt;int, int&gt; <code class="descname">return_connected_clients</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_tcp_serv24return_connected_clientsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv12command_recvE">
+<span id="ah_tcp_serv::command_recv__sigslot::signal1:cP:"></span><span class="target" id="cppmclassah__tcp__serv_1adcb4c57397976504ba75fc102a35aff1"></span>sigslot::signal1&lt;char *&gt; <code class="descname">command_recv</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv12command_recvE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv5errorE">
+<span id="ah_tcp_serv::error__sigslot::signal2:i.cP:"></span><span class="target" id="cppmclassah__tcp__serv_1a82ab909058d3f923eaf59c0ef7a09626"></span>sigslot::signal2&lt;int, char *&gt; <code class="descname">error</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv5errorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv16client_connectedE">
+<span id="ah_tcp_serv::client_connected__sigslot::signal1:i:"></span><span class="target" id="cppmclassah__tcp__serv_1aeb99bc125a84e4571e5110d31bd7a599"></span>sigslot::signal1&lt;int&gt; <code class="descname">client_connected</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv16client_connectedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv19client_disconnectedE">
+<span id="ah_tcp_serv::client_disconnected__sigslot::signal1:i:"></span><span class="target" id="cppmclassah__tcp__serv_1a862409973fdb3a483b33506b3aabb5c4"></span>sigslot::signal1&lt;int&gt; <code class="descname">client_disconnected</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv19client_disconnectedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv6masterE">
+<span id="ah_tcp_serv::master__fd_set"></span><span class="target" id="cppmclassah__tcp__serv_1a5ed63d7eab301d4e6f506389cfba7b36"></span>fd_set <code class="descname">master</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv6masterE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv8read_fdsE">
+<span id="ah_tcp_serv::read_fds__fd_set"></span><span class="target" id="cppmclassah__tcp__serv_1acc1843ce16a657aa2caee98cab0eef43"></span>fd_set <code class="descname">read_fds</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv8read_fdsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv10serveraddrE">
+<span id="ah_tcp_serv::serveraddr__sockaddr_in"></span><span class="target" id="cppmclassah__tcp__serv_1a01d87713a80435ef41d63bf1f8025a66"></span><em class="property">struct</em> sockaddr_in <code class="descname">serveraddr</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv10serveraddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv10clientaddrE">
+<span id="ah_tcp_serv::clientaddr__sockaddr_in"></span><span class="target" id="cppmclassah__tcp__serv_1a147a1083460701704f7b52132166eb9f"></span><em class="property">struct</em> sockaddr_in <code class="descname">clientaddr</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv10clientaddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv5fdmaxE">
+<span id="ah_tcp_serv::fdmax__i"></span><span class="target" id="cppmclassah__tcp__serv_1a678e2f5c41a1e8a32b7cff5b44501c6e"></span>int <code class="descname">fdmax</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv5fdmaxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv8listenerE">
+<span id="ah_tcp_serv::listener__i"></span><span class="target" id="cppmclassah__tcp__serv_1a9489acec11e501ef9070a178d7d585ff"></span>int <code class="descname">listener</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv8listenerE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv5newfdE">
+<span id="ah_tcp_serv::newfd__i"></span><span class="target" id="cppmclassah__tcp__serv_1a86f4176f98bfcf8dd448b886f1bde5e7"></span>int <code class="descname">newfd</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv5newfdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv3bufE">
+<span id="ah_tcp_serv::buf__cA"></span><span class="target" id="cppmclassah__tcp__serv_1a18fa5b957355af8eb32dd1139d260f51"></span>char <code class="descname">buf</code>[1024]<a class="headerlink" href="#_CPPv2N11ah_tcp_serv3bufE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv6nbytesE">
+<span id="ah_tcp_serv::nbytes__i"></span><span class="target" id="cppmclassah__tcp__serv_1a3aa424d9431e54e30697d569e4dcb724"></span>int <code class="descname">nbytes</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv6nbytesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv3yesE">
+<span id="ah_tcp_serv::yes__i"></span><span class="target" id="cppmclassah__tcp__serv_1a4e24a64bd8a7e5d25acca864f71c1e50"></span>int <code class="descname">yes</code> = 1<a class="headerlink" href="#_CPPv2N11ah_tcp_serv3yesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv7addrlenE">
+<span id="ah_tcp_serv::addrlen__i"></span><span class="target" id="cppmclassah__tcp__serv_1a27234d72df667b7d02283742d0b0d402"></span>int <code class="descname">addrlen</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv7addrlenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv1iE">
+<span id="ah_tcp_serv::i__i"></span><span class="target" id="cppmclassah__tcp__serv_1a31830b0e154653bee74e2619d50096b6"></span>int <code class="descname">i</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv1iE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv1jE">
+<span id="ah_tcp_serv::j__i"></span><span class="target" id="cppmclassah__tcp__serv_1aefbbc688a7ab0ba96eae90c4e3382640"></span>int <code class="descname">j</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv1jE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv6ipAddrE">
+<span id="ah_tcp_serv::ipAddr__unsigned-l-i"></span><span class="target" id="cppmclassah__tcp__serv_1a95c64abdd9e5b5c360d0ef4ef3679a86"></span>unsigned long int <code class="descname">ipAddr</code> = INADDR_ANY<a class="headerlink" href="#_CPPv2N11ah_tcp_serv6ipAddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv4portE">
+<span id="ah_tcp_serv::port__i"></span><span class="target" id="cppmclassah__tcp__serv_1a3731604d536b4e58e6d45c0035db4bcc"></span>int <code class="descname">port</code> = 9000<a class="headerlink" href="#_CPPv2N11ah_tcp_serv4portE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv4contE">
+<span id="ah_tcp_serv::cont__b"></span><span class="target" id="cppmclassah__tcp__serv_1adc80b3525190206815bc39f073e07e30"></span>bool <code class="descname">cont</code> = true<a class="headerlink" href="#_CPPv2N11ah_tcp_serv4contE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_tcp_serv17connected_clientsE">
+<span id="ah_tcp_serv::connected_clients__std::map:i.i:"></span><span class="target" id="cppmclassah__tcp__serv_1a010741195acc2b4efc3137725c9644d4"></span>std::map&lt;int, int&gt; <code class="descname">connected_clients</code><a class="headerlink" href="#_CPPv2N11ah_tcp_serv17connected_clientsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="simple-tcp-client-a-simplified-tcp-client">
+<h3>simple_tcp_client - A simplified TCP client<a class="headerlink" href="#simple-tcp-client-a-simplified-tcp-client" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a42b3e4501dac318b1384a0c2a28d1e8b"></span><code class="descname">BufferLength</code> 100</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a3db4dba8d56385b62759b89c98cae447"></span><code class="descname">DEFAULTPORT</code> 9000</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a9922df1615f2bdefad557ea5ed097cc9"></span><code class="descname">ERR_EMERG</code> 0</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a1e294ccf9aa4a309ba36a100e6918c28"></span><code class="descname">ERR_CRIT</code> 1</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a139aedc8e582971ff6b718ab65ef90a5"></span><code class="descname">ERR_ERR</code> 2</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a63d07a0b4263315e90bb0c9c3670e0b2"></span><code class="descname">ERR_WARN</code> 3</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1aeb9f68c965857a2bc9852c1b8ba150ff"></span><code class="descname">ERR_NOTICE</code> 4</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a85dd690038737fa7336aa2f9c6db454a"></span><code class="descname">ERR_INFO</code> 5</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmsimple__tcp__client_8h_1a9afa06c99ef7aa0128d3b9cb825e7af4"></span><code class="descname">ERR_DEBUG</code> 6</dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv217simple_tcp_client">
+<span id="simple_tcp_client"></span><span class="target" id="cppmclasssimple__tcp__client"></span><em class="property">class </em><code class="descname">simple_tcp_client</code><a class="headerlink" href="#_CPPv217simple_tcp_client" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client17simple_tcp_clientEv">
+<span id="simple_tcp_client::simple_tcp_client__void"></span><span class="target" id="cppmclasssimple__tcp__client_1a0a2e3b1be9b6351874d8a6ff0498b7b5"></span><code class="descname">simple_tcp_client</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client17simple_tcp_clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client11tcp_connectEPci">
+<span id="simple_tcp_client::tcp_connect__cP.i"></span><span class="target" id="cppmclasssimple__tcp__client_1a6140cdc2789251a1fdcf891f9b36fb67"></span>void <code class="descname">tcp_connect</code><span class="sig-paren">(</span>char *<em>_ipAddr</em>, int <em>_port</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client11tcp_connectEPci" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client10disconnectEv">
+<span id="simple_tcp_client::disconnect__void"></span><span class="target" id="cppmclasssimple__tcp__client_1ab40dcb19e62b41b4ec1c13551b178f7a"></span>void <code class="descname">disconnect</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client10disconnectEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client9send_dataEPc">
+<span id="simple_tcp_client::send_data__cP"></span><span class="target" id="cppmclasssimple__tcp__client_1a8c6d96598363a0a58dbf3d5df313f9a3"></span>void <code class="descname">send_data</code><span class="sig-paren">(</span>char *<em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client9send_dataEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client10accumulateEi">
+<span id="simple_tcp_client::accumulate__i"></span><span class="target" id="cppmclasssimple__tcp__client_1aa9f094425d740d204e2de8aab06b5cae"></span>void <code class="descname">accumulate</code><span class="sig-paren">(</span>int <em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client10accumulateEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N17simple_tcp_client10accumulateEc">
+<span id="simple_tcp_client::accumulate__c"></span><span class="target" id="cppmclasssimple__tcp__client_1ab801b4410ec1e05380596389caa447a8"></span>void <code class="descname">accumulate</code><span class="sig-paren">(</span>char <em>start_byte</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N17simple_tcp_client10accumulateEc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client2sdE">
+<span id="simple_tcp_client::sd__i"></span><span class="target" id="cppmclasssimple__tcp__client_1a98f2a05f10872f2bb291a7dd8c7acc52"></span>int <code class="descname">sd</code><a class="headerlink" href="#_CPPv2N17simple_tcp_client2sdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client2rcE">
+<span id="simple_tcp_client::rc__i"></span><span class="target" id="cppmclasssimple__tcp__client_1a6ac175ce0797df941e425482680b335b"></span>int <code class="descname">rc</code><a class="headerlink" href="#_CPPv2N17simple_tcp_client2rcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client6lengthE">
+<span id="simple_tcp_client::length__i"></span><span class="target" id="cppmclasssimple__tcp__client_1a3644d48c38353338125d42ef543e5b7a"></span>int <code class="descname">length</code> = sizeof(int)<a class="headerlink" href="#_CPPv2N17simple_tcp_client6lengthE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client10serveraddrE">
+<span id="simple_tcp_client::serveraddr__sockaddr_in"></span><span class="target" id="cppmclasssimple__tcp__client_1a80bbf89f0f008f9e0081eab348c77c44"></span><em class="property">struct</em> sockaddr_in <code class="descname">serveraddr</code><a class="headerlink" href="#_CPPv2N17simple_tcp_client10serveraddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client6bufferE">
+<span id="simple_tcp_client::buffer__cA"></span><span class="target" id="cppmclasssimple__tcp__client_1a8e0a1a070749a68c460858bb1686aa36"></span>char <code class="descname">buffer</code>[BufferLength]<a class="headerlink" href="#_CPPv2N17simple_tcp_client6bufferE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client4tempE">
+<span id="simple_tcp_client::temp__c"></span><span class="target" id="cppmclasssimple__tcp__client_1aaa005b054f7e768b48779d406488cf64"></span>char <code class="descname">temp</code><a class="headerlink" href="#_CPPv2N17simple_tcp_client4tempE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client8totalcntE">
+<span id="simple_tcp_client::totalcnt__i"></span><span class="target" id="cppmclasssimple__tcp__client_1ae155f101d1e609da7a9c6242a9871e2b"></span>int <code class="descname">totalcnt</code> = 0<a class="headerlink" href="#_CPPv2N17simple_tcp_client8totalcntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client14data_ready_sigE">
+<span id="simple_tcp_client::data_ready_sig__b"></span><span class="target" id="cppmclasssimple__tcp__client_1aa94278e2fe58f73db0a3c847e2670b00"></span>bool <code class="descname">data_ready_sig</code> = false<a class="headerlink" href="#_CPPv2N17simple_tcp_client14data_ready_sigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client5hostpE">
+<span id="simple_tcp_client::hostp__hostentP"></span><span class="target" id="cppmclasssimple__tcp__client_1a805ad4b700f41b109218e8d620dfadfd"></span><em class="property">struct</em> hostent *<code class="descname">hostp</code><a class="headerlink" href="#_CPPv2N17simple_tcp_client5hostpE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client7err_strE">
+<span id="simple_tcp_client::err_str__cA"></span><span class="target" id="cppmclasssimple__tcp__client_1a99bfca319e74b29e1954bbc59d648e07"></span>char <code class="descname">err_str</code>[255]<a class="headerlink" href="#_CPPv2N17simple_tcp_client7err_strE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client4dataE">
+<span id="simple_tcp_client::data__cA"></span><span class="target" id="cppmclasssimple__tcp__client_1a9e4b0cdeed9ec35679980a2278163c9b"></span>char <code class="descname">data</code>[BufferLength]<a class="headerlink" href="#_CPPv2N17simple_tcp_client4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client4portE">
+<span id="simple_tcp_client::port__i"></span><span class="target" id="cppmclasssimple__tcp__client_1a6e0e900d32bc06bffabd080c9de3b143"></span>int <code class="descname">port</code> = DEFAULTPORT<a class="headerlink" href="#_CPPv2N17simple_tcp_client4portE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N17simple_tcp_client6ipAddrE">
+<span id="simple_tcp_client::ipAddr__unsigned-l-i"></span><span class="target" id="cppmclasssimple__tcp__client_1a09f34cb160b218a1858c25f2736ca6f5"></span>unsigned long int <code class="descname">ipAddr</code> = INADDR_NONE<a class="headerlink" href="#_CPPv2N17simple_tcp_client6ipAddrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="udp-objects">
+<h2>UDP Objects<a class="headerlink" href="#udp-objects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ah-udp-client-a-simplified-udp-client">
+<h3>ah_udp_client - A simplified UDP client<a class="headerlink" href="#ah-udp-client-a-simplified-udp-client" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt id="c.PORT">
+<span class="target" id="cppmah__udp__client_8h_1a614217d263be1fb1a5f76e2ff7be19a2"></span><code class="descname">PORT</code> 6000<a class="headerlink" href="#c.PORT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.GROUP">
+<span class="target" id="cppmah__udp__client_8h_1a5f6b617b45eb12646bb651ecf77f6dcd"></span><code class="descname">GROUP</code> “239.1.1.1”<a class="headerlink" href="#c.GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt id="c.BUFSIZE">
+<span class="target" id="cppmah__udp__client_8h_1aeca034f67218340ecb2261a22c2f3dcd"></span><code class="descname">BUFSIZE</code> 2048<a class="headerlink" href="#c.BUFSIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv213ah_udp_client">
+<span id="ah_udp_client"></span><span class="target" id="cppmclassah__udp__client"></span><em class="property">class </em><code class="descname">ah_udp_client</code><a class="headerlink" href="#_CPPv213ah_udp_client" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N13ah_udp_client13ah_udp_clientEv">
+<span id="ah_udp_client::ah_udp_client__void"></span><span class="target" id="cppmclassah__udp__client_1a10aa48c46e85724c3f22f6bc98e82046"></span><code class="descname">ah_udp_client</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_udp_client13ah_udp_clientEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N13ah_udp_client5startEv">
+<span id="ah_udp_client::start__void"></span><span class="target" id="cppmclassah__udp__client_1a1baee3b1c5121ec5325e6317bc98d5c7"></span>void <code class="descname">start</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13ah_udp_client5startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client10data_readyE">
+<span id="ah_udp_client::data_ready__sigslot::signal1:cP:"></span><span class="target" id="cppmclassah__udp__client_1a1050bd762e3120bf7c33438abc65a921"></span>sigslot::signal1&lt;char *&gt; <code class="descname">data_ready</code><a class="headerlink" href="#_CPPv2N13ah_udp_client10data_readyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client4addrE">
+<span id="ah_udp_client::addr__sockaddr_in"></span><span class="target" id="cppmclassah__udp__client_1a2b75191f0fb9b22d065c58f23729bc02"></span><em class="property">struct</em> sockaddr_in <code class="descname">addr</code><a class="headerlink" href="#_CPPv2N13ah_udp_client4addrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client7addrlenE">
+<span id="ah_udp_client::addrlen__socklen_t"></span><span class="target" id="cppmclassah__udp__client_1a0efa790ae68e7a7a776369f0858c3920"></span>socklen_t <code class="descname">addrlen</code><a class="headerlink" href="#_CPPv2N13ah_udp_client7addrlenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client4sockE">
+<span id="ah_udp_client::sock__i"></span><span class="target" id="cppmclassah__udp__client_1a3636879b2f121144260872c80dc96f66"></span>int <code class="descname">sock</code><a class="headerlink" href="#_CPPv2N13ah_udp_client4sockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client3cntE">
+<span id="ah_udp_client::cnt__i"></span><span class="target" id="cppmclassah__udp__client_1a522175ffe6cb30f73b7196ca52965d8c"></span>int <code class="descname">cnt</code><a class="headerlink" href="#_CPPv2N13ah_udp_client3cntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client4mreqE">
+<span id="ah_udp_client::mreq__ip_mreq"></span><span class="target" id="cppmclassah__udp__client_1a0be932897e0c9e70341b5d823dc8c007"></span><em class="property">struct</em> ip_mreq <code class="descname">mreq</code><a class="headerlink" href="#_CPPv2N13ah_udp_client4mreqE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client7messageE">
+<span id="ah_udp_client::message__cA"></span><span class="target" id="cppmclassah__udp__client_1a03395e67c3471db6c3af7983eab0e029"></span>char <code class="descname">message</code>[BUFSIZE]<a class="headerlink" href="#_CPPv2N13ah_udp_client7messageE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N13ah_udp_client4contE">
+<span id="ah_udp_client::cont__b"></span><span class="target" id="cppmclassah__udp__client_1a3a28cb3e32e9c53f5832b98624d9b159"></span>bool <code class="descname">cont</code><a class="headerlink" href="#_CPPv2N13ah_udp_client4contE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-udp-client-qt-a-signal-slot-qt-based-udp-client">
+<h3>ah_udp_client_qt - A signal/slot QT based UDP client<a class="headerlink" href="#ah-udp-client-qt-a-signal-slot-qt-based-udp-client" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__udp__client__qt_8h_1a614217d263be1fb1a5f76e2ff7be19a2"></span><code class="descname">PORT</code> 6000</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__udp__client__qt_8h_1a5f6b617b45eb12646bb651ecf77f6dcd"></span><code class="descname">GROUP</code> “239.1.1.1”</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__udp__client__qt_8h_1aeca034f67218340ecb2261a22c2f3dcd"></span><code class="descname">BUFSIZE</code> 2048</dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv216ah_udp_client_qt">
+<span id="ah_udp_client_qt"></span><span class="target" id="cppmclassah__udp__client__qt"></span><em class="property">class </em><code class="descname">ah_udp_client_qt</code><a class="headerlink" href="#_CPPv216ah_udp_client_qt" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from QObject</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt16ah_udp_client_qtEv">
+<span id="ah_udp_client_qt::ah_udp_client_qt__void"></span><span class="target" id="cppmclassah__udp__client__qt_1a6f5f1fda25a3fbbf454ecd06a88f1c15"></span><code class="descname">ah_udp_client_qt</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt16ah_udp_client_qtEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt16ah_udp_client_qtEi">
+<span id="ah_udp_client_qt::ah_udp_client_qt__i"></span><span class="target" id="cppmclassah__udp__client__qt_1a41a18c6a0d48604eb554bf91c2f25fa4"></span><code class="descname">ah_udp_client_qt</code><span class="sig-paren">(</span>int <em>_port</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt16ah_udp_client_qtEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt5startEv">
+<span id="ah_udp_client_qt::start__void"></span><span class="target" id="cppmclassah__udp__client__qt_1a778aa269b32603ecda50c95e9e9f8c42"></span>void <code class="descname">start</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt5startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt5startEi">
+<span id="ah_udp_client_qt::start__i"></span><span class="target" id="cppmclassah__udp__client__qt_1a8d48e3480be15afa654e4d23df3cf1d9"></span>void <code class="descname">start</code><span class="sig-paren">(</span>int <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt5startEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt5setupEv">
+<span id="ah_udp_client_qt::setup__void"></span><span class="target" id="cppmclassah__udp__client__qt_1a29353e5b41ca8af7f64927869a20c9c5"></span>void <code class="descname">setup</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt5setupEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Slots</p>
+<dl class="function">
+<dt id="_CPPv2N16ah_udp_client_qt4loopEv">
+<span id="ah_udp_client_qt::loop__void"></span><span class="target" id="cppmclassah__udp__client__qt_1a8fe7e7672fa609ca532a50b39ed887bd"></span>void <code class="descname">loop</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4loopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Signal</p>
+<dl class="member">
+<dt>
+<span class="target" id="cppmclassah__udp__client__qt_1ab486c19dd07003a978b31786afc9748a"></span><em class="property">signal </em><code class="descname">data_ready</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt4addrE">
+<span id="ah_udp_client_qt::addr__sockaddr_in"></span><span class="target" id="cppmclassah__udp__client__qt_1a846ffee7df118e3b5c09dc9703ba43ba"></span><em class="property">struct</em> sockaddr_in <code class="descname">addr</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4addrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt7addrlenE">
+<span id="ah_udp_client_qt::addrlen__socklen_t"></span><span class="target" id="cppmclassah__udp__client__qt_1a57d85795651998e00597fb1c37eff030"></span>socklen_t <code class="descname">addrlen</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt7addrlenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt4sockE">
+<span id="ah_udp_client_qt::sock__i"></span><span class="target" id="cppmclassah__udp__client__qt_1a312f25a50ba5babff6d87ddc83e8880f"></span>int <code class="descname">sock</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4sockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt3cntE">
+<span id="ah_udp_client_qt::cnt__i"></span><span class="target" id="cppmclassah__udp__client__qt_1a1643f19035a092231296827a50ff8b2f"></span>int <code class="descname">cnt</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt3cntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt4portE">
+<span id="ah_udp_client_qt::port__i"></span><span class="target" id="cppmclassah__udp__client__qt_1af9809075f2ea2aa3e0db2f3c726dc872"></span>int <code class="descname">port</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4portE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt4mreqE">
+<span id="ah_udp_client_qt::mreq__ip_mreq"></span><span class="target" id="cppmclassah__udp__client__qt_1a3a288afdee0db5f4214aa8a3cfceb6da"></span><em class="property">struct</em> ip_mreq <code class="descname">mreq</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4mreqE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt7messageE">
+<span id="ah_udp_client_qt::message__cA"></span><span class="target" id="cppmclassah__udp__client__qt_1a8d48ac2d5abf13bed8adc04c01ddcb2c"></span>char <code class="descname">message</code>[BUFSIZE]<a class="headerlink" href="#_CPPv2N16ah_udp_client_qt7messageE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16ah_udp_client_qt4contE">
+<span id="ah_udp_client_qt::cont__b"></span><span class="target" id="cppmclassah__udp__client__qt_1a1e658fc9e369f8a09bb44fbc51c18ca9"></span>bool <code class="descname">cont</code><a class="headerlink" href="#_CPPv2N16ah_udp_client_qt4contE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ah-udp-serv-a-simplified-udp-server">
+<h3>ah_udp_serv - A simplified UDP server<a class="headerlink" href="#ah-udp-serv-a-simplified-udp-server" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__udp__serv_8h_1a614217d263be1fb1a5f76e2ff7be19a2"></span><code class="descname">PORT</code> 6000</dt>
+<dd></dd></dl>
+
+<dl class="macro">
+<dt>
+<span class="target" id="cppmah__udp__serv_8h_1a5f6b617b45eb12646bb651ecf77f6dcd"></span><code class="descname">GROUP</code> “239.1.1.1”</dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv211ah_udp_serv">
+<span id="ah_udp_serv"></span><span class="target" id="cppmclassah__udp__serv"></span><em class="property">class </em><code class="descname">ah_udp_serv</code><a class="headerlink" href="#_CPPv211ah_udp_serv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N11ah_udp_serv11ah_udp_servEv">
+<span id="ah_udp_serv::ah_udp_serv__void"></span><span class="target" id="cppmclassah__udp__serv_1ad7067b7ffef7e7b4eb93c6f96aa87804"></span><code class="descname">ah_udp_serv</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_udp_serv11ah_udp_servEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_udp_serv4sendEi">
+<span id="ah_udp_serv::send__i"></span><span class="target" id="cppmclassah__udp__serv_1a1268f9d7c7c1a3b53a0b9fdf7861c4da"></span>void <code class="descname">send</code><span class="sig-paren">(</span>int <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_udp_serv4sendEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N11ah_udp_serv4sendEPc">
+<span id="ah_udp_serv::send__cP"></span><span class="target" id="cppmclassah__udp__serv_1a99a5b0baacaf1f52d8c8fbe743452335"></span>void <code class="descname">send</code><span class="sig-paren">(</span>char *<em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N11ah_udp_serv4sendEPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N11ah_udp_serv4addrE">
+<span id="ah_udp_serv::addr__sockaddr_in"></span><span class="target" id="cppmclassah__udp__serv_1a41c30d6d7bf21966b8918f84d9aa1117"></span><em class="property">struct</em> sockaddr_in <code class="descname">addr</code><a class="headerlink" href="#_CPPv2N11ah_udp_serv4addrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_udp_serv7addrlenE">
+<span id="ah_udp_serv::addrlen__i"></span><span class="target" id="cppmclassah__udp__serv_1a47192efde12a7640ccd6f8f38eefd9a2"></span>int <code class="descname">addrlen</code><a class="headerlink" href="#_CPPv2N11ah_udp_serv7addrlenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_udp_serv4sockE">
+<span id="ah_udp_serv::sock__i"></span><span class="target" id="cppmclassah__udp__serv_1afe9341a67e9a51df53f36e51cef7badc"></span>int <code class="descname">sock</code><a class="headerlink" href="#_CPPv2N11ah_udp_serv4sockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_udp_serv3cntE">
+<span id="ah_udp_serv::cnt__i"></span><span class="target" id="cppmclassah__udp__serv_1ae607668b6b6a16af4bc7d088c87df1e2"></span>int <code class="descname">cnt</code><a class="headerlink" href="#_CPPv2N11ah_udp_serv3cntE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N11ah_udp_serv4mreqE">
+<span id="ah_udp_serv::mreq__ip_mreq"></span><span class="target" id="cppmclassah__udp__serv_1af99510747d489f294c36a790f26d240b"></span><em class="property">struct</em> ip_mreq <code class="descname">mreq</code><a class="headerlink" href="#_CPPv2N11ah_udp_serv4mreqE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="signals-and-timing">
+<h2>Signals and Timing<a class="headerlink" href="#signals-and-timing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ah-signal-signals-for-signal-slot-method">
+<h3>ah_signal - Signals for signal/slot method<a class="headerlink" href="#ah-signal-signals-for-signal-slot-method" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv29ah_signaliPFviE">
+<span class="target" id="cppmah__signal_8h_1ad2efd46b37e5d3976b210c1d20b80b2e"></span>void <code class="descname">ah_signal</code><span class="sig-paren">(</span>int <em>_signum</em>, void (*<em>_act</em>)<span class="sig-paren">(</span>int<span class="sig-paren">)</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29ah_signaliPFviE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv29set_groupPc">
+<span id="set_group__cP"></span><span class="target" id="cppmah__signal_8h_1a65108affa8e178bdccba0990f8d41002"></span>void <code class="descname">set_group</code><span class="sig-paren">(</span>char *<em>gname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29set_groupPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv211send_signaliPc">
+<span id="send_signal__i.cP"></span><span class="target" id="cppmah__signal_8h_1af30af395f0c7c192ce62c61141cc6760"></span>int <code class="descname">send_signal</code><span class="sig-paren">(</span>int <em>_signal</em>, char *<em>gname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211send_signaliPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv211clean_groupPc">
+<span id="clean_group__cP"></span><span class="target" id="cppmah__signal_8h_1aae709b59c272dab2930070b11dc24e75"></span>void <code class="descname">clean_group</code><span class="sig-paren">(</span>char *<em>gname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211clean_groupPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="simple-timer-a-simple-hardware-timer">
+<h3>simple_timer - A simple hardware timer<a class="headerlink" href="#simple-timer-a-simple-hardware-timer" title="Permalink to this headline">¶</a></h3>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv213signalHandleriP9siginfo_tPv">
+<span id="signalHandler__i.siginfo_tP.voidP"></span><span class="target" id="cppmtimer_8h_1ae3704857f1717ed660b7696c3e75e5dd"></span>void <code class="descname">signalHandler</code><span class="sig-paren">(</span>int <em>sig</em>, siginfo_t *<em>si</em>, void *<em>uc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213signalHandleriP9siginfo_tPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv25timer">
+<span id="timer"></span><span class="target" id="cppmclasstimer"></span><em class="property">class </em><code class="descname">timer</code><a class="headerlink" href="#_CPPv25timer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inherits from sigslot::has_slots&lt;&gt;</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N5timer5timerEv">
+<span id="timer::timer__void"></span><span class="target" id="cppmclasstimer_1ab513ecb2f68cbd108fff3236e8b44670"></span><code class="descname">timer</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer5timerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timerD0Ev">
+<span id="timer::~timer__void"></span><span class="target" id="cppmclasstimer_1a5ff0ba77b3fda04b2f0babe7c9be8e90"></span><code class="descname">~timer</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timerD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer3setEd">
+<span id="timer::set__double"></span><span class="target" id="cppmclasstimer_1adb2d43cd27c254d0646157e860017939"></span>void <code class="descname">set</code><span class="sig-paren">(</span>double <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer3setEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer7set_intEd">
+<span id="timer::set_int__double"></span><span class="target" id="cppmclasstimer_1af395ba4838bddf97c29e9a14c6cf9427"></span>void <code class="descname">set_int</code><span class="sig-paren">(</span>double <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer7set_intEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer7on_deckEv">
+<span id="timer::on_deck__void"></span><span class="target" id="cppmclasstimer_1a55ad878dd2d2eb928807b7465121e765"></span>void <code class="descname">on_deck</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer7on_deckEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer5startEv">
+<span id="timer::start__void"></span><span class="target" id="cppmclasstimer_1ac755334f169d75fec80d30936899ee3a"></span>void <code class="descname">start</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer5startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer5clearEv">
+<span id="timer::clear__void"></span><span class="target" id="cppmclasstimer_1acf9f378907897ff825576715d17ff8a5"></span>void <code class="descname">clear</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer6finishEv">
+<span id="timer::finish__void"></span><span class="target" id="cppmclasstimer_1a34aca7088e16b7fda75b6a302ef74b83"></span>void <code class="descname">finish</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer6finishEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N5timer4stopEv">
+<span id="timer::stop__void"></span><span class="target" id="cppmclasstimer_1a07881224194ae4cd323f6ab3ff287b65"></span>void <code class="descname">stop</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N5timer4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N5timer4deltE">
+<span id="timer::delt__double"></span><span class="target" id="cppmclasstimer_1acbf65d343b9e9dc8d61b245e36ecf919"></span>double <code class="descname">delt</code><a class="headerlink" href="#_CPPv2N5timer4deltE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer8realtimeE">
+<span id="timer::realtime__double"></span><span class="target" id="cppmclasstimer_1a0dc1ef3cd339fdc1d1a55749c44dc532"></span>double <code class="descname">realtime</code><a class="headerlink" href="#_CPPv2N5timer8realtimeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer7timerIDE">
+<span id="timer::timerID__timer_t"></span><span class="target" id="cppmclasstimer_1a42c9dbdf43fff9f8709e297404e3e1f0"></span>timer_t <code class="descname">timerID</code><a class="headerlink" href="#_CPPv2N5timer7timerIDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer3sigE">
+<span id="timer::sig__sigslot::signal0P"></span><span class="target" id="cppmclasstimer_1a99f1a7f8a93033ad7374f58f820f8c13"></span>sigslot::signal0 *<code class="descname">sig</code><a class="headerlink" href="#_CPPv2N5timer3sigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N5timer10start_timeE">
+<span id="timer::start_time__double"></span><span class="target" id="cppmclasstimer_1a34fa4bf684a0e9f9440b7a3154ee4a07"></span>double <code class="descname">start_time</code><a class="headerlink" href="#_CPPv2N5timer10start_timeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer3nowE">
+<span id="timer::now__timespec"></span><span class="target" id="cppmclasstimer_1a936554192d27918e2a4a69aee4f04b05"></span><em class="property">struct</em> timespec <code class="descname">now</code><a class="headerlink" href="#_CPPv2N5timer3nowE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer2teE">
+<span id="timer::te__sigevent"></span><span class="target" id="cppmclasstimer_1ae0fb9ff617c8230a84166656d4585cbf"></span><em class="property">struct</em> sigevent <code class="descname">te</code><a class="headerlink" href="#_CPPv2N5timer2teE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer3itsE">
+<span id="timer::its__itimerspec"></span><span class="target" id="cppmclasstimer_1a3403329faadf2473739ebe3365999be1"></span><em class="property">struct</em> itimerspec <code class="descname">its</code><a class="headerlink" href="#_CPPv2N5timer3itsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer2saE">
+<span id="timer::sa__sigaction"></span><span class="target" id="cppmclasstimer_1a11eff423195590f5e3879c6ef0522659"></span><em class="property">struct</em> sigaction <code class="descname">sa</code><a class="headerlink" href="#_CPPv2N5timer2saE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N5timer5sigNoE">
+<span id="timer::sigNo__i"></span><span class="target" id="cppmclasstimer_1acc720e5ed0cf95c69216fcdd3ee693d7"></span>int <code class="descname">sigNo</code> = SIGALRM<a class="headerlink" href="#_CPPv2N5timer5sigNoE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="timer-a-signal-slot-method-timer">
+<h3>timer - A signal/slot method timer<a class="headerlink" href="#timer-a-signal-slot-method-timer" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="_CPPv212simple_timer">
+<span id="simple_timer"></span><span class="target" id="cppmclasssimple__timer"></span><em class="property">class </em><code class="descname">simple_timer</code><a class="headerlink" href="#_CPPv212simple_timer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N12simple_timer12simple_timerEv">
+<span id="simple_timer::simple_timer__void"></span><span class="target" id="cppmclasssimple__timer_1a898609d0d335bd1c000012a997f5883f"></span><code class="descname">simple_timer</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer12simple_timerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer12simple_timerEi">
+<span id="simple_timer::simple_timer__i"></span><span class="target" id="cppmclasssimple__timer_1a47a32ee6744a6fe3c9ea6b5e8dd8848a"></span><code class="descname">simple_timer</code><span class="sig-paren">(</span>int <em>_signum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer12simple_timerEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer3setEd">
+<span id="simple_timer::set__double"></span><span class="target" id="cppmclasssimple__timer_1a98d4bf4b61df405849475fb129acfde9"></span>void <code class="descname">set</code><span class="sig-paren">(</span>double <em>_delt</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer3setEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer5startEv">
+<span id="simple_timer::start__void"></span><span class="target" id="cppmclasssimple__timer_1a10aa12064f90fa175f111f3e7fbdb94f"></span>void <code class="descname">start</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer5startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer5startEd">
+<span id="simple_timer::start__double"></span><span class="target" id="cppmclasssimple__timer_1aea9eb4c196e68f2f9859ae633d6689ba"></span>void <code class="descname">start</code><span class="sig-paren">(</span>double <em>_delt</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer5startEd" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer4stopEv">
+<span id="simple_timer::stop__void"></span><span class="target" id="cppmclasssimple__timer_1ae76ead34ed278488850a09938581fec0"></span>double <code class="descname">stop</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer4stopEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer5get_tEv">
+<span id="simple_timer::get_t__void"></span><span class="target" id="cppmclasssimple__timer_1a1d047587b316ba89d3ec08d7ce4a3c93"></span>double <code class="descname">get_t</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer5get_tEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer8get_deltEv">
+<span id="simple_timer::get_delt__void"></span><span class="target" id="cppmclasssimple__timer_1a2baa942b22ad04a8be4b1752b36ed97c"></span>double <code class="descname">get_delt</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer8get_deltEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N12simple_timer10check_timeEv">
+<span id="simple_timer::check_time__void"></span><span class="target" id="cppmclasssimple__timer_1a0e2bb90995ea0d64a8b3369f12efc604"></span>double <code class="descname">check_time</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer10check_timeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Functions</p>
+<dl class="function">
+<dt id="_CPPv2N12simple_timer6_startEv">
+<span id="simple_timer::_start__void"></span><span class="target" id="cppmclasssimple__timer_1a8f64b6fcc2c9d5123ca5ddbfd7a59546"></span>void <code class="descname">_start</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N12simple_timer6_startEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="member">
+<dt id="_CPPv2N12simple_timer4deltE">
+<span id="simple_timer::delt__double"></span><span class="target" id="cppmclasssimple__timer_1a3c56015250373ef8bdf24b9eafe0c3b3"></span>double <code class="descname">delt</code><a class="headerlink" href="#_CPPv2N12simple_timer4deltE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer1tE">
+<span id="simple_timer::t__double"></span><span class="target" id="cppmclasssimple__timer_1a29c0f8bbcbbb3bba1fd8a28628782ed3"></span>double <code class="descname">t</code><a class="headerlink" href="#_CPPv2N12simple_timer1tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer7start_tE">
+<span id="simple_timer::start_t__double"></span><span class="target" id="cppmclasssimple__timer_1accca713389f8889389a0b1cca17a6dec"></span>double <code class="descname">start_t</code><a class="headerlink" href="#_CPPv2N12simple_timer7start_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer6signumE">
+<span id="simple_timer::signum__i"></span><span class="target" id="cppmclasssimple__timer_1a0fd0d99884ccb2091851c1378c9bbb9b"></span>int <code class="descname">signum</code><a class="headerlink" href="#_CPPv2N12simple_timer6signumE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer7timerIDE">
+<span id="simple_timer::timerID__timer_t"></span><span class="target" id="cppmclasssimple__timer_1a45ce2c8c093e2bec6e86e3ee43bb38c5"></span>timer_t <code class="descname">timerID</code><a class="headerlink" href="#_CPPv2N12simple_timer7timerIDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer3nowE">
+<span id="simple_timer::now__timespec"></span><span class="target" id="cppmclasssimple__timer_1a6718078319e9a7f36a11ababf3ea66c8"></span><em class="property">struct</em> timespec <code class="descname">now</code><a class="headerlink" href="#_CPPv2N12simple_timer3nowE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer2teE">
+<span id="simple_timer::te__sigevent"></span><span class="target" id="cppmclasssimple__timer_1a9e9d47b2279f02d104429174795df574"></span><em class="property">struct</em> sigevent <code class="descname">te</code><a class="headerlink" href="#_CPPv2N12simple_timer2teE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N12simple_timer3itsE">
+<span id="simple_timer::its__itimerspec"></span><span class="target" id="cppmclasssimple__timer_1a17a2d92d0ad60dac62213765e4a520fb"></span><em class="property">struct</em> itimerspec <code class="descname">its</code><a class="headerlink" href="#_CPPv2N12simple_timer3itsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Alex Hagen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
