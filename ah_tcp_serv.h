@@ -25,16 +25,13 @@
 #define ERR_INFO	5
 #define ERR_DEBUG	6
 
-
-
-/*                AH TCP Multiple Client Server (Select) class                */
-/*                             Author: Alex Hagen                             */
-/* This server is a c++ implementation of the c select server.  I have strived 
+/*!
+  This server is a c++ implementation of the c select server.  I have strived
 	to make it signal and slot oriented, so that responses can be hooked up
 	using the slots.  I have also strived to follow c++ practices and to make it
 	robust using overloading and encapsulation, along with error handling and
-	debugging.  */
-
+	debugging.
+  */
 class ah_tcp_serv : public sigslot::has_slots<>{
 public:
 	// constructor methods - overloading
@@ -116,20 +113,20 @@ void ah_tcp_serv::start_b(void){
         exit(1);
     }
     error.emit(ERR_DEBUG,"Server-setsockopt() got the address and port.");
-     
+
     // bind to the server address
     serveraddr.sin_family = AF_INET;
     serveraddr.sin_addr.s_addr = ipAddr;
     serveraddr.sin_port = htons(port);
     memset(&(serveraddr.sin_zero), '\0', 8);
-     
+
     if(bind(listener, (struct sockaddr *)&serveraddr, sizeof(serveraddr)) == \
     	-1) {
         error.emit(ERR_CRIT,"Server-bind() failed to bind to server.");
         exit(1);
     }
     error.emit(ERR_DEBUG,"Server-bind() was able to bind to address.");
-     
+
     // listen
     if(listen(listener, 10) == -1) {
          error.emit(ERR_CRIT,"Server-listen() was unable to start listening.");
@@ -138,7 +135,7 @@ void ah_tcp_serv::start_b(void){
    	error.emit(ERR_DEBUG,"Server-listen() started listening.");
 
     FD_SET(listener, &master); // add the listener to the master set
-    fdmax = listener; // keep track of the biggest file descriptor: 
+    fdmax = listener; // keep track of the biggest file descriptor:
     				  // so far, it's this one
 
     error.emit(ERR_INFO,"The tcp multiple client server has been initialized.");
@@ -146,14 +143,14 @@ void ah_tcp_serv::start_b(void){
 	while(cont) {
         memset(buf,0,sizeof(buf));
         read_fds = master;
-         
+
         if(select(fdmax+1, &read_fds, NULL, NULL, NULL) == -1) {
             error.emit(ERR_ERR,"Server-select had an error, restarting the loop.");
             //perror("Server-select() error lol!");
             //exit(1);
         }
         error.emit(ERR_DEBUG,"server was able to select.");
-         
+
         /*run through the existing connections looking for data to be read*/
         for(i = 0; i <= fdmax; i++) {
             if(FD_ISSET(i, &read_fds)) { /* we got one... */
