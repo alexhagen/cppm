@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="timer_8h" kind="file" language="C++">
     <compoundname>timer.h</compoundname>
     <includes local="yes">sigslot.h</includes>
@@ -23,9 +23,18 @@
       <node id="138">
         <label>signal.h</label>
       </node>
+      <node id="139">
+        <label>time.h</label>
+      </node>
+      <node id="143">
+        <label>math.h</label>
+      </node>
+      <node id="137">
+        <label>sys/time.h</label>
+      </node>
       <node id="135">
         <label>timer.h</label>
-        <link refid="timer_8h"/>
+        <link refid="timer.h"/>
         <childnode refid="136" relation="include">
         </childnode>
         <childnode refid="137" relation="include">
@@ -42,15 +51,6 @@
         </childnode>
         <childnode refid="143" relation="include">
         </childnode>
-      </node>
-      <node id="139">
-        <label>time.h</label>
-      </node>
-      <node id="143">
-        <label>math.h</label>
-      </node>
-      <node id="137">
-        <label>sys/time.h</label>
       </node>
       <node id="140">
         <label>stdio.h</label>
@@ -171,24 +171,24 @@
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>timer::set(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t){</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>delt<sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>sig-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,&amp;timer::finish);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sec<sp/>=<sp/>floor(delt);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsec<sp/>=<sp/>int((delt-floor(delt))*1.0E9);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_sec<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_nsec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sec<sp/>=<sp/>floor(delt);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsec<sp/>=<sp/>int((delt-floor(delt))*1.0E9);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_sec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_nsec<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>sig-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;timer::finish);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>timer::set_int(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t){</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>delt<sp/>=<sp/>t;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>sig-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,&amp;timer::finish);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sec<sp/>=<sp/>floor(delt);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsec<sp/>=<sp/>int((delt-floor(delt))*1.0E9);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sec<sp/>=<sp/>floor(delt);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nsec<sp/>=<sp/>int((delt-floor(delt))*1.0E9);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_value.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>its.it_interval.tv_nsec<sp/>=<sp/>nsec;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>sig-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;timer::finish);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>timer::start(){</highlight></codeline>
@@ -199,8 +199,8 @@
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>timer::finish(){</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_gettime(CLOCK_REALTIME,<sp/>&amp;now);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>realtime<sp/>=<sp/>double(now.tv_sec+(now.tv_nsec/1.0E9))-start_time;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(realtime<sp/>&gt;<sp/>10000)<sp/>realtime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>realtime<sp/>=<sp/>double(now.tv_sec+(now.tv_nsec/1.0E9))<sp/>-<sp/>start_time;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>(realtime<sp/>&gt;<sp/>10000)<sp/>realtime<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_gettime(CLOCK_REALTIME,<sp/>&amp;now);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>start_time<sp/>=<sp/>double(now.tv_sec+(now.tv_nsec/1.0E9));</highlight></codeline>
 <codeline lineno="115"><highlight class="normal">}</highlight></codeline>

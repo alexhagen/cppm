@@ -17,13 +17,20 @@ class cppmagics(Magics):
         self.opts = ['--std=c++11', '-Wall']
         self.ps = []
         self.includes = []
+        self.links = []
         super(cppmagics, self).__init__(**kwargs)
 
     @line_magic
     def set_compiler(self, line):
         arr = line.split()
         self.compiler = arr[0]
-        self.opts = arr[1:]
+        self.opts = []
+        self.links = []
+        for opt in arr[1:]:
+            if '-l' in opt:
+                self.links.extend([opt])
+            else:
+                self.opts.extend([opt])
 
     @cell_magic
     def cpp(self, line, cell):
@@ -58,13 +65,14 @@ class cppmagics(Magics):
         for i in self.includes:
             includes += '-I/{fname} '.format(fname=i)
         opts = ''
+        links = ''
         for o in self.opts:
             opts += '{opt} '.format(opt=o)
-        cmd = "{cmp} {opts} {inp} -o {out} {inc}".format(cmp=self.compiler,
-                                                  opts=opts,
-                                                  inp=self.filename + '.cpp',
-                                                  out=self.filename + '.o',
-                                                  inc=includes)
+        for l in self.links:
+            links += '{link} '.format(link=l)
+        cmd = "{cmp} {opts} {inp} -o {out} {inc} {links}"\
+            .format(cmp=self.compiler, opts=opts, inp=self.filename + '.cpp',
+                    out=self.filename + '.o', inc=includes, links=links)
         p = subprocess.Popen([cmd], stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE, shell=True)
         (out, err) = p.communicate()

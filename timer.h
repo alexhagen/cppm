@@ -80,24 +80,24 @@ timer::~timer(){
 
 void timer::set(double t){
     delt = t;
-    sig->connect(this,&timer::finish);
     int sec = floor(delt);
     int nsec = int((delt-floor(delt))*1.0E9);
     its.it_value.tv_sec = sec;
     its.it_value.tv_nsec = nsec;
     its.it_interval.tv_sec = 0;
     its.it_interval.tv_nsec = 0;
+    sig->connect(this, &timer::finish);
 }
 
 void timer::set_int(double t){
     delt = t;
-    sig->connect(this,&timer::finish);
     int sec = floor(delt);
     int nsec = int((delt-floor(delt))*1.0E9);
     its.it_value.tv_sec = sec;
     its.it_value.tv_nsec = nsec;
     its.it_interval.tv_sec = sec;
     its.it_interval.tv_nsec = nsec;
+    sig->connect(this, &timer::finish);
 }
 
 void timer::start(){
@@ -108,8 +108,8 @@ void timer::start(){
 
 void timer::finish(){
     clock_gettime(CLOCK_REALTIME, &now);
-    realtime = double(now.tv_sec+(now.tv_nsec/1.0E9))-start_time;
-    if (realtime > 10000) realtime = 0;
+    realtime = double(now.tv_sec+(now.tv_nsec/1.0E9)) - start_time;
+    //if (realtime > 10000) realtime = 0;
     clock_gettime(CLOCK_REALTIME, &now);
     start_time = double(now.tv_sec+(now.tv_nsec/1.0E9));
 }

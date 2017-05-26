@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="ah__udp__client_8h" kind="file" language="C++">
     <compoundname>ah_udp_client.h</compoundname>
     <includes local="no">sys/types.h</includes>
@@ -23,18 +23,9 @@
       <node id="65">
         <label>sigslot.h</label>
       </node>
-      <node id="58">
-        <label>sys/types.h</label>
-      </node>
-      <node id="62">
-        <label>time.h</label>
-      </node>
-      <node id="59">
-        <label>sys/socket.h</label>
-      </node>
       <node id="57">
         <label>ah_udp_client.h</label>
-        <link refid="ah__udp__client_8h"/>
+        <link refid="ah_udp_client.h"/>
         <childnode refid="58" relation="include">
         </childnode>
         <childnode refid="59" relation="include">
@@ -51,6 +42,15 @@
         </childnode>
         <childnode refid="65" relation="include">
         </childnode>
+      </node>
+      <node id="58">
+        <label>sys/types.h</label>
+      </node>
+      <node id="62">
+        <label>time.h</label>
+      </node>
+      <node id="59">
+        <label>sys/socket.h</label>
       </node>
       <node id="63">
         <label>stdio.h</label>

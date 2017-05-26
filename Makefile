@@ -9,6 +9,8 @@ breathe: FORCE
 	mv examples/example_shm.html docs/source/README_SHM.html; \
 	jupyter nbconvert examples/example_value.ipynb --to html --template basic --execute; \
 	mv examples/example_value.html docs/source/README_VALUE.html; \
+	jupyter nbconvert examples/example_timer.ipynb --to html --template basic --execute; \
+	mv examples/example_timer.html docs/source/README_TIMER.html; \
 	cd docs/; \
 	sphinx-apidoc -e -f -M -o ./ ../; \
 	make html

@@ -2,6 +2,10 @@
 #ifndef AH_SHM_H
 #define AH_SHM_H
 
+/*
+g++ --std=c++11 `pkg-config --cflags glib-2.0` -g shm_client.cpp -o shm_client.o `pkg-config --libs glib-2.0`
+*/
+
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -9,6 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <glib.h>
 
 #define SHMSZ 27
 
@@ -56,7 +61,7 @@ shm_server<T>::~shm_server(){
 
 template <class T>
 void shm_server<T>::set(T val){
-	memcpy (shm,&val,sizeof(T));
+	memcpy (shm, &val, sizeof(T));
 }
 
 template <class T>

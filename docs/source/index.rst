@@ -26,8 +26,15 @@ UDP Objects
 Signals and Timing
 ------------------
 
+.. raw:: html
+  :file: README_TIMER.html
+
+Indexes
+-------
+
 .. toctree::
    :maxdepth: 2
 
    ah_shm
    ah_value
+   ah_timer
